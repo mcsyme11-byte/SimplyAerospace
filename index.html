@@ -420,6 +420,53 @@
   .lab.myth{color:#e0705a; border-color:rgba(224,112,90,.4)} .lab.truth{color:#8fd19e; border-color:rgba(143,209,158,.4)}
   .mr-go{font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--gold); margin-top:4px; opacity:0; transition:opacity .2s ease}
   .mythrow:hover .mr-go{opacity:1}
+  /* ---- mission control ---- */
+  .mhub{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:8px}
+  @media(max-width:620px){ .mhub{grid-template-columns:1fr} }
+  .mcard{display:block; text-decoration:none; color:var(--text); border:1px solid var(--line); border-radius:16px; padding:24px 22px 20px; background:linear-gradient(180deg,rgba(255,255,255,.015),transparent); position:relative; overflow:hidden; transition:border-color .2s ease, transform .2s ease}
+  .mcard:hover{border-color:var(--acc,#C8A96E); transform:translateY(-3px)}
+  .mcard::after{display:none}
+  .mcard .mnum{font-family:var(--mono); font-size:11px; letter-spacing:.16em; color:var(--acc,#C8A96E); opacity:.8}
+  .mcard .mttl{font-family:var(--display); font-weight:600; font-size:23px; line-height:1.15; margin:8px 0 6px}
+  .mcard .mskill{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim)}
+  .mcard .mblurb{font-family:var(--body); font-size:15px; line-height:1.5; color:var(--text); opacity:.78; margin-top:10px}
+  .mcard .mdone{position:absolute; top:18px; right:18px; font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#8fd19e; border:1px solid rgba(143,209,158,.4); border-radius:20px; padding:4px 10px; display:none}
+  .mcard.earned .mdone{display:inline-block}
+  .mcard.earned{border-color:rgba(143,209,158,.3)}
+  .mpatchbar{display:flex; align-items:center; gap:10px; margin:2px 0 24px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim)}
+  .mpatchbar b{color:#8fd19e; font-weight:400}
+  /* mission runner */
+  .mrun{max-width:680px; margin:0 auto}
+  .mscene{border:1px solid var(--line); border-radius:18px; padding:26px 24px; background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+  .mscene h2{font-family:var(--display); font-weight:600; font-size:24px; line-height:1.2; margin:0 0 6px}
+  .mscene .mlead{font-family:var(--body); font-size:17px; line-height:1.55; color:var(--text); opacity:.85; margin:0 0 18px}
+  .mgauge{margin:18px 0 20px}
+  .mgauge .glab{display:flex; justify-content:space-between; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:7px}
+  .mgauge .gtrack{height:16px; border-radius:10px; background:rgba(255,255,255,.07); overflow:hidden}
+  .mgauge .gfill{height:100%; border-radius:10px; transition:width .45s cubic-bezier(.3,.8,.4,1); background:var(--acc,#6FB6E8)}
+  .mgauge.over .gfill{background:#e0705a}
+  .mchoices{display:flex; flex-direction:column; gap:12px; margin-top:6px}
+  .mbtn{font-family:var(--body); font-size:16px; text-align:left; color:var(--text); background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px; padding:15px 18px; cursor:pointer; transition:border-color .18s ease, background .18s ease}
+  .mbtn:hover{border-color:var(--gold); background:rgba(200,169,110,.07)}
+  .mbtn .mb-sub{display:block; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); margin-top:5px}
+  .mbtn.toggle.on{border-color:#6FB6E8; background:rgba(111,182,232,.1)}
+  .mbtn.toggle .tw{float:right; font-family:var(--mono); font-size:13px; color:var(--dim)}
+  .mbtn.go{text-align:center; font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--navy,#0a0f16); background:var(--gold); border-color:var(--gold); font-weight:700}
+  .mbtn.go:hover{filter:brightness(1.08)}
+  .mfx{border-radius:14px; padding:18px 20px; margin-top:4px; border:1px solid var(--line)}
+  .mfx.good{border-color:rgba(143,209,158,.45); background:rgba(143,209,158,.06)}
+  .mfx.bad{border-color:rgba(224,112,90,.45); background:rgba(224,112,90,.06)}
+  .mfx .fxhead{font-family:var(--display); font-weight:600; font-size:19px; margin:0 0 6px}
+  .mfx.good .fxhead{color:#8fd19e} .mfx.bad .fxhead{color:#e0705a}
+  .mfx .fxwhy{font-family:var(--body); font-size:15px; line-height:1.5; opacity:.85; margin:0}
+  .mfx .fxwhy b{color:var(--gold); font-weight:400}
+  .mwin{text-align:center; padding:10px 0 0}
+  .mwin .patch{width:116px; height:116px; margin:4px auto 14px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 40%,rgba(200,169,110,.18),transparent 70%); box-shadow:0 0 34px rgba(200,169,110,.18)}
+  .mwin .patch svg{width:62px; height:62px}
+  .mwin .wtag{font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8fd19e; margin-bottom:6px}
+  .mrow{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:20px}
+  .mback{display:inline-block; margin-bottom:18px; font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); text-decoration:none}
+  .mback:hover{color:var(--gold)} .mback::after{display:none}
   /* ---- footer nav ---- */
   .footnav{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 22px; margin:22px 0 24px}
   .footnav a{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); text-decoration:none; transition:color .2s ease}
@@ -602,6 +649,7 @@
         <span class="navgroup">Learn</span>
         <a href="#/levels">Levels</a>
         <a href="#/quiz">Take the Quiz</a>
+        <a href="#/missions">Mission Control</a>
         <a href="#/glossary">Glossary</a>
         <span class="navgroup">About</span>
         <a href="#/faq">FAQ</a>
@@ -617,7 +665,7 @@
     <p class="quote">"Somewhere, something incredible is waiting to be known."<span>Sharon Begley</span></p>
     <nav class="footnav">
       <a href="#/">Home</a><a href="#/start">Start Here</a><a href="#/levels">Levels</a>
-      <a href="#/quiz">Quiz</a><a href="#/myths">Myth Index</a><a href="#/glossary">Glossary</a>
+      <a href="#/quiz">Quiz</a><a href="#/missions">Mission Control</a><a href="#/myths">Myth Index</a><a href="#/glossary">Glossary</a>
       <a href="#/faq">FAQ</a><a href="#/sources">Sources</a><a href="#/about">About</a>
     </nav>
     <div class="foothandles" id="footlinks"></div>
@@ -637,8 +685,8 @@
              the "Watch the Short" button opens the actual video.
              (YouTube is used first; Instagram is the fallback.)
    ============================================================ */
-const SITE_VERSION = "2.5.0";
-const BUILD_DATE = "2026.10.14";
+const SITE_VERSION = "2.6.0";
+const BUILD_DATE = "2026.10.22";
 const CHANNELS = {
   youtube:   "https://www.youtube.com/@SimplyAerospace",
   instagram: "https://www.instagram.com/simplyaerospace"
@@ -1274,14 +1322,72 @@ const VIDEOS = [
       { t:"NASA StarChild — Why do we have seasons?", url:"https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question53.html" },
       { t:"NASA Space Place — What Causes the Seasons?", url:"https://spaceplace.nasa.gov/seasons/en/" }
     ]
+  },
+  {
+    id:"tides", topic:"space", topicLabel:"Space", code:"SP · 11", accentReel:"blue",
+    title:"What causes the tides?",
+    teaser:"The Moon pulls the sea — but there are TWO bulges, and one of them points away from the Moon.",
+    duration:"0:52", read:"6 min", level:"Flight Engineer", published:true,
+    watch:{ youtube:"", instagram:"https://www.instagram.com/reel/DezwJQSSsR1/" },
+    standfirst:"It feels obvious that the Moon lifts the ocean on the side facing it. But most coasts get TWO high tides a day, and the second bulge points directly away from the Moon. The secret isn't the Moon's pull — it's the difference in that pull across the Earth.",
+    myth:"The Moon lifts the water on its side, so there's one bulge and one high tide a day.",
+    truth:"There are two bulges — one facing the Moon and one on the far side — so most coasts get two high tides a day. They happen because the Moon pulls the near water harder than the solid Earth, and the Earth harder than the far water, stretching the whole planet.",
+    sections:[
+      { h:"Two bulges, not one", p:"Most coastlines get two high tides and two low tides roughly every day, about twelve hours apart. If the Moon simply lifted the water on the side facing it, there would be just one bulge and one high tide. So where does the second one come from? It sits on the side of Earth pointing directly away from the Moon — the last place you'd expect the Moon to pile water up. The answer isn't about how hard the Moon pulls. It's about how that pull changes across the width of the Earth." },
+      { h:"A tug-of-war of distance", p:"Gravity weakens with distance (F = G·M·m / d²), so the Moon doesn't pull every part of Earth equally. It pulls the near-side ocean hardest, the solid Earth in the middle a little less, and the far-side ocean least of all. The result: the near water is pulled ahead of the Earth, piling into a bulge toward the Moon — while the Earth is pulled ahead of the far water, leaving that water behind as a second bulge pointing away. The whole planet is gently stretched along the Earth–Moon line, and as Earth spins, each coast sweeps through both bulges — giving two high tides a day." },
+      { h:"The Sun joins in", p:"The Sun raises tides too, but because it's so far away its tidal effect is a bit under half the Moon's. Timing is what matters. At full and new Moon the Sun and Moon line up and their stretches add together, giving the largest tides of the month — spring tides (nothing to do with the season). A week later, at the half Moon, the Sun and Moon pull at right angles and partly cancel, giving the gentlest tides — neap tides. Same physics, playing out like clockwork twice a month." }
+    ],
+    deeper:[
+      { k:"Two highs a day", v:"Most coasts see two high and two low tides each day because Earth rotates through two tidal bulges — one toward the Moon and one directly away from it." },
+      { k:"It's the difference", v:"Tides come from the difference in the Moon's pull across Earth, not the pull itself. The near side is tugged more than the far side, which stretches the planet." },
+      { k:"The far-side bulge", v:"The Moon pulls the solid Earth away from the far-side ocean more than it pulls that ocean, so the far water is 'left behind' as a second bulge pointing away from the Moon." },
+      { k:"Gravity and distance", v:"Gravity follows F = G·M·m / d² — it weakens with distance. That distance-dependence is exactly why the near water, the Earth and the far water each feel a different pull." },
+      { k:"The Sun's share", v:"The Sun's tidal effect is a bit under half the Moon's. The Moon wins despite being far smaller because it is so much closer, and tides depend steeply on distance." },
+      { k:"Spring tides", v:"At full and new Moon the Sun and Moon align and their tidal stretches add, producing the biggest tides — 'spring' tides, meaning to spring up, not the season." },
+      { k:"Neap tides", v:"At the first- and last-quarter (half) Moon, the Sun and Moon pull at right angles and partly cancel, giving the smallest tidal range — neap tides." },
+      { k:"Land has tides too", v:"The solid Earth itself flexes by up to about 30 cm twice a day from the same effect — 'Earth tides' — though we never feel it because everything around us moves together." }
+    ],
+    sources:[
+      { t:"NOAA Ocean Service — Tides and Water Levels (what causes tides)", url:"https://oceanservice.noaa.gov/education/tutorial_tides/" },
+      { t:"NOAA — Why does the ocean have tides?", url:"https://oceanservice.noaa.gov/facts/tides.html" }
+    ]
+  },
+  {
+    id:"landing", topic:"propulsion", topicLabel:"Propulsion", code:"PR · 05", accentReel:"amber",
+    title:"How do rockets land themselves?",
+    teaser:"A booster falls back from space and sets itself upright on a target — and it can't slow down gently.",
+    duration:"0:50", read:"6 min", level:"Senior Engineer", published:true,
+    watch:{ youtube:"", instagram:"https://www.instagram.com/reel/DezwUToSy1t/" },
+    standfirst:"A rocket booster falls back from the edge of space and lands upright on a pad the size of a ship. The strange part: it can't hover or ease itself down. Even near-empty its engine is too powerful — so it falls almost all the way, then fires a single, perfectly-timed burn.",
+    myth:"The booster just eases off the throttle and hovers gently down to a soft landing.",
+    truth:"It can't hover. Even one engine at its lowest throttle pushes harder than the near-empty booster weighs, so firing it makes the rocket climb, not hang. Instead it falls almost to the ground, then fires one burn timed to hit zero speed exactly at the pad — the 'hoverslam.'",
+    sections:[
+      { h:"Why it can't hover", p:"To hover, a rocket's thrust has to exactly balance its weight. The problem is that a booster coming home is nearly empty — it has burned most of its fuel — so it is very light. Even a single engine throttled as low as it will go still produces more thrust than the whole empty rocket weighs. Fire it, and the rocket accelerates upward; shut it off, and it falls. There is no setting in between that lets it hang in the air. Its thrust-to-weight ratio stays greater than one even empty (TWR = T / (m·g) > 1), so hovering simply isn't an option — it gets one shot." },
+      { h:"The hoverslam", p:"Since the booster can only fall or accelerate, it does something audacious: it falls almost the entire way down with its engines off, then lights them at the last possible moment for a single hard burn — nicknamed the 'suicide burn' or hoverslam. The burn is timed so the rocket reaches zero speed at the exact instant it reaches the ground. Fire too early and it stops high in the air, then drops again with no fuel left; fire too late and it hits the ground still moving. On the way down, titanium grid fins steer it like a falling dart, and the engine swivels (gimbals) to keep it balanced and pointed straight up." },
+      { h:"Seconds of fuel to spare", p:"For a Falcon 9, the landing starts with three engines lit to kill speed quickly, then drops to a single engine for the final touchdown, throttling and steering thousands of times a second. It aims for a landing pad or a floating drone ship at sea, and arrives with only seconds of fuel left — the margins really are that thin. Why go to all this trouble? The booster is by far the most expensive part of a rocket. Land it, refurbish it and fly it again, and the cost of reaching space drops dramatically. It isn't magic — just ruthless timing and real-time math." }
+    ],
+    deeper:[
+      { k:"It can't hover", v:"A near-empty booster weighs so little that even one engine at minimum throttle out-pushes its weight. Thrust-to-weight stays above 1, so it can only climb or fall — never hang still." },
+      { k:"TWR > 1", v:"Thrust-to-weight ratio, TWR = T / (m·g), stays greater than one even with empty tanks. That single fact is why a propulsive landing must be a timed burn, not a gentle hover-down." },
+      { k:"The hoverslam", v:"Also called the suicide burn: the booster falls with engines off, then fires once, timed to reach zero velocity exactly at the ground. No second attempt is possible." },
+      { k:"Too early or too late", v:"Burn too soon and the rocket stops in mid-air and falls again out of fuel; burn too late and it hits the ground still moving. The timing window is a fraction of a second." },
+      { k:"Grid fins steer", v:"Four titanium grid fins fold out near the top and steer the falling booster like a dart, guiding it through the thick lower atmosphere toward the target." },
+      { k:"Engines gimbal", v:"The engine swivels on gimbals to vector its thrust and balance the tall booster upright — the same way you balance a broom upright by moving your hand under it." },
+      { k:"Three engines, then one", v:"Falcon 9 lights three engines for the landing burn to slow down fast, then shuts two off and finishes on a single engine for fine control at touchdown." },
+      { k:"Why bother: reuse", v:"The first stage is the priciest part of the rocket. Recovering and reflying it, instead of throwing it away, is what has made launching to space far cheaper." }
+    ],
+    sources:[
+      { t:"SpaceX — Falcon 9 (reusable first stage)", url:"https://www.spacex.com/vehicles/falcon-9/" },
+      { t:"Wikipedia — Falcon 9 first-stage landing", url:"https://en.wikipedia.org/wiki/Falcon_9" }
+    ]
   }
 ];
 
 /* upcoming placeholders shown as dimmed cards */
 const SOON = [
   { topic:"aviation",   code:"AV \u00B7 09", title:"What causes turbulence?" },
-  { topic:"propulsion", code:"PR \u00B7 05", title:"How does a jet engine work?" },
-  { topic:"space",      code:"SP \u00B7 11", title:"What is a light-year?" }
+  { topic:"propulsion", code:"PR \u00B7 06", title:"How does an afterburner work?" },
+  { topic:"space",      code:"SP \u00B7 12", title:"Where does space actually begin?" }
 ]
 
 /* editorial "where the channel is heading" themes (not video placeholders) */
@@ -1757,6 +1863,181 @@ function renderGlossary(target){
   }
 }
 
+/* ================= MISSION CONTROL ================= */
+const MISSIONS = [
+  { id:"moon",  acc:"#6FB6E8", num:"MISSION 01", title:"Touchdown on the Moon", skill:"Subtraction & planning ahead",
+    blurb:"You're the pilot. Spend your fuel wisely and land softly — run the tank dry and it's a rough day." },
+  { id:"load",  acc:"#E89A4C", num:"MISSION 02", title:"Load the Rocket", skill:"Adding under a limit",
+    blurb:"Your rocket can lift only so much. Choose what to pack — and don't forget what you truly need." },
+  { id:"route", acc:"#8fd19e", num:"MISSION 03", title:"Plot the Flight Path", skill:"Shortest-path thinking",
+    blurb:"Fly halfway around the world. The route that looks straight on the map isn't the shortest one." },
+  { id:"orbit", acc:"#FFD27A", num:"MISSION 04", title:"Catch the Orbit", skill:"Number sense",
+    blurb:"Too slow and you fall back. Too fast and you fly off forever. Find the speed that's just right." }
+];
+const MBYID = id => MISSIONS.find(m=>m.id===id);
+function getPatches(){ try{ return JSON.parse(localStorage.getItem("sa_patches")||"[]"); }catch(e){ return []; } }
+function savePatch(id){ try{ const p=getPatches(); if(p.indexOf(id)<0){ p.push(id); localStorage.setItem("sa_patches", JSON.stringify(p)); } }catch(e){} }
+
+function renderMissions(){
+  setTitle("Mission Control");
+  const earned=getPatches();
+  const cards = MISSIONS.map(m=>`<a class="mcard reveal${earned.indexOf(m.id)>=0?' earned':''}" style="--acc:${m.acc}" href="#/missions/${m.id}">
+      <span class="mdone">✓ Patch earned</span>
+      <div class="mnum">${m.num}</div>
+      <div class="mttl">${esc(m.title)}</div>
+      <div class="mskill">${esc(m.skill)}</div>
+      <div class="mblurb">${esc(m.blurb)}</div>
+    </a>`).join("");
+  app.innerHTML = pageHead("For younger engineers · ages 7–11", "Mission <em>Control.</em>",
+    "Pick a mission and make the calls yourself. Every choice has a reason — you'll be doing real aerospace thinking, and a little math, without even noticing.") + `
+    <div class="mpatchbar reveal">Patches earned: <b>${earned.length} / ${MISSIONS.length}</b></div>
+    <div class="mhub">${cards}</div>`;
+}
+
+let MRUN=null;
+function startMission(id){
+  const m=MBYID(id); if(!m){ renderMissions(); return; }
+  if(id==="moon") MRUN={id, screen:"start", fuel:100, bumpy:false};
+  else if(id==="load") MRUN={id, picks:{}, msg:null, screen:"build"};
+  else if(id==="route") MRUN={id, screen:"q1"};
+  else if(id==="orbit") MRUN={id, screen:"ask"};
+  mRender();
+}
+function mShell(m, inner){
+  return `<a class="mback" href="#/missions">← Mission Control</a>
+    <div class="mrun"><div class="mscene reveal" style="--acc:${m.acc}">${inner}</div></div>`;
+}
+function gauge(label, pct, valtext, over){
+  return `<div class="mgauge${over?' over':''}"><div class="glab"><span>${esc(label)}</span><span>${esc(valtext)}</span></div>
+    <div class="gtrack"><div class="gfill" style="width:${Math.max(0,Math.min(100,pct))}%"></div></div></div>`;
+}
+function choiceBtn(act, val, label, sub){
+  return `<button class="mbtn" data-act="${act}"${val!=null?` data-val="${val}"`:""}>${esc(label)}${sub?`<span class="mb-sub">${esc(sub)}</span>`:""}</button>`;
+}
+function patchSVG(c){ return `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 15.8 6.8 18.5l1-5.8L3.6 8.6l5.8-.8z"/></svg>`; }
+function winScreen(m, line){
+  return `<div class="mwin"><div class="wtag">Mission complete</div>
+    <div class="patch">${patchSVG(m.acc)}</div>
+    <h2>${esc(m.title)} ✓</h2>
+    <p class="mlead">${esc(line)}</p>
+    <div class="mrow"><button class="mbtn go" data-act="replay">Play again</button>
+      <a class="mbtn" style="text-align:center" href="#/missions">Back to Mission Control</a></div></div>`;
+}
+function moonScene(){
+  const f=MRUN.fuel, g=gauge("Fuel", f, f+" / 100", false);
+  if(MRUN.screen==="start") return `<h2>Dropping toward the Moon</h2>
+      <p class="mlead">You're falling fast and the surface is rushing up. How do you shed speed?</p>${g}
+      <div class="mchoices">
+        ${choiceBtn("moon","big","Fire one big burn","Slows you a lot now · costs 45 fuel")}
+        ${choiceBtn("moon","gentle","Gentle taps on the engine","Slows you a little · costs 20 fuel")}
+      </div>`;
+  if(MRUN.screen==="spot") return `<h2>Choose your landing spot</h2>
+      <p class="mlead">Two places to set down. One is safe; one is closer but rough.</p>${g}
+      <div class="mchoices">
+        ${choiceBtn("moon","flat","Flat crater floor","Safe and smooth · costs 30 fuel to glide over")}
+        ${choiceBtn("moon","ridge","Rocky ridge, closer","Less fuel · costs 15 fuel, but bumpy")}
+      </div>`;
+  if(MRUN.screen==="land") return `<h2>Final descent</h2>
+      <p class="mlead">The landing burn needs <b>30 fuel</b> to touch down softly. You have <b>${f}</b>. Fire it?</p>${g}
+      <div class="mchoices">${choiceBtn("moon","fire","Fire the landing burn","Needs 30 fuel")}</div>`;
+  if(MRUN.screen==="lose") return `<div class="mfx bad"><p class="fxhead">Out of fuel — hard landing!</p>
+      <p class="fxwhy">You had ${f} fuel, but the landing burn needs 30. <b>A big early burn plus the long glide to the flat crater spent too much.</b> Next time, save fuel early or pick the closer spot.</p></div>
+      <div class="mrow"><button class="mbtn go" data-act="replay">Try again</button>
+      <a class="mbtn" style="text-align:center" href="#/missions">Back to Mission Control</a></div>`;
+  if(MRUN.screen==="win"){ const extra = MRUN.bumpy ? "A little bumpy on that ridge, but you set her down in one piece." : "A textbook soft landing — you budgeted your fuel perfectly.";
+    return winScreen(MBYID("moon"), extra+" You kept working out whether you had enough fuel left — that's subtraction doing real work."); }
+  return "";
+}
+const LOAD_ITEMS=[
+  {k:"crew", w:3, name:"Crew capsule", req:true},
+  {k:"fuel", w:3, name:"Fuel for orbit", req:true},
+  {k:"lab",  w:2, name:"Science lab"},
+  {k:"rover",w:2, name:"Moon rover"},
+  {k:"food", w:1, name:"Food & water"},
+  {k:"sat",  w:2, name:"Satellite"}
+];
+const LOAD_LIMIT=10;
+function loadTotal(){ return LOAD_ITEMS.reduce((a,it)=>a+(MRUN.picks[it.k]?it.w:0),0); }
+function loadScene(){
+  if(MRUN.screen==="win") return winScreen(MBYID("load"), "Lift-off! You packed everything essential and still came in under the "+LOAD_LIMIT+"-tonne limit. Adding up weights and staying under a target is exactly how real missions are planned.");
+  const total=loadTotal(), over=total>LOAD_LIMIT;
+  const g=gauge("Weight", total/LOAD_LIMIT*100, total+" / "+LOAD_LIMIT+" t", over);
+  const items=LOAD_ITEMS.map(it=>{ const on=!!MRUN.picks[it.k];
+    return `<button class="mbtn toggle${on?' on':''}" data-act="toggle" data-val="${it.k}">${esc(it.name)}${it.req?' (needed)':''}<span class="tw">${it.w} t${on?' ✓':''}</span></button>`; }).join("");
+  const msg = MRUN.msg ? `<div class="mfx bad"><p class="fxwhy">${esc(MRUN.msg)}</p></div>` : "";
+  return `<h2>Load the Rocket</h2>
+    <p class="mlead">Your rocket can lift <b>${LOAD_LIMIT} tonnes</b>. Tap items to add or remove them. You must bring the crew and the fuel — the rest is your call.</p>
+    ${g}<div class="mchoices">${items}</div>${msg}
+    <div class="mrow"><button class="mbtn go" data-act="launch">Launch!</button></div>`;
+}
+function routeScene(){
+  if(MRUN.screen==="q1") return `<h2>Plot the Flight Path</h2>
+      <p class="mlead">You're flying from New York to Tokyo. On a flat map you could draw a straight line across the middle. But which route is actually the shortest?</p>
+      <div class="mchoices">
+        ${choiceBtn("route","straight","Straight across the map","The flat line through the middle")}
+        ${choiceBtn("route","curve","Curve up toward the North Pole","Arcing over the top of the globe")}
+      </div>`;
+  if(MRUN.screen==="wrong") return `<div class="mfx bad"><p class="fxhead">It looks shortest — but it isn't</p>
+      <p class="fxwhy">A flat map stretches the top and bottom of the world to fit it on a rectangle, so straight lines up there are longer than they look. <b>The real shortest path curves toward the pole.</b></p></div>
+      <div class="mchoices">${choiceBtn("route","curve","Try the polar curve")}</div>`;
+  if(MRUN.screen==="win") return winScreen(MBYID("route"), "Exactly. On a globe the shortest path between two far-apart cities bends toward the pole — a 'great circle.' That's why real flights from New York to Tokyo arc up over the Arctic.");
+  return "";
+}
+function orbitScene(){
+  if(MRUN.screen==="ask") return `<h2>Catch the Orbit</h2>
+      <p class="mlead">To circle the Earth you have to go sideways incredibly fast — about <b>28,000 km/h</b>. Too slow and gravity pulls you back down; too fast and you escape into deep space. Pick your speed:</p>
+      <div class="mchoices">
+        ${choiceBtn("orbit","slow","15,000 km/h","About half the speed you need")}
+        ${choiceBtn("orbit","right","28,000 km/h","Right around orbital speed")}
+        ${choiceBtn("orbit","fast","50,000 km/h","Far more than you need")}
+      </div>`;
+  if(MRUN.screen==="slow") return `<div class="mfx bad"><p class="fxhead">Too slow — you fell back down</p>
+      <p class="fxwhy">At 15,000 km/h gravity wins and curves your path straight back into the ground. You need to go faster to keep 'missing' the Earth as you fall. <b>Try again.</b></p></div>
+      <div class="mchoices">${choiceBtn("orbit","retry","Pick again")}</div>`;
+  if(MRUN.screen==="fast") return `<div class="mfx bad"><p class="fxhead">Too fast — you flew off!</p>
+      <p class="fxwhy">At 50,000 km/h you beat Earth's gravity completely and shot off into deep space — past escape velocity. Great for leaving, no good for orbiting. <b>Try again.</b></p></div>
+      <div class="mchoices">${choiceBtn("orbit","retry","Pick again")}</div>`;
+  if(MRUN.screen==="win") return winScreen(MBYID("orbit"), "That's it — about 28,000 km/h. Fast enough that as you fall toward Earth, the ground curves away just as quickly, so you keep falling around the planet forever. That is what an orbit really is.");
+  return "";
+}
+function mRender(){
+  const m=MBYID(MRUN&&MRUN.id); if(!m){ renderMissions(); return; }
+  let inner="";
+  if(MRUN.id==="moon") inner=moonScene();
+  else if(MRUN.id==="load") inner=loadScene();
+  else if(MRUN.id==="route") inner=routeScene();
+  else if(MRUN.id==="orbit") inner=orbitScene();
+  app.innerHTML = mShell(m, inner);
+  initReveal();
+}
+function handleMission(act, val){
+  if(act==="replay"){ if(MRUN) startMission(MRUN.id); return; }
+  if(!MRUN) return;
+  if(MRUN.id==="moon"){
+    if(val==="big"){ MRUN.fuel=55; MRUN.screen="spot"; }
+    else if(val==="gentle"){ MRUN.fuel=80; MRUN.screen="spot"; }
+    else if(val==="flat"){ MRUN.fuel-=30; MRUN.screen="land"; }
+    else if(val==="ridge"){ MRUN.fuel-=15; MRUN.bumpy=true; MRUN.screen="land"; }
+    else if(val==="fire"){ if(MRUN.fuel>=30){ MRUN.screen="win"; savePatch("moon"); } else MRUN.screen="lose"; }
+  } else if(MRUN.id==="load"){
+    if(act==="toggle"){ MRUN.picks[val]=!MRUN.picks[val]; MRUN.msg=null; }
+    else if(act==="launch"){ const t=loadTotal();
+      if(!MRUN.picks.crew) MRUN.msg="You forgot the crew! A crewed rocket needs its astronauts.";
+      else if(!MRUN.picks.fuel) MRUN.msg="No fuel on board — you'd never reach orbit. Add the fuel.";
+      else if(t>LOAD_LIMIT) MRUN.msg="Too heavy! "+t+" t is over the "+LOAD_LIMIT+"-tonne limit. Take something back off.";
+      else { MRUN.screen="win"; savePatch("load"); } }
+  } else if(MRUN.id==="route"){
+    if(val==="straight") MRUN.screen="wrong";
+    else if(val==="curve"){ MRUN.screen="win"; savePatch("route"); }
+  } else if(MRUN.id==="orbit"){
+    if(val==="slow") MRUN.screen="slow";
+    else if(val==="fast") MRUN.screen="fast";
+    else if(val==="right"){ MRUN.screen="win"; savePatch("orbit"); }
+    else if(val==="retry") MRUN.screen="ask";
+  }
+  mRender();
+}
+
 function renderMyths(){
   setTitle("Myth index");
   const pub = VIDEOS.filter(v=>v.published);
@@ -1875,6 +2156,8 @@ function router(){
   if(h==="/start"){ renderStart(); window.scrollTo(0,0); return; }
   if(h==="/glossary"){ renderGlossary(); window.scrollTo(0,0); return; }
   if(h.startsWith("/glossary/")){ renderGlossary(decodeURIComponent(h.slice(10))); return; }
+  if(h==="/missions"){ MRUN=null; renderMissions(); window.scrollTo(0,0); return; }
+  if(h.startsWith("/missions/")){ MRUN=null; startMission(decodeURIComponent(h.slice(10))); window.scrollTo(0,0); return; }
   if(h==="/myths"){ renderMyths(); window.scrollTo(0,0); return; }
   if(h==="/sources"){ renderSources(); window.scrollTo(0,0); return; }
   if(h.startsWith("/t/")){
@@ -2016,6 +2299,7 @@ q.addEventListener("keydown", e => {
   if(items[sel]) items[sel].scrollIntoView({block:"nearest"});
 });
 document.addEventListener("click", e => { if(!e.target.closest(".search")) closeResults(); if(!e.target.closest(".navmore")) closeMore(); if(!e.target.closest(".navright")){ const n=document.querySelector(".navlinks"); if(n) n.classList.remove("open"); } });
+if(app){ app.addEventListener("click", e => { const b=e.target.closest(".mbtn[data-act]"); if(b){ e.preventDefault(); handleMission(b.dataset.act, b.dataset.val); } }); }
 document.addEventListener("keydown", e => {
   const tag = (document.activeElement && document.activeElement.tagName) || "";
   const typing = /^(input|textarea|select)$/i.test(tag);
