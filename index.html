@@ -426,9 +426,9 @@
   .mcard{display:block; text-decoration:none; color:var(--text); border:1px solid var(--line); border-radius:16px; padding:24px 22px 20px; background:linear-gradient(180deg,rgba(255,255,255,.015),transparent); position:relative; overflow:hidden; transition:border-color .2s ease, transform .2s ease}
   .mcard:hover{border-color:var(--acc,#C8A96E); transform:translateY(-3px)}
   .mcard::after{display:none}
-  .mcard .mnum{font-family:var(--mono); font-size:11px; letter-spacing:.16em; color:var(--acc,#C8A96E); opacity:.8}
+  .mcard .mnum{font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--acc,#C8A96E); opacity:.85}
   .mcard .mttl{font-family:var(--display); font-weight:600; font-size:23px; line-height:1.15; margin:8px 0 6px}
-  .mcard .mskill{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim)}
+  .mcard .mskill{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim)}
   .mcard .mblurb{font-family:var(--body); font-size:15px; line-height:1.5; color:var(--text); opacity:.78; margin-top:10px}
   .mcard .mdone{position:absolute; top:18px; right:18px; font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#8fd19e; border:1px solid rgba(143,209,158,.4); border-radius:20px; padding:4px 10px; display:none}
   .mcard.earned .mdone{display:inline-block}
@@ -436,35 +436,57 @@
   .mpatchbar{display:flex; align-items:center; gap:10px; margin:2px 0 24px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim)}
   .mpatchbar b{color:#8fd19e; font-weight:400}
   /* mission runner */
-  .mrun{max-width:680px; margin:0 auto}
-  .mscene{border:1px solid var(--line); border-radius:18px; padding:26px 24px; background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
-  .mscene h2{font-family:var(--display); font-weight:600; font-size:24px; line-height:1.2; margin:0 0 6px}
-  .mscene .mlead{font-family:var(--body); font-size:17px; line-height:1.55; color:var(--text); opacity:.85; margin:0 0 18px}
-  .mgauge{margin:18px 0 20px}
+  .mrun{max-width:700px; margin:0 auto}
+  .mscene{border:1px solid var(--line); border-radius:18px; padding:28px 26px; background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+  .mscene h2{font-family:var(--display); font-weight:600; font-size:25px; line-height:1.2; margin:0 0 12px}
+  .mscene .mlead, .mscene .mbody{font-family:var(--body); font-size:17px; line-height:1.6; color:var(--text); opacity:.86; margin:0 0 13px}
+  .mkicker{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--acc,#C8A96E); margin-bottom:10px}
+  .mobj{border-left:2px solid var(--acc,#C8A96E); background:rgba(255,255,255,.02); border-radius:0 10px 10px 0; padding:13px 16px; margin:4px 0 14px; font-family:var(--body); font-size:16px; line-height:1.5}
+  .mobj .objlab{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--acc,#C8A96E); margin-bottom:5px; opacity:.85}
+  .mtip{font-family:var(--body); font-size:14.5px; line-height:1.5; color:var(--text); opacity:.6; margin:0 0 6px}
+  /* stage progress */
+  .mprog{margin:0 0 18px}
+  .mprog-lab{display:flex; justify-content:space-between; font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); margin-bottom:7px}
+  .mprog-track{height:4px; border-radius:3px; background:rgba(255,255,255,.07); overflow:hidden}
+  .mprog-fill{height:100%; border-radius:3px; background:var(--acc,#C8A96E); transition:width .4s ease}
+  /* gauges */
+  .mgauge{margin:4px 0 20px}
   .mgauge .glab{display:flex; justify-content:space-between; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:7px}
   .mgauge .gtrack{height:16px; border-radius:10px; background:rgba(255,255,255,.07); overflow:hidden}
-  .mgauge .gfill{height:100%; border-radius:10px; transition:width .45s cubic-bezier(.3,.8,.4,1); background:var(--acc,#6FB6E8)}
+  .mgauge .gfill{height:100%; border-radius:10px; transition:width .45s cubic-bezier(.3,.8,.4,1); background:var(--gc,var(--acc,#6FB6E8))}
   .mgauge.over .gfill{background:#e0705a}
+  /* choices */
   .mchoices{display:flex; flex-direction:column; gap:12px; margin-top:6px}
-  .mbtn{font-family:var(--body); font-size:16px; text-align:left; color:var(--text); background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px; padding:15px 18px; cursor:pointer; transition:border-color .18s ease, background .18s ease}
+  .mbtn{font-family:var(--body); font-size:16px; text-align:left; color:var(--text); background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px; padding:15px 18px; cursor:pointer; transition:border-color .18s ease, background .18s ease; line-height:1.35}
   .mbtn:hover{border-color:var(--gold); background:rgba(200,169,110,.07)}
   .mbtn .mb-sub{display:block; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); margin-top:5px}
   .mbtn.toggle.on{border-color:#6FB6E8; background:rgba(111,182,232,.1)}
   .mbtn.toggle .tw{float:right; font-family:var(--mono); font-size:13px; color:var(--dim)}
-  .mbtn.go{text-align:center; font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--navy,#0a0f16); background:var(--gold); border-color:var(--gold); font-weight:700}
-  .mbtn.go:hover{filter:brightness(1.08)}
+  .mbtn.go{text-align:center; font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:#0a0f16; background:var(--gold); border-color:var(--gold); font-weight:700}
+  .mbtn.go:hover{filter:brightness(1.08); background:var(--gold)}
+  /* feedback / verdict */
   .mfx{border-radius:14px; padding:18px 20px; margin-top:4px; border:1px solid var(--line)}
+  .mfx.big{padding:22px 22px}
   .mfx.good{border-color:rgba(143,209,158,.45); background:rgba(143,209,158,.06)}
+  .mfx.ok{border-color:rgba(200,169,110,.45); background:rgba(200,169,110,.06)}
   .mfx.bad{border-color:rgba(224,112,90,.45); background:rgba(224,112,90,.06)}
-  .mfx .fxhead{font-family:var(--display); font-weight:600; font-size:19px; margin:0 0 6px}
-  .mfx.good .fxhead{color:#8fd19e} .mfx.bad .fxhead{color:#e0705a}
-  .mfx .fxwhy{font-family:var(--body); font-size:15px; line-height:1.5; opacity:.85; margin:0}
-  .mfx .fxwhy b{color:var(--gold); font-weight:400}
-  .mwin{text-align:center; padding:10px 0 0}
+  .mfx .fxhead{font-family:var(--display); font-weight:600; font-size:21px; margin:0 0 8px; line-height:1.2}
+  .mfx.good .fxhead{color:#8fd19e} .mfx.ok .fxhead{color:#e0b87a} .mfx.bad .fxhead{color:#e0705a}
+  .mfx .fxwhy{font-family:var(--body); font-size:16px; line-height:1.55; opacity:.88; margin:0}
+  /* debrief */
+  .mwin{text-align:center; padding:6px 0 2px}
   .mwin .patch{width:116px; height:116px; margin:4px auto 14px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 40%,rgba(200,169,110,.18),transparent 70%); box-shadow:0 0 34px rgba(200,169,110,.18)}
   .mwin .patch svg{width:62px; height:62px}
   .mwin .wtag{font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8fd19e; margin-bottom:6px}
-  .mrow{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:20px}
+  .mwin h2{margin-bottom:2px}
+  .mlog, .mlearned{border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:14px 0}
+  .mlog{background:rgba(255,255,255,.015)}
+  .mlearned{background:rgba(143,209,158,.04); border-color:rgba(143,209,158,.22)}
+  .loglab{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin-bottom:9px}
+  .mlog ul, .mlearned ul{margin:0; padding-left:20px}
+  .mlog li, .mlearned li{font-family:var(--body); font-size:15.5px; line-height:1.5; margin:5px 0; opacity:.86}
+  .mlearned li{opacity:.92}
+  .mrow{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:22px}
   .mback{display:inline-block; margin-bottom:18px; font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); text-decoration:none}
   .mback:hover{color:var(--gold)} .mback::after{display:none}
   /* ---- footer nav ---- */
@@ -685,8 +707,8 @@
              the "Watch the Short" button opens the actual video.
              (YouTube is used first; Instagram is the fallback.)
    ============================================================ */
-const SITE_VERSION = "2.6.0";
-const BUILD_DATE = "2026.10.22";
+const SITE_VERSION = "2.7.0";
+const BUILD_DATE = "2026.10.23";
 const CHANNELS = {
   youtube:   "https://www.youtube.com/@SimplyAerospace",
   instagram: "https://www.instagram.com/simplyaerospace"
@@ -1864,179 +1886,498 @@ function renderGlossary(target){
 }
 
 /* ================= MISSION CONTROL ================= */
-const MISSIONS = [
-  { id:"moon",  acc:"#6FB6E8", num:"MISSION 01", title:"Touchdown on the Moon", skill:"Subtraction & planning ahead",
-    blurb:"You're the pilot. Spend your fuel wisely and land softly — run the tank dry and it's a rough day." },
-  { id:"load",  acc:"#E89A4C", num:"MISSION 02", title:"Load the Rocket", skill:"Adding under a limit",
-    blurb:"Your rocket can lift only so much. Choose what to pack — and don't forget what you truly need." },
-  { id:"route", acc:"#8fd19e", num:"MISSION 03", title:"Plot the Flight Path", skill:"Shortest-path thinking",
-    blurb:"Fly halfway around the world. The route that looks straight on the map isn't the shortest one." },
-  { id:"orbit", acc:"#FFD27A", num:"MISSION 04", title:"Catch the Orbit", skill:"Number sense",
-    blurb:"Too slow and you fall back. Too fast and you fly off forever. Find the speed that's just right." }
-];
-const MBYID = id => MISSIONS.find(m=>m.id===id);
+/* A multi-stage mission engine: briefing -> several decision stages
+   (each with a consequence and a "why") -> debrief. Missions are data. */
+
 function getPatches(){ try{ return JSON.parse(localStorage.getItem("sa_patches")||"[]"); }catch(e){ return []; } }
 function savePatch(id){ try{ const p=getPatches(); if(p.indexOf(id)<0){ p.push(id); localStorage.setItem("sa_patches", JSON.stringify(p)); } }catch(e){} }
+function mMission(id){ return MISSIONS.find(m=>m.id===id); }
+function bodyHTML(arr){ return (arr||[]).map(p=>`<p class="mbody">${esc(p)}</p>`).join(""); }
+function gaugeHTML(g){ if(!g) return ""; return `<div class="mgauge${g.over?' over':''}" style="--gc:${g.color||'var(--acc)'}"><div class="glab"><span>${esc(g.label)}</span><span>${esc(g.valText)}</span></div><div class="gtrack"><div class="gfill" style="width:${Math.max(0,Math.min(100,g.pct))}%"></div></div></div>`; }
+function patchSVG(c){ return `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 15.8 6.8 18.5l1-5.8L3.6 8.6l5.8-.8z"/></svg>`; }
 
 function renderMissions(){
   setTitle("Mission Control");
   const earned=getPatches();
-  const cards = MISSIONS.map(m=>`<a class="mcard reveal${earned.indexOf(m.id)>=0?' earned':''}" style="--acc:${m.acc}" href="#/missions/${m.id}">
+  const cards = MISSIONS.map((m,idx)=>`<a class="mcard reveal${earned.indexOf(m.id)>=0?' earned':''}" style="--acc:${m.acc}" href="#/missions/${m.id}">
       <span class="mdone">✓ Patch earned</span>
-      <div class="mnum">${m.num}</div>
+      <div class="mnum">MISSION ${String(idx+1).padStart(2,"0")} · ${m.steps.length} stages</div>
       <div class="mttl">${esc(m.title)}</div>
       <div class="mskill">${esc(m.skill)}</div>
       <div class="mblurb">${esc(m.blurb)}</div>
     </a>`).join("");
   app.innerHTML = pageHead("For younger engineers · ages 7–11", "Mission <em>Control.</em>",
-    "Pick a mission and make the calls yourself. Every choice has a reason — you'll be doing real aerospace thinking, and a little math, without even noticing.") + `
-    <div class="mpatchbar reveal">Patches earned: <b>${earned.length} / ${MISSIONS.length}</b></div>
+    "Pick a mission and fly it yourself. Each one is a short adventure in stages — every choice has a real consequence and a reason, so you'll be doing genuine aerospace thinking, and a little math, without even noticing.") + `
+    <div class="mpatchbar reveal">Mission patches earned: <b>${earned.length} / ${MISSIONS.length}</b>${earned.length===MISSIONS.length?" — every patch, Commander. Incredible.":""}</div>
     <div class="mhub">${cards}</div>`;
 }
 
 let MRUN=null;
 function startMission(id){
-  const m=MBYID(id); if(!m){ renderMissions(); return; }
-  if(id==="moon") MRUN={id, screen:"start", fuel:100, bumpy:false};
-  else if(id==="load") MRUN={id, picks:{}, msg:null, screen:"build"};
-  else if(id==="route") MRUN={id, screen:"q1"};
-  else if(id==="orbit") MRUN={id, screen:"ask"};
+  const m=mMission(id); if(!m){ renderMissions(); return; }
+  MRUN={ id, i:0, phase:"intro", outcome:null, st: m.state0?JSON.parse(JSON.stringify(m.state0)):{} };
+  MRUN.st._log=[];
   mRender();
 }
 function mShell(m, inner){
   return `<a class="mback" href="#/missions">← Mission Control</a>
     <div class="mrun"><div class="mscene reveal" style="--acc:${m.acc}">${inner}</div></div>`;
 }
-function gauge(label, pct, valtext, over){
-  return `<div class="mgauge${over?' over':''}"><div class="glab"><span>${esc(label)}</span><span>${esc(valtext)}</span></div>
-    <div class="gtrack"><div class="gfill" style="width:${Math.max(0,Math.min(100,pct))}%"></div></div></div>`;
+function introHTML(m){
+  const idx=MISSIONS.indexOf(m)+1;
+  return `<div class="mkicker">Mission ${String(idx).padStart(2,"0")} · ${m.steps.length} stages · ${esc(m.skill)}</div>
+    <h2>${esc(m.title)}</h2>
+    ${bodyHTML(m.intro.lead)}
+    <div class="mobj"><span class="objlab">Your objective</span>${esc(m.intro.objective)}</div>
+    ${m.intro.tip?`<p class="mtip">💡 ${esc(m.intro.tip)}</p>`:""}
+    <div class="mrow"><button class="mbtn go" data-act="begin">Begin mission →</button></div>`;
 }
-function choiceBtn(act, val, label, sub){
-  return `<button class="mbtn" data-act="${act}"${val!=null?` data-val="${val}"`:""}>${esc(label)}${sub?`<span class="mb-sub">${esc(sub)}</span>`:""}</button>`;
+function progHTML(m){
+  const n=m.steps.length, cur=MRUN.i+1, pct=cur/n*100;
+  return `<div class="mprog"><div class="mprog-lab"><span>Stage ${cur} / ${n}</span><span>${esc(m.title)}</span></div><div class="mprog-track"><div class="mprog-fill" style="width:${pct}%"></div></div></div>`;
 }
-function patchSVG(c){ return `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 15.8 6.8 18.5l1-5.8L3.6 8.6l5.8-.8z"/></svg>`; }
-function winScreen(m, line){
+function stepHTML(m, step){
+  let body = `${progHTML(m)}<h2>${esc(step.heading)}</h2>${bodyHTML(step.body)}`;
+  if(step.gauge) body += gaugeHTML(step.gauge(MRUN.st));
+  if(step.type==="loadout"){
+    const items = step.items.map(it=>{ const on=!!MRUN.st.picks[it.k];
+      return `<button class="mbtn toggle${on?' on':''}" data-act="toggle" data-val="${it.k}">${esc(it.name)}${it.req?' (needed)':''}${it.note?`<span class="mb-sub">${esc(it.note)}</span>`:""}<span class="tw">${it.w} ${esc(step.unit||"t")}${on?' ✓':''}</span></button>`;
+    }).join("");
+    const msg = MRUN.st._msg ? `<div class="mfx bad"><p class="fxwhy">${esc(MRUN.st._msg)}</p></div>` : "";
+    body += `<div class="mchoices">${items}</div>${msg}<div class="mrow"><button class="mbtn go" data-act="confirm">${esc(step.cta||"Confirm")}</button></div>`;
+  } else {
+    const btns = step.choices.map((c,ci)=>`<button class="mbtn" data-act="choose" data-val="${ci}">${esc(c.label)}${c.sub?`<span class="mb-sub">${esc(c.sub)}</span>`:""}</button>`).join("");
+    body += `<div class="mchoices">${btns}</div>`;
+  }
+  return body;
+}
+function outcomeHTML(m, o, isFail){
+  const cls = o.verdict==="good"?"good":(o.verdict==="ok"?"ok":"bad");
+  let btns;
+  if(isFail) btns = `<button class="mbtn go" data-act="restart">Fly the mission again</button><a class="mbtn" style="text-align:center" href="#/missions">Back to Mission Control</a>`;
+  else if(o._retry) btns = `<button class="mbtn go" data-act="retrystep">Try that stage again</button>`;
+  else btns = `<button class="mbtn go" data-act="next">Continue →</button>`;
+  return `<div class="mfx ${cls} big"><p class="fxhead">${esc(o.head)}</p><p class="fxwhy">${esc(o.why)}</p></div>
+    <div class="mrow">${btns}</div>`;
+}
+function debriefHTML(m){
+  const log = (MRUN.st._log&&MRUN.st._log.length) ? `<div class="mlog"><span class="loglab">How your mission went</span><ul>${MRUN.st._log.map(l=>`<li>${esc(l)}</li>`).join("")}</ul></div>` : "";
+  const learned = `<div class="mlearned"><span class="loglab">What you figured out</span><ul>${m.debrief.learned.map(l=>`<li>${esc(l)}</li>`).join("")}</ul></div>`;
   return `<div class="mwin"><div class="wtag">Mission complete</div>
     <div class="patch">${patchSVG(m.acc)}</div>
-    <h2>${esc(m.title)} ✓</h2>
-    <p class="mlead">${esc(line)}</p>
-    <div class="mrow"><button class="mbtn go" data-act="replay">Play again</button>
-      <a class="mbtn" style="text-align:center" href="#/missions">Back to Mission Control</a></div></div>`;
-}
-function moonScene(){
-  const f=MRUN.fuel, g=gauge("Fuel", f, f+" / 100", false);
-  if(MRUN.screen==="start") return `<h2>Dropping toward the Moon</h2>
-      <p class="mlead">You're falling fast and the surface is rushing up. How do you shed speed?</p>${g}
-      <div class="mchoices">
-        ${choiceBtn("moon","big","Fire one big burn","Slows you a lot now · costs 45 fuel")}
-        ${choiceBtn("moon","gentle","Gentle taps on the engine","Slows you a little · costs 20 fuel")}
-      </div>`;
-  if(MRUN.screen==="spot") return `<h2>Choose your landing spot</h2>
-      <p class="mlead">Two places to set down. One is safe; one is closer but rough.</p>${g}
-      <div class="mchoices">
-        ${choiceBtn("moon","flat","Flat crater floor","Safe and smooth · costs 30 fuel to glide over")}
-        ${choiceBtn("moon","ridge","Rocky ridge, closer","Less fuel · costs 15 fuel, but bumpy")}
-      </div>`;
-  if(MRUN.screen==="land") return `<h2>Final descent</h2>
-      <p class="mlead">The landing burn needs <b>30 fuel</b> to touch down softly. You have <b>${f}</b>. Fire it?</p>${g}
-      <div class="mchoices">${choiceBtn("moon","fire","Fire the landing burn","Needs 30 fuel")}</div>`;
-  if(MRUN.screen==="lose") return `<div class="mfx bad"><p class="fxhead">Out of fuel — hard landing!</p>
-      <p class="fxwhy">You had ${f} fuel, but the landing burn needs 30. <b>A big early burn plus the long glide to the flat crater spent too much.</b> Next time, save fuel early or pick the closer spot.</p></div>
-      <div class="mrow"><button class="mbtn go" data-act="replay">Try again</button>
+    <h2>${esc(m.title)} ✓</h2></div>
+    ${bodyHTML(m.debrief.lead)}
+    ${log}${learned}
+    <div class="mrow"><button class="mbtn go" data-act="replay">Fly it again</button>
       <a class="mbtn" style="text-align:center" href="#/missions">Back to Mission Control</a></div>`;
-  if(MRUN.screen==="win"){ const extra = MRUN.bumpy ? "A little bumpy on that ridge, but you set her down in one piece." : "A textbook soft landing — you budgeted your fuel perfectly.";
-    return winScreen(MBYID("moon"), extra+" You kept working out whether you had enough fuel left — that's subtraction doing real work."); }
-  return "";
-}
-const LOAD_ITEMS=[
-  {k:"crew", w:3, name:"Crew capsule", req:true},
-  {k:"fuel", w:3, name:"Fuel for orbit", req:true},
-  {k:"lab",  w:2, name:"Science lab"},
-  {k:"rover",w:2, name:"Moon rover"},
-  {k:"food", w:1, name:"Food & water"},
-  {k:"sat",  w:2, name:"Satellite"}
-];
-const LOAD_LIMIT=10;
-function loadTotal(){ return LOAD_ITEMS.reduce((a,it)=>a+(MRUN.picks[it.k]?it.w:0),0); }
-function loadScene(){
-  if(MRUN.screen==="win") return winScreen(MBYID("load"), "Lift-off! You packed everything essential and still came in under the "+LOAD_LIMIT+"-tonne limit. Adding up weights and staying under a target is exactly how real missions are planned.");
-  const total=loadTotal(), over=total>LOAD_LIMIT;
-  const g=gauge("Weight", total/LOAD_LIMIT*100, total+" / "+LOAD_LIMIT+" t", over);
-  const items=LOAD_ITEMS.map(it=>{ const on=!!MRUN.picks[it.k];
-    return `<button class="mbtn toggle${on?' on':''}" data-act="toggle" data-val="${it.k}">${esc(it.name)}${it.req?' (needed)':''}<span class="tw">${it.w} t${on?' ✓':''}</span></button>`; }).join("");
-  const msg = MRUN.msg ? `<div class="mfx bad"><p class="fxwhy">${esc(MRUN.msg)}</p></div>` : "";
-  return `<h2>Load the Rocket</h2>
-    <p class="mlead">Your rocket can lift <b>${LOAD_LIMIT} tonnes</b>. Tap items to add or remove them. You must bring the crew and the fuel — the rest is your call.</p>
-    ${g}<div class="mchoices">${items}</div>${msg}
-    <div class="mrow"><button class="mbtn go" data-act="launch">Launch!</button></div>`;
-}
-function routeScene(){
-  if(MRUN.screen==="q1") return `<h2>Plot the Flight Path</h2>
-      <p class="mlead">You're flying from New York to Tokyo. On a flat map you could draw a straight line across the middle. But which route is actually the shortest?</p>
-      <div class="mchoices">
-        ${choiceBtn("route","straight","Straight across the map","The flat line through the middle")}
-        ${choiceBtn("route","curve","Curve up toward the North Pole","Arcing over the top of the globe")}
-      </div>`;
-  if(MRUN.screen==="wrong") return `<div class="mfx bad"><p class="fxhead">It looks shortest — but it isn't</p>
-      <p class="fxwhy">A flat map stretches the top and bottom of the world to fit it on a rectangle, so straight lines up there are longer than they look. <b>The real shortest path curves toward the pole.</b></p></div>
-      <div class="mchoices">${choiceBtn("route","curve","Try the polar curve")}</div>`;
-  if(MRUN.screen==="win") return winScreen(MBYID("route"), "Exactly. On a globe the shortest path between two far-apart cities bends toward the pole — a 'great circle.' That's why real flights from New York to Tokyo arc up over the Arctic.");
-  return "";
-}
-function orbitScene(){
-  if(MRUN.screen==="ask") return `<h2>Catch the Orbit</h2>
-      <p class="mlead">To circle the Earth you have to go sideways incredibly fast — about <b>28,000 km/h</b>. Too slow and gravity pulls you back down; too fast and you escape into deep space. Pick your speed:</p>
-      <div class="mchoices">
-        ${choiceBtn("orbit","slow","15,000 km/h","About half the speed you need")}
-        ${choiceBtn("orbit","right","28,000 km/h","Right around orbital speed")}
-        ${choiceBtn("orbit","fast","50,000 km/h","Far more than you need")}
-      </div>`;
-  if(MRUN.screen==="slow") return `<div class="mfx bad"><p class="fxhead">Too slow — you fell back down</p>
-      <p class="fxwhy">At 15,000 km/h gravity wins and curves your path straight back into the ground. You need to go faster to keep 'missing' the Earth as you fall. <b>Try again.</b></p></div>
-      <div class="mchoices">${choiceBtn("orbit","retry","Pick again")}</div>`;
-  if(MRUN.screen==="fast") return `<div class="mfx bad"><p class="fxhead">Too fast — you flew off!</p>
-      <p class="fxwhy">At 50,000 km/h you beat Earth's gravity completely and shot off into deep space — past escape velocity. Great for leaving, no good for orbiting. <b>Try again.</b></p></div>
-      <div class="mchoices">${choiceBtn("orbit","retry","Pick again")}</div>`;
-  if(MRUN.screen==="win") return winScreen(MBYID("orbit"), "That's it — about 28,000 km/h. Fast enough that as you fall toward Earth, the ground curves away just as quickly, so you keep falling around the planet forever. That is what an orbit really is.");
-  return "";
 }
 function mRender(){
-  const m=MBYID(MRUN&&MRUN.id); if(!m){ renderMissions(); return; }
+  const m=mMission(MRUN&&MRUN.id); if(!m){ renderMissions(); return; }
   let inner="";
-  if(MRUN.id==="moon") inner=moonScene();
-  else if(MRUN.id==="load") inner=loadScene();
-  else if(MRUN.id==="route") inner=routeScene();
-  else if(MRUN.id==="orbit") inner=orbitScene();
+  if(MRUN.phase==="intro") inner=introHTML(m);
+  else if(MRUN.phase==="step") inner=stepHTML(m, m.steps[MRUN.i]);
+  else if(MRUN.phase==="outcome") inner=outcomeHTML(m, MRUN.outcome, false);
+  else if(MRUN.phase==="fail") inner=outcomeHTML(m, MRUN.outcome, true);
+  else if(MRUN.phase==="debrief") inner=debriefHTML(m);
   app.innerHTML = mShell(m, inner);
-  initReveal();
+  initReveal(); window.scrollTo(0,0);
 }
-function handleMission(act, val){
-  if(act==="replay"){ if(MRUN) startMission(MRUN.id); return; }
-  if(!MRUN) return;
-  if(MRUN.id==="moon"){
-    if(val==="big"){ MRUN.fuel=55; MRUN.screen="spot"; }
-    else if(val==="gentle"){ MRUN.fuel=80; MRUN.screen="spot"; }
-    else if(val==="flat"){ MRUN.fuel-=30; MRUN.screen="land"; }
-    else if(val==="ridge"){ MRUN.fuel-=15; MRUN.bumpy=true; MRUN.screen="land"; }
-    else if(val==="fire"){ if(MRUN.fuel>=30){ MRUN.screen="win"; savePatch("moon"); } else MRUN.screen="lose"; }
-  } else if(MRUN.id==="load"){
-    if(act==="toggle"){ MRUN.picks[val]=!MRUN.picks[val]; MRUN.msg=null; }
-    else if(act==="launch"){ const t=loadTotal();
-      if(!MRUN.picks.crew) MRUN.msg="You forgot the crew! A crewed rocket needs its astronauts.";
-      else if(!MRUN.picks.fuel) MRUN.msg="No fuel on board — you'd never reach orbit. Add the fuel.";
-      else if(t>LOAD_LIMIT) MRUN.msg="Too heavy! "+t+" t is over the "+LOAD_LIMIT+"-tonne limit. Take something back off.";
-      else { MRUN.screen="win"; savePatch("load"); } }
-  } else if(MRUN.id==="route"){
-    if(val==="straight") MRUN.screen="wrong";
-    else if(val==="curve"){ MRUN.screen="win"; savePatch("route"); }
-  } else if(MRUN.id==="orbit"){
-    if(val==="slow") MRUN.screen="slow";
-    else if(val==="fast") MRUN.screen="fast";
-    else if(val==="right"){ MRUN.screen="win"; savePatch("orbit"); }
-    else if(val==="retry") MRUN.screen="ask";
-  }
+function applyOutcome(o){
+  if(o.effect) o.effect(MRUN.st);
+  if(o.log) MRUN.st._log.push(o.log);
+  MRUN.outcome = o;
+  if(o.next==="fail") MRUN.phase="fail";
+  else if(o.next==="retry"){ o._retry=true; MRUN.phase="outcome"; }
+  else MRUN.phase="outcome";
   mRender();
 }
+function handleMission(act, val){
+  if(act==="replay" || act==="restart"){ if(MRUN) startMission(MRUN.id); return; }
+  if(!MRUN) return;
+  const m=mMission(MRUN.id); if(!m) return;
+  if(act==="begin"){ MRUN.phase="step"; MRUN.i=0; MRUN.st._msg=null; mRender(); return; }
+  if(act==="next"){ MRUN.i++; MRUN.outcome=null; MRUN.st._msg=null;
+    if(MRUN.i>=m.steps.length){ MRUN.phase="debrief"; savePatch(m.id); } else MRUN.phase="step";
+    mRender(); return; }
+  if(act==="retrystep"){ MRUN.phase="step"; MRUN.outcome=null; MRUN.st._msg=null; mRender(); return; }
+  const step=m.steps[MRUN.i]; if(!step) return;
+  if(act==="toggle"){ MRUN.st.picks[val]=!MRUN.st.picks[val]; MRUN.st._msg=null; mRender(); return; }
+  if(act==="confirm"){ const r=step.evaluate(MRUN.st);
+    if(r.ok) applyOutcome({verdict:"good", head:r.head, why:r.why, next:"advance", log:r.log});
+    else { MRUN.st._msg=r.why; mRender(); }
+    return; }
+  if(act==="choose"){ const c=step.choices[+val];
+    const o = c.resolve ? c.resolve(MRUN.st)
+      : { verdict:c.verdict, head:c.head, why:c.why, next:c.next||"advance", log:c.log, effect:c.effect };
+    applyOutcome(o); return; }
+}
+
+/* ---------------- the missions ---------------- */
+const MISSIONS = [
+  /* 1 ---- MOON LANDING (subtraction / fuel budgeting) ---- */
+  {
+    id:"moon", acc:"#6FB6E8", title:"Touchdown on the Moon", skill:"Subtraction & planning ahead",
+    blurb:"Fly a lander down to the surface. Spend your fuel wisely — run the tank dry before touchdown and it's a rough day.",
+    state0:{ fuel:100, bumpy:false },
+    intro:{ lead:[
+      "You're the pilot of a small lander, dropping toward the grey dust of the Moon. There's no gas station up here — the fuel in your tank is all you get.",
+      "Every move you make burns some of it. Your job is to land softly before the tank runs dry."],
+      objective:"Reach the surface with at least 30 fuel left for the final landing burn.",
+      tip:"Watch the fuel gauge after every choice. A little saved early can rescue you at the end." },
+    steps:[
+      { heading:"Leaving orbit", body:["You're still whipping sideways around the Moon. To start dropping, you fire a de-orbit burn."],
+        gauge:st=>({label:"Fuel", valText:st.fuel+" / 100", pct:st.fuel}),
+        choices:[
+          { label:"Full de-orbit burn", sub:"Drop quickly · costs 25 fuel", verdict:"ok", head:"Dropping fast.", why:"A strong burn gets you down quickly, but it took a big bite of fuel right away. Speed now can mean trouble later.", effect:st=>{st.fuel-=25;}, log:"Full de-orbit burn (−25 fuel)" },
+          { label:"Gentle de-orbit burn", sub:"Ease into it · costs 12 fuel", verdict:"good", head:"Nice and steady.", why:"A smaller burn still starts your descent and leaves more fuel in the tank. Patience pays in space.", effect:st=>{st.fuel-=12;}, log:"Gentle de-orbit burn (−12 fuel)" }
+        ] },
+      { heading:"Falling toward the surface", body:["The ground is coming up. You need to kill some of that falling speed."],
+        gauge:st=>({label:"Fuel", valText:st.fuel+" / 100", pct:st.fuel}),
+        choices:[
+          { label:"One big braking burn", sub:"Slows you a lot · costs 40 fuel", verdict:"ok", head:"Hard brake.", why:"You shed a lot of speed, but 40 fuel is a huge chunk. Could gentler taps have done the job?", effect:st=>{st.fuel-=40;}, log:"Big braking burn (−40 fuel)" },
+          { label:"Gentle taps on the engine", sub:"Slows you a little · costs 18 fuel", verdict:"good", head:"Feathering it in.", why:"Small, careful taps spend far less fuel to do nearly the same job. This is how real pilots fly.", effect:st=>{st.fuel-=18;}, log:"Gentle braking taps (−18 fuel)" }
+        ] },
+      { heading:"Boulders ahead!", body:["Below you is a field of rocks. Off to one side is a smooth plain; closer in is a rough patch you could reach for less fuel."],
+        gauge:st=>({label:"Fuel", valText:st.fuel+" / 100", pct:st.fuel}),
+        choices:[
+          { label:"Glide to the smooth plain", sub:"Safe landing site · costs 10 fuel", verdict:"good", head:"Lining up the safe spot.", why:"The smooth plain costs a little fuel to reach, but it's a flat, safe place to set down. Often worth it.", effect:st=>{st.fuel-=10;}, log:"Steered to the smooth plain (−10 fuel)" },
+          { label:"Drop onto the rocky patch", sub:"Closer · costs 3 fuel, but bumpy", verdict:"ok", head:"Rough ground it is.", why:"You saved fuel by taking the nearer spot — but rocks make for a bumpy, riskier landing. A real trade-off.", effect:st=>{st.fuel-=3; st.bumpy=true;}, log:"Took the rocky patch (−3 fuel)" }
+        ] },
+      { heading:"Your engines kick up dust", body:["So close now — but your exhaust is blasting moon dust everywhere, hiding the ground. Do you pause to let it clear?"],
+        gauge:st=>({label:"Fuel", valText:st.fuel+" / 100", pct:st.fuel}),
+        choices:[
+          { label:"Hover a moment to see clearly", sub:"Safer · costs 8 fuel", verdict:"ok", head:"Hovering to look.", why:"Waiting makes the landing safer — but hovering burns fuel every second. Time is fuel up here.", effect:st=>{st.fuel-=8;}, log:"Hovered to see through dust (−8 fuel)" },
+          { label:"Commit to the descent", sub:"Save fuel · costs 0", verdict:"good", head:"Trusting your setup.", why:"You kept your fuel by committing. Bold, and fine when you've flown a careful approach.", effect:st=>{}, log:"Committed through the dust (free)" }
+        ] },
+      { heading:"Final descent", body:["This is it. The landing burn needs 30 fuel to touch down softly.","Check your gauge and fire when ready."],
+        gauge:st=>({label:"Fuel", valText:st.fuel+" / 100", pct:st.fuel, over:st.fuel<30}),
+        choices:[
+          { label:"Fire the landing burn", sub:"Needs 30 fuel",
+            resolve:st=> st.fuel>=30
+              ? { verdict:"good", head:(st.bumpy?"Down — a little bumpy, but safe!":"A perfect, feather-soft landing!"), why:"You had "+st.fuel+" fuel and the burn needed 30 — enough to spare. You budgeted your fuel the whole way down. That's subtraction doing real work.", next:"advance", log:"Landed with "+st.fuel+" fuel to spare" }
+              : { verdict:"bad", head:"Out of fuel — hard landing!", why:"You had only "+st.fuel+" fuel, but the landing burn needs 30. Spending too much early left you short at the worst moment. Try saving fuel sooner next time.", next:"fail" } }
+        ] }
+    ],
+    debrief:{ lead:[
+      "You flew a real fuel budget: every burn subtracted from your tank, and you kept checking whether you'd have enough left for the part that mattered most — the landing."],
+      learned:[
+        "Subtracting as you go, and thinking ahead to what you'll still need",
+        "Trade-offs: a big burn is powerful but expensive; gentle taps save fuel",
+        "Apollo 11 really did land with only about 25 seconds of fuel left — budgeting is life-or-death for real crews"] }
+  },
+
+  /* 2 ---- LOAD THE ROCKET (adding under a limit) ---- */
+  {
+    id:"load", acc:"#E89A4C", title:"Load the Rocket", skill:"Adding under a limit & trade-offs",
+    blurb:"Your rocket can lift only so much. Pack it for the mission — bring what you truly need and stay under the weight limit.",
+    state0:{ picks:{}, _msg:null },
+    intro:{ lead:[
+      "Mission planners pack a rocket the way you'd pack a backpack with a strict weight limit — every kilo counts.",
+      "Load too much and it can't lift off. Leave out something vital and the mission fails. Your call."],
+      objective:"Pack the essentials and stay at or under the 10-tonne lift limit.",
+      tip:"Add up the weights as you go, and ask of each item: does the mission really need this?" },
+    steps:[
+      { type:"loadout", heading:"Pack the rocket", body:["Your rocket can lift 10 tonnes. Tap items to add or remove them. You must bring the crew and the fuel — the rest is your choice."],
+        unit:"t", cta:"Launch!",
+        items:[
+          {k:"crew", w:3, name:"Crew capsule", req:true},
+          {k:"fuel", w:3, name:"Fuel for orbit", req:true},
+          {k:"lab",  w:2, name:"Science lab"},
+          {k:"rover",w:2, name:"Moon rover"},
+          {k:"food", w:1, name:"Food & water"},
+          {k:"sat",  w:2, name:"Satellite"}
+        ],
+        gauge:st=>{ const t=LOAD_TOTAL(st); return {label:"Weight", valText:t+" / 10 t", pct:t/10*100, over:t>10}; },
+        evaluate:st=>{ const t=LOAD_TOTAL(st);
+          if(!st.picks.crew) return {ok:false, why:"You forgot the crew! A crewed rocket needs its astronauts on board."};
+          if(!st.picks.fuel) return {ok:false, why:"No fuel loaded — you'd never reach orbit. Add the fuel."};
+          if(t>10) return {ok:false, why:"Too heavy! "+t+" t is over the 10-tonne limit. Take something back off and try again."};
+          return {ok:true, head:"Lift-off!", why:"You packed both essentials and kept the total at "+t+" t — under the limit. Adding weights and staying under a target is exactly how missions are planned.", log:"Launched at "+t+" t (limit 10)"}; }
+      },
+      { heading:"Climbing for a higher orbit", body:["You want to reach a higher orbit than planned. To climb higher, which do you need more of?"],
+        choices:[
+          { label:"More fuel", sub:"Energy to climb", verdict:"good", head:"Right — fuel is reach.", why:"Going higher takes more energy, and energy comes from fuel. More fuel means you can push to a higher orbit.", log:"Chose more fuel for a higher orbit" },
+          { label:"More food", sub:"Snacks for the crew", verdict:"bad", head:"Not quite.", why:"Food keeps the crew going, but it won't lift the rocket any higher. Height comes from fuel. Try again.", next:"retry" },
+          { label:"A bigger rover", sub:"", verdict:"bad", head:"Not quite.", why:"A heavier rover actually makes it harder to climb — more weight to lift! Height comes from fuel. Try again.", next:"retry" }
+        ] },
+      { heading:"A quick swap", body:["Your rover weighs 2 tonnes. Mission control offers a lighter 1-tonne drone instead.","If you swap the rover for the drone, how much weight do you free up?"],
+        choices:[
+          { label:"1 tonne", sub:"", verdict:"good", head:"Exactly — 2 minus 1 is 1.", why:"Swapping a 2-t rover for a 1-t drone frees up 1 tonne. That spare tonne could carry more fuel or another experiment.", log:"Swapped rover for drone, freed 1 t" },
+          { label:"2 tonnes", sub:"", verdict:"bad", head:"Close, but no.", why:"The drone isn't weightless — it still weighs 1 t. You only save the difference: 2 − 1 = 1 tonne. Try again.", next:"retry" },
+          { label:"3 tonnes", sub:"", verdict:"bad", head:"Not this time.", why:"You can't free up more than the rover weighed! The saving is 2 − 1 = 1 tonne. Try again.", next:"retry" }
+        ] }
+    ],
+    debrief:{ lead:[
+      "You balanced a real weight budget: adding up what you packed, keeping it under the limit, and making smart swaps to free up room."],
+      learned:[
+        "Adding numbers while staying under a target — the heart of mission planning",
+        "Essentials first, then spend what's left on the nice-to-haves",
+        "Real rockets fight for every kilo; engineers swap and trim parts for exactly this reason"] }
+  },
+
+  /* 3 ---- FLIGHT PATH (shortest-path thinking / maps) ---- */
+  {
+    id:"route", acc:"#8fd19e", title:"Plot the Flight Path", skill:"Shortest-path thinking",
+    blurb:"Route planes across the globe. The line that looks straight on a flat map is almost never the shortest one.",
+    state0:{},
+    intro:{ lead:[
+      "You're a flight planner, drawing routes for planes crossing the world. The trouble is that a flat map tells little lies — it has to squash a round planet onto a rectangle.",
+      "Your job is to find the truly shortest path, not just the one that looks straight."],
+      objective:"Pick the genuinely shortest route for each flight, and learn why the map fools us.",
+      tip:"When in doubt, imagine the route drawn on a globe, not a flat map." },
+    steps:[
+      { heading:"New York to Tokyo", body:["On a flat map you could draw a straight line across the middle of the Pacific. But which route is actually shortest?"],
+        choices:[
+          { label:"Straight across the map", sub:"The flat line through the middle", verdict:"bad", head:"It looks shortest — but it isn't.", why:"A flat map stretches the top and bottom of the world, so a 'straight' line across the middle is really longer than it looks. Try the other option.", next:"retry" },
+          { label:"Curve up toward the North Pole", sub:"Arcing over the top of the globe", verdict:"good", head:"Exactly right.", why:"On a globe, the shortest path between two far-apart cities bends toward the pole. That's why real New York–Tokyo flights arc up over the Arctic.", log:"Routed NY–Tokyo over the Arctic (shortest)" }
+        ] },
+      { heading:"Why does the map trick us?", body:["You spotted that the curved route is shorter. But why does the flat map make the wrong route look right?"],
+        choices:[
+          { label:"Flat maps stretch the poles", sub:"Top and bottom get pulled wide", verdict:"good", head:"That's the one.", why:"To flatten a round Earth, mapmakers stretch the top and bottom. Greenland looks huge; polar routes look long. On the real globe, those routes are short.", log:"Understood map distortion near the poles" },
+          { label:"Planes can't fly straight", sub:"", verdict:"bad", head:"Not that.", why:"Planes can fly very straight! The issue is the map, not the plane. A flat map distorts distances near the top and bottom. Try again.", next:"retry" },
+          { label:"The Earth is flat", sub:"", verdict:"bad", head:"Definitely not!", why:"The Earth is a globe — that's the whole point. A flat map has to distort it to lie flat, and that's what fools us. Try again.", next:"retry" }
+        ] },
+      { heading:"London to Sydney", body:["Now a really long one — two cities almost on opposite sides of the planet. Does the shortest route run straight across a flat map, or curve?"],
+        choices:[
+          { label:"It curves — a great circle", sub:"Arcs across Asia and the globe", verdict:"good", head:"You've got it.", why:"Any long route curves, because the shortest path on a sphere is always a 'great circle' — a ring whose centre is the centre of the Earth.", log:"Recognised the great-circle route to Sydney" },
+          { label:"Straight line on the map", sub:"", verdict:"bad", head:"The map lies again.", why:"The flat-map straight line is longer than it looks. On a globe the real shortest path curves. Try again.", next:"retry" }
+        ] },
+      { heading:"How much does it save?", body:["Flying the true great-circle route instead of the flat-map line can make a real difference on a long trip. Roughly how much time can it save?"],
+        choices:[
+          { label:"An hour or more", sub:"On a long-haul flight", verdict:"good", head:"Yes — it's a big deal.", why:"On long flights the great-circle route can save an hour or more, plus a lot of fuel. That's why airlines plan every route this way.", log:"Learned great circles save real time & fuel" },
+          { label:"A few seconds", sub:"", verdict:"bad", head:"Bigger than that.", why:"Over thousands of kilometres the saving adds up to an hour or more, not seconds. Try again.", next:"retry" },
+          { label:"No time at all", sub:"", verdict:"bad", head:"It really does help.", why:"A shorter path means less flying time — often an hour or more saved. Try again.", next:"retry" }
+        ] }
+    ],
+    debrief:{ lead:[
+      "You learned to trust the globe over the flat map. The shortest path between two far cities is a curved 'great circle' — and the flat map only makes it look long because it stretches the poles."],
+      learned:[
+        "The shortest route on a globe is a great circle, not a map's straight line",
+        "Flat maps distort distances, especially near the top and bottom",
+        "Comparing routes and spotting the trick is real critical thinking — and it saves airlines time and fuel every day"] }
+  },
+
+  /* 4 ---- CATCH THE ORBIT (number sense / what an orbit is) ---- */
+  {
+    id:"orbit", acc:"#FFD27A", title:"Catch the Orbit", skill:"Number sense & how orbits work",
+    blurb:"Be the flight computer. Find the one speed that keeps you circling Earth — too slow you fall, too fast you fly away.",
+    state0:{},
+    intro:{ lead:[
+      "You're the flight computer on a spacecraft. To circle the Earth instead of crashing back or flying off into space, you have to hit exactly the right speed.",
+      "Get the number right, then figure out what's really going on up there."],
+      objective:"Find orbital speed, then work out what an orbit actually is.",
+      tip:"There's a 'just right' in the middle — not too little, not too much." },
+    steps:[
+      { heading:"Pick your speed", body:["To circle the Earth you must go sideways incredibly fast — about 28,000 km/h. Too slow and gravity drags you down; too fast and you escape into deep space. Choose:"],
+        choices:[
+          { label:"15,000 km/h", sub:"About half of what you need", verdict:"bad", head:"Too slow — you fell back down.", why:"At 15,000 km/h gravity wins and curves your path straight into the ground. You need more speed to keep missing the Earth as you fall. Try again.", next:"retry" },
+          { label:"28,000 km/h", sub:"Right around orbital speed", verdict:"good", head:"Orbit achieved!", why:"That's it — fast enough that as you fall toward Earth, the ground curves away just as quickly. You keep falling around the planet forever.", log:"Reached orbital speed (~28,000 km/h)" },
+          { label:"50,000 km/h", sub:"Far more than you need", verdict:"bad", head:"Too fast — you flew off!", why:"At 50,000 km/h you beat Earth's gravity completely and shot off into deep space — past escape velocity. Great for leaving, no good for orbiting. Try again.", next:"retry" }
+        ] },
+      { heading:"So what IS an orbit?", body:["You're circling the Earth. But what's actually keeping you up there?"],
+        choices:[
+          { label:"You're falling, but always missing the ground", sub:"", verdict:"good", head:"Exactly — orbit is falling sideways.", why:"An orbit is perpetual free-fall: you fall toward Earth, but you're moving sideways so fast that the ground curves away before you reach it. You fall forever.", log:"Understood orbit = falling and missing the ground" },
+          { label:"There's no gravity up there", sub:"", verdict:"bad", head:"Not quite.", why:"There's plenty of gravity in orbit — it's what curves your path into a circle! You don't escape gravity; you fall around the planet. Try again.", next:"retry" },
+          { label:"The air pushes you up", sub:"", verdict:"bad", head:"No air up there.", why:"Orbit is above almost all the air — nothing is pushing you up. You stay up by moving sideways fast while gravity pulls you into a curve. Try again.", next:"retry" }
+        ] },
+      { heading:"Is there gravity at the space station?", body:["Astronauts float around inside the station. Does that mean there's no gravity where they are?"],
+        choices:[
+          { label:"No — gravity still pulls almost as hard as on the ground", sub:"They float for another reason", verdict:"good", head:"Right — gravity is still there.", why:"At the station's height, gravity is about 90% as strong as on the ground. Astronauts float because they and the station are both falling around Earth together — free-fall, not zero gravity.", log:"Learned microgravity is really constant free-fall" },
+          { label:"Yes — space has no gravity at all", sub:"", verdict:"bad", head:"Common mix-up!", why:"If there were no gravity, the station would fly off in a straight line instead of circling. Gravity is still strong up there — the crew floats because they're all falling together. Try again.", next:"retry" }
+        ] }
+    ],
+    debrief:{ lead:[
+      "You cracked the big secret of orbits: it's not about escaping gravity, it's about going sideways so fast that you keep falling past the Earth instead of into it."],
+      learned:[
+        "Finding the 'just right' number — not too slow, not too fast",
+        "An orbit is perpetual free-fall: falling, but always missing the ground",
+        "Astronauts float because they're falling with their spacecraft, not because gravity is gone"] }
+  },
+
+  /* 5 ---- MISSION TO MARS (prediction / leading a moving target) ---- */
+  {
+    id:"mars", acc:"#E8714C", title:"Mission to Mars", skill:"Planning ahead & prediction",
+    blurb:"Send a spacecraft to Mars. You can't point straight at it — the trip takes months, and Mars keeps moving.",
+    state0:{},
+    intro:{ lead:[
+      "You're planning humanity's trip to Mars. Here's the tricky part: Mars is a moving target, orbiting the Sun just like Earth, and the journey takes many months.",
+      "Point straight at where Mars is today and you'll arrive to find… empty space. You have to think ahead."],
+      objective:"Aim, time and shape your journey so you arrive exactly where Mars will be.",
+      tip:"Think of passing a ball to a friend who's running — you throw to where they're going to be." },
+    steps:[
+      { heading:"Where do you aim?", body:["Your rocket is ready. Mars is a bright dot in the sky. Where do you point the spacecraft?"],
+        choices:[
+          { label:"Aim ahead — where Mars will be", sub:"Lead the target", verdict:"good", head:"Smart — you led the target.", why:"Just like passing a ball to a running friend, you aim where Mars will be after the long trip, not where it is now. By the time you arrive, Mars has moved to meet you.", log:"Aimed ahead of Mars (led the target)" },
+          { label:"Straight at Mars right now", sub:"Point at today's dot", verdict:"bad", head:"It'll be long gone.", why:"The trip takes months, and Mars keeps orbiting. Aim where it is today and you'll cross empty space where Mars used to be. Try again.", next:"retry" },
+          { label:"Aim behind Mars", sub:"", verdict:"bad", head:"Wrong direction.", why:"Mars is moving forward along its orbit, not backward. You need to aim ahead of it, not behind. Try again.", next:"retry" }
+        ] },
+      { heading:"When do you launch?", body:["Earth and Mars only line up nicely for a trip about every 26 months — that's called a launch window. Do you wait for it, or go now?"],
+        choices:[
+          { label:"Wait for the launch window", sub:"Go when the planets line up", verdict:"good", head:"Patience wins.", why:"When the planets line up, the trip needs far less fuel and time. Missing the window can cost a fortune in fuel — so real missions wait for it, even if that means waiting years.", log:"Launched in the Mars window (efficient)" },
+          { label:"Launch today, don't wait", sub:"Impatient!", verdict:"bad", head:"That'll cost you.", why:"Outside the window, Mars is poorly placed, so the trip needs much more fuel and time. Waiting for the right moment is worth it. Try again.", next:"retry" }
+        ] },
+      { heading:"What shape is the path?", body:["You won't fly in a straight line to Mars. What does the cheapest route actually look like?"],
+        choices:[
+          { label:"A big curved arc out to Mars's orbit", sub:"A transfer orbit", verdict:"good", head:"Exactly — a transfer orbit.", why:"The spacecraft swings in a wide curve around the Sun, starting at Earth's orbit and arcing out to meet Mars's orbit. Curving with the Sun's gravity is far cheaper than a straight shove.", log:"Chose a curved transfer orbit" },
+          { label:"A dead-straight line", sub:"", verdict:"bad", head:"Too expensive.", why:"A straight line would need enormous fuel to fight the Sun's gravity the whole way. Spacecraft coast along a curved path instead. Try again.", next:"retry" }
+        ] },
+      { heading:"How long will it take?", body:["Your spacecraft is coasting along its curve toward Mars. Roughly how long is the ride?"],
+        choices:[
+          { label:"About 7 months", sub:"", verdict:"good", head:"Right ballpark.", why:"A typical Earth-to-Mars trip takes around seven months. Space is vast, and the spacecraft coasts most of the way with its engines off to save fuel.", log:"Planned for a ~7-month cruise" },
+          { label:"A few days", sub:"", verdict:"bad", head:"Much longer.", why:"The Moon takes a few days — but Mars is hundreds of times farther. Think many months. Try again.", next:"retry" },
+          { label:"Ten years", sub:"", verdict:"bad", head:"Not that long.", why:"Ten years is more like a trip to the distant outer planets. Mars is close enough to reach in well under a year. Try again.", next:"retry" }
+        ] },
+      { heading:"Arrival day", body:["Months later, your spacecraft reaches the spot you aimed for — and there's Mars, a huge rusty world rolling up to meet you, right on schedule."],
+        choices:[
+          { label:"Begin the landing sequence", sub:"You timed it perfectly", verdict:"good", head:"Rendezvous!", why:"Because you led the target, waited for the window, curved your path and planned for the long cruise, you and Mars arrived at the same place at the same time. That's planning ahead.", log:"Arrived at Mars on target" }
+        ] }
+    ],
+    debrief:{ lead:[
+      "Reaching Mars isn't about aiming at it — it's about predicting the future. You aimed where Mars would be, waited for the right moment, and coasted along a clever curve to meet it."],
+      learned:[
+        "Leading a moving target: aim where it's going, not where it is",
+        "Timing matters — launch windows save huge amounts of fuel",
+        "Spacecraft coast along curved transfer orbits, and even 'close' planets are months away"] }
+  },
+
+  /* 6 ---- STACK THE ROCKET (efficiency / staging) ---- */
+  {
+    id:"stack", acc:"#C8A96E", title:"Stack the Rocket", skill:"Efficiency & smart design",
+    blurb:"Design a rocket that can actually reach orbit. The secret is building it in stages that drop away.",
+    state0:{},
+    intro:{ lead:[
+      "Time to design your rocket. The hardest part of spaceflight is that fuel is heavy, and you need a LOT of it — but hauling heavy, empty tanks is a waste.",
+      "The clever answer is staging: build the rocket in sections that fall away once they're empty."],
+      objective:"Work out why rockets are built in stages, and design one that reaches orbit.",
+      tip:"Always ask: am I carrying anything I don't need any more?" },
+    steps:[
+      { heading:"One rocket, or several stages?", body:["You can build one giant rocket that flies the whole way, or stack smaller stages that drop off as they empty. Which reaches orbit?"],
+        choices:[
+          { label:"Stack stages, drop them when empty", sub:"Shed weight as you go", verdict:"good", head:"That's the trick.", why:"As each stage empties, you drop it — so you stop wasting fuel hauling dead weight. The lighter rocket left behind flies much higher.", log:"Chose a staged design" },
+          { label:"One giant stage all the way", sub:"Keep everything", verdict:"bad", head:"It won't make it.", why:"A single stage drags its huge empty tanks all the way up, wasting fuel pushing metal it no longer needs. Almost no rocket can reach orbit this way. Try again.", next:"retry" }
+        ] },
+      { heading:"Why drop the empty tanks?", body:["Dropping big chunks of your own rocket seems wasteful. Why is it actually the smart move?"],
+        choices:[
+          { label:"Empty tanks still weigh a lot and cost fuel to push", sub:"", verdict:"good", head:"Exactly.", why:"An empty tank isn't weightless — it's heavy metal. Every second you carry it, you burn fuel just to lift it. Drop it and the rest of the rocket accelerates far more easily.", log:"Understood why to shed empty mass" },
+          { label:"They look messy", sub:"", verdict:"bad", head:"Not about looks.", why:"It's about weight, not tidiness. Empty tanks are heavy, and carrying them wastes fuel. Try again.", next:"retry" },
+          { label:"There's no real reason", sub:"", verdict:"bad", head:"There is, though.", why:"There's a big reason: empty tanks are dead weight that costs fuel to carry. Shedding them is what makes orbit possible. Try again.", next:"retry" }
+        ] },
+      { heading:"How many stages?", body:["More stages means shedding weight more often — but each split adds complexity and heavy joints. How many stages do real rockets usually use?"],
+        choices:[
+          { label:"Two or three", sub:"Like most real rockets", verdict:"good", head:"Just right.", why:"Two or three stages gets most of the weight-saving benefit without becoming a tangled, heavy mess of joints. It's the sweet spot engineers settled on.", log:"Chose 2–3 stages (the sweet spot)" },
+          { label:"Just one", sub:"", verdict:"bad", head:"Back where we started.", why:"One stage means no weight-shedding at all — the problem we're trying to solve. You need at least two. Try again.", next:"retry" },
+          { label:"Twenty tiny stages", sub:"", verdict:"bad", head:"Too much of a good thing.", why:"Every split adds heavy joints and things that can go wrong. Twenty stages would be fragile and heavy. Two or three is the sweet spot. Try again.", next:"retry" }
+        ] },
+      { heading:"Which stage fires first?", body:["Your rocket is stacked with a big powerful stage at the bottom and smaller ones on top. Which one lights first, on the launch pad?"],
+        choices:[
+          { label:"The big bottom stage", sub:"", verdict:"good", head:"Correct.", why:"Getting off the ground, fully fuelled and heaviest, needs the most push — so the big bottom stage fires first. The lighter upper stages take over once you're high and fast.", log:"Fired the big first stage off the pad" },
+          { label:"The small top stage", sub:"", verdict:"bad", head:"Not enough push.", why:"At lift-off the rocket is at its heaviest and needs the most thrust — that's the big bottom stage's job. The small upper stages come later. Try again.", next:"retry" }
+        ] },
+      { heading:"Lift-off", body:["Your bottom stage roars, lifts the stack off the pad, then drops away empty. The next stage fires, lighter and faster, and carries your payload all the way to orbit."],
+        choices:[
+          { label:"Payload in orbit — mission success", sub:"", verdict:"good", head:"Orbit!", why:"By shedding each stage as it emptied, your rocket never wasted fuel on dead weight — and reached orbit while a single-stage design would have fallen short.", log:"Reached orbit with a staged rocket" }
+        ] }
+    ],
+    debrief:{ lead:[
+      "You designed a rocket the way real engineers do: in stages that drop away. Shedding empty tanks as you climb is the single biggest trick that makes reaching orbit possible."],
+      learned:[
+        "Don't carry what you no longer need — empty weight costs fuel",
+        "Two or three stages is the practical sweet spot",
+        "The heaviest, most powerful stage fires first, at lift-off"] }
+  },
+
+  /* 7 ---- SURVIVE RE-ENTRY (angles / Goldilocks / real mechanism) ---- */
+  {
+    id:"reentry", acc:"#E8552C", title:"Survive Re-entry", skill:"Angles & cause-and-effect",
+    blurb:"Bring your crew home. Hitting the atmosphere is the most dangerous part — the angle has to be just right.",
+    state0:{},
+    intro:{ lead:[
+      "Your crew is coming home from orbit, racing toward the atmosphere at nearly 28,000 km/h. This is the most dangerous part of the whole flight.",
+      "Get the angle wrong and the capsule either burns up or bounces back into space. Precision is everything."],
+      objective:"Thread the narrow re-entry corridor and bring the capsule down safely.",
+      tip:"Like many things in space, there's a narrow 'just right' between two dangers." },
+    steps:[
+      { heading:"Pick your re-entry angle", body:["You're about to hit the top of the atmosphere. How steeply do you come in?"],
+        choices:[
+          { label:"A shallow, gentle angle", sub:"Ease into the air", verdict:"good", head:"Right down the corridor.", why:"A shallow angle lets the capsule slow down gradually, spreading out the heat and the crushing forces. That's the narrow 'corridor' pilots aim for.", log:"Entered at a safe, shallow angle" },
+          { label:"A steep nose-dive", sub:"Straight down, fast", verdict:"bad", head:"Too steep — you burned up.", why:"Diving steeply slams you into thick air all at once: too much heat and crushing force for the capsule and crew to survive. Come in shallower. Try again.", next:"retry" },
+          { label:"Flat and level", sub:"Skim the top", verdict:"bad", head:"You skipped off!", why:"Come in too flat and you bounce off the atmosphere like a stone skipping on water — straight back into space. There's a narrow angle between too steep and too flat. Try again.", next:"retry" }
+        ] },
+      { heading:"Which way does the heat shield face?", body:["Your capsule has a thick heat shield on one side. As you plunge into the air, which way should it point?"],
+        choices:[
+          { label:"Forward, into the oncoming air", sub:"", verdict:"good", head:"Shield up front.", why:"The heat builds up on the side hitting the air, so the shield must face forward to take it. The crew rides safely behind it.", log:"Pointed the heat shield forward" },
+          { label:"Backward, away from the air", sub:"", verdict:"bad", head:"That won't protect anyone.", why:"The heat is worst on the side meeting the air — so a backward shield leaves the capsule unprotected. Face it into the wind. Try again.", next:"retry" }
+        ] },
+      { heading:"What actually makes it so hot?", body:["The capsule glows white-hot. Most people guess friction — but what's really heating it?"],
+        choices:[
+          { label:"Air squashed and compressed in front of it", sub:"", verdict:"good", head:"Yes — it's compression.", why:"Slamming into air so fast squashes it violently in front of the capsule, and squashed air gets ferociously hot. It's compression, not rubbing friction, that does most of the heating.", log:"Learned the real cause: compression heating" },
+          { label:"Rubbing friction with the air", sub:"The common guess", verdict:"bad", head:"That's the myth!", why:"It feels like friction, but the real culprit is the air being violently compressed in front of the capsule — squashed air heats up. Try again.", next:"retry" }
+        ] },
+      { heading:"Slowing down for the parachutes", body:["Parachutes can only open once you're much slower. How do you shed most of that enormous speed?"],
+        choices:[
+          { label:"Let the thick air brake you", sub:"The atmosphere does the work", verdict:"good", head:"The air is your brake.", why:"The atmosphere itself slams the capsule from 28,000 km/h down to a few hundred — no engines needed. Once slow enough, the parachutes finish the job.", log:"Used the atmosphere as a giant brake" },
+          { label:"Fire big engines to slow down", sub:"", verdict:"bad", head:"No need — and no fuel for it.", why:"Capsules don't carry engines big enough for that. The thick air does the braking for free; that's the whole point of the heat shield. Try again.", next:"retry" }
+        ] },
+      { heading:"Splashdown", body:["The capsule slows, the parachutes blossom open, and your crew drifts gently down to a splashdown in the ocean. Safe and sound."],
+        choices:[
+          { label:"Recover the crew — welcome home", sub:"", verdict:"good", head:"Home safe.", why:"You threaded the narrow corridor, kept the shield forward, understood the real heat, and let the air brake you. That's how every returning crew makes it home.", log:"Brought the crew home safely" }
+        ] }
+    ],
+    debrief:{ lead:[
+      "You brought a crew home through the hardest part of any mission. Re-entry is a knife-edge: a narrow angle between burning up and skipping off, survived by facing the shield forward and letting the air itself slow you down."],
+      learned:[
+        "A Goldilocks angle — between too steep and too flat — like many space problems",
+        "The glow is compression heating (squashed air), not rubbing friction",
+        "The atmosphere, not engines, does almost all of the braking"] }
+  },
+
+  /* 8 ---- OXYGEN COUNTDOWN (time budgeting / prioritising) ---- */
+  {
+    id:"oxygen", acc:"#7FD1C0", title:"Oxygen Countdown", skill:"Time budgeting & prioritising",
+    blurb:"On a spacewalk with a limited air supply, get your jobs done and get back inside — and don't cut it close.",
+    state0:{ air:120 },
+    intro:{ lead:[
+      "You're floating outside the space station on a spacewalk. Your suit holds 120 minutes of oxygen — that's your whole clock.",
+      "Everything you do costs air, and you must keep enough to get back inside. You can't do it all. Choose what matters."],
+      objective:"Finish the important work and return with enough oxygen to get safely back — the trip inside costs 35.",
+      tip:"Keep a reserve. Doing one extra thing can leave you short for the trip home." },
+    steps:[
+      { heading:"Fix the broken antenna", body:["Your main job: repair the station's antenna. You can work slowly and carefully, or hurry to save air."],
+        gauge:st=>({label:"Oxygen (minutes)", valText:st.air+" / 120", pct:st.air/120*100, over:st.air<40}),
+        choices:[
+          { label:"Work carefully", sub:"Do it right · costs 40 air", verdict:"ok", head:"Careful and solid.", why:"A careful repair is more likely to hold — but it took 40 minutes of air. That's a big slice of your budget gone on the main job.", effect:st=>{st.air-=40;}, log:"Repaired the antenna carefully (−40 air)" },
+          { label:"Hurry the repair", sub:"Save air · costs 25 air", verdict:"ok", head:"Quick fix done.", why:"You saved 15 minutes of air by hurrying. Faster is cheaper here — though rushing real repairs can be risky.", effect:st=>{st.air-=25;}, log:"Hurried the antenna repair (−25 air)" }
+        ] },
+      { heading:"A crewmate needs a hand", body:["Another astronaut is struggling with a stuck bolt nearby and asks for help. Helping is kind — but it costs air you may need."],
+        gauge:st=>({label:"Oxygen (minutes)", valText:st.air+" / 120", pct:st.air/120*100, over:st.air<40}),
+        choices:[
+          { label:"Stop and help them", sub:"Costs 35 air", verdict:"ok", head:"Good teamwork — at a cost.", why:"Helping your crewmate was generous and spent 35 minutes of air. Now watch your budget carefully — kindness has a price out here.", effect:st=>{st.air-=35;}, log:"Helped a crewmate (−35 air)" },
+          { label:"Stay focused on your list", sub:"Costs 0 air", verdict:"ok", head:"Eyes on the mission.", why:"You kept your air for your own tasks and the trip home. Sometimes staying on plan is the responsible call — another crew member can assist them.", effect:st=>{}, log:"Stayed focused, saved air (free)" }
+        ] },
+      { heading:"One perfect photo of Earth?", body:["The whole blue Earth is floating below you. You could grab one unforgettable photo — but even that costs a little air."],
+        gauge:st=>({label:"Oxygen (minutes)", valText:st.air+" / 120", pct:st.air/120*100, over:st.air<40}),
+        choices:[
+          { label:"Take the photo", sub:"A memory for life · costs 15 air", verdict:"ok", head:"Click — what a view.", why:"A wonderful moment that cost 15 minutes of air. Worth it only if you've kept enough for the trip home — check your gauge!", effect:st=>{st.air-=15;}, log:"Took a photo of Earth (−15 air)" },
+          { label:"Skip it, head for the airlock", sub:"Costs 0 air", verdict:"ok", head:"Mission first.", why:"You passed on the photo to protect your air. A little disappointing — but keeping a safety margin is exactly what real astronauts do.", effect:st=>{}, log:"Skipped the photo to save air (free)" }
+        ] },
+      { heading:"Head back to the airlock", body:["Time to return. The trip back to the airlock costs 35 minutes of oxygen. Check your gauge and push off."],
+        gauge:st=>({label:"Oxygen (minutes)", valText:st.air+" / 120", pct:st.air/120*100, over:st.air<35}),
+        choices:[
+          { label:"Push off for the airlock", sub:"Needs 35 air",
+            resolve:st=> st.air>=35
+              ? { verdict:"good", head:"Back inside — safe!", why:"You reached the airlock with "+st.air+" minutes of air, and the trip needed 35. You kept a reserve by not trying to do everything. That's smart budgeting.", next:"advance", log:"Made it back with "+st.air+" air to spare" }
+              : { verdict:"bad", head:"Dangerously low on air!", why:"You had only "+st.air+" minutes left and the trip home needs 35. You tried to do too much out there. Next time, keep a bigger reserve and skip an extra task.", next:"fail" } }
+        ] }
+    ],
+    debrief:{ lead:[
+      "You managed a ticking budget where every choice cost something you couldn't get back — and the smartest move was knowing what to leave out so you'd have enough for the trip home."],
+      learned:[
+        "Budgeting a limited resource against a deadline, subtracting as you go",
+        "Prioritising: you couldn't do everything, so you chose what mattered most",
+        "Keeping a safety reserve — real astronauts always plan to come back with oxygen to spare"] }
+  }
+];
+function LOAD_TOTAL(st){ return [["crew",3],["fuel",3],["lab",2],["rover",2],["food",1],["sat",2]].reduce((a,p)=>a+(st.picks[p[0]]?p[1]:0),0); }
 
 function renderMyths(){
   setTitle("Myth index");
