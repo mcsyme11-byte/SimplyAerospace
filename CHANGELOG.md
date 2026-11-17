@@ -2,6 +2,23 @@
 
 Every version of https://mcsyme11-byte.github.io/SimplyAerospace/, newest first. Semantic versioning (MAJOR.MINOR.PATCH); the footer build stamp shows the current one. Every release adds a `## vX.Y.Z` section here (the Site check fails without it).
 
+## v3.0.0 — 2026.11.17 (redesign, in preview)
+- **New look:** the shared "old money" design of Malcolm Syme's projects:
+  - navy, brass and cream, with Georgia throughout;
+  - thin brass rules, pill buttons, and cards whose border turns brass.
+- **No web fonts:** the Google Fonts download is gone, so pages load faster and nothing is requested from other companies.
+- **The patch's gold is the shared brass** (`#C0A062` / `#E2C88E`), like the other projects' patches. The icons and share preview were rebuilt.
+- **Faster to get around:**
+  - a sticky top bar with direct links (Explainers, Myths, Mission Control, Glossary) and a More menu;
+  - search on every page (`/`), and a full-screen menu on phones;
+  - the current page highlighted, a back-to-top button, and a skip link.
+- **New "All explainers" page** (`#/explainers`): filter by topic and level, and narrow down by any word.
+- **Home:**
+  - the hero has the patch, "Browse all explainers" and "Find your level", topic shortcuts and "Surprise me";
+  - a **Mission Control** promo card.
+- **New Legal page** (`#/legal`): terms of use, privacy (what the site stores in your browser), copyright and trademarks, contact.
+- **New footer:** the patch, Explore / Learn / About columns, the Begley quote, the build stamp, the credit and trademark lines, and a link to Legal.
+
 ## v2.8.0 — 2026.11.17
 - **The mission patch is the logo.** No-text patch in the top bar, full patch in the home hero (inline SVG, lettering outlined), tiny version as the favicon.
 - New icons: `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest`; new share preview `og-image.png`.

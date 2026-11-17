@@ -19,18 +19,15 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#070c14">
+<meta name="theme-color" content="#0F1520">
 <meta name="author" content="Malcolm Syme">
 <meta name="copyright" content="© Malcolm Syme · mcsyme11@gmail.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#070c14; --gold:#C8A96E; --gold-bright:#E4C88A;
-    --blue:#6FB6E8; --amber:#E89A4C; --text:#E8E3D8; --dim:#928d83;
-    --line:rgba(200,169,110,0.16);
-    --display:'Fraunces',Georgia,serif; --body:'Newsreader',Georgia,serif; --mono:'Space Mono',ui-monospace,monospace;
+    --bg:#141B26; --bg2:#0F1520; --card:#1A2333; --deep:#0C1119; --gold:#C0A062; --gold-bright:#E2C88E; --bright:#E2C88E; --brass-dim:#7E6A45; --line2:#3A465C; --ink2:#B4AFA2;
+    --blue:#6FB6E8; --amber:#E89A4C; --text:#EDE6D3; --dim:#98A0AB;
+    --line:rgba(192,160,98,0.16);
+    --display:Georgia,'Palatino','Palatino Linotype','Book Antiqua',serif; --body:Georgia,'Palatino','Palatino Linotype','Book Antiqua',serif; --mono:Georgia,'Palatino','Palatino Linotype',serif; --r:10px; --ease:cubic-bezier(.2,.7,.2,1);
   }
   *{box-sizing:border-box; margin:0; padding:0}
   html{scroll-behavior:smooth; overflow-x:hidden}
@@ -39,20 +36,19 @@
   a{color:inherit}
   .stars{position:fixed; inset:0; z-index:0; pointer-events:none;
     background-image:
-      radial-gradient(1.4px 1.4px at 12% 18%, rgba(200,169,110,.55), transparent),
+      radial-gradient(1.4px 1.4px at 12% 18%, rgba(192,160,98,.55), transparent),
       radial-gradient(1.2px 1.2px at 78% 12%, rgba(255,255,255,.45), transparent),
       radial-gradient(1.6px 1.6px at 42% 30%, rgba(111,182,232,.45), transparent),
       radial-gradient(1.1px 1.1px at 90% 44%, rgba(255,255,255,.4), transparent),
-      radial-gradient(1.3px 1.3px at 24% 60%, rgba(200,169,110,.4), transparent),
+      radial-gradient(1.3px 1.3px at 24% 60%, rgba(192,160,98,.4), transparent),
       radial-gradient(1.1px 1.1px at 63% 74%, rgba(255,255,255,.35), transparent),
       radial-gradient(1.5px 1.5px at 8% 88%, rgba(111,182,232,.4), transparent),
-      radial-gradient(1.2px 1.2px at 95% 92%, rgba(200,169,110,.4), transparent);
+      radial-gradient(1.2px 1.2px at 95% 92%, rgba(192,160,98,.4), transparent);
     background-repeat:no-repeat;; will-change:transform}
   .glowtop{position:fixed; top:-30vh; left:50%; transform:translateX(-50%); width:120vw; height:70vh; z-index:0;
     pointer-events:none; background:radial-gradient(ellipse at center, rgba(21,42,66,.5), transparent 62%)}
   .wrap{position:relative; z-index:1; max-width:1140px; margin:0 auto; padding:0 28px}
 
-  nav{display:flex; align-items:center; justify-content:space-between; padding:24px 0; position:relative; z-index:3}
   .brand{display:flex; align-items:center; gap:16px; text-decoration:none; color:var(--text)}
   .mark{width:48px; height:48px; flex:none}
   .brandtext{display:flex; flex-direction:column; line-height:1.08}
@@ -60,7 +56,7 @@
   .brandtext i{font-family:var(--mono); font-style:normal; font-size:9.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); margin-top:6px}
   .brand:hover b{color:var(--bright)}
   .navlinks{display:none; position:absolute; top:calc(100% + 12px); right:0; min-width:236px; flex-direction:column; gap:1px;
-    background:linear-gradient(#0c1522,#0a121c); border:1px solid var(--line); border-radius:14px; padding:12px; z-index:60; box-shadow:0 26px 64px rgba(0,0,0,.6)}
+    background:linear-gradient(#1A2333,#0F1520); border:1px solid var(--line); border-radius:14px; padding:12px; z-index:60; box-shadow:0 26px 64px rgba(0,0,0,.6)}
   .navlinks.open{display:flex; animation:menupop .22s ease}
   @keyframes menupop{from{opacity:0; transform:translateY(-8px)}}
   .navgroup{font-family:var(--mono); font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); opacity:.6; padding:12px 14px 5px}
@@ -71,7 +67,7 @@
   .navright{display:flex; align-items:center; gap:16px; position:relative}
   .navtoggle{display:inline-flex; align-items:center; gap:10px; background:none; border:1px solid var(--line); border-radius:10px; color:var(--gold);
     font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; line-height:1; cursor:pointer; padding:12px 17px; transition:border-color .2s ease, background .2s ease}
-  .navtoggle:hover{border-color:var(--gold); background:rgba(200,169,110,.06)}
+  .navtoggle:hover{border-color:var(--gold); background:rgba(192,160,98,.06)}
   .mburger{font-size:16px; line-height:1}
   .search{position:relative}
   .search input{width:190px; background:rgba(255,255,255,.04); border:1px solid var(--line); color:var(--text);
@@ -80,11 +76,11 @@
     background-repeat:no-repeat; background-position:13px center; transition:border-color .2s, width .2s}
   .search input::placeholder{color:var(--dim); text-transform:uppercase; letter-spacing:.14em; font-size:10.5px}
   .search input:focus{border-color:var(--gold); width:230px}
-  .results{position:absolute; top:48px; right:0; width:360px; max-width:82vw; background:#0b1420; border:1px solid var(--line);
+  .results{position:absolute; top:48px; right:0; width:360px; max-width:82vw; background:#1A2333; border:1px solid var(--line);
     border-radius:14px; padding:8px; z-index:40; box-shadow:0 24px 60px rgba(0,0,0,.55); max-height:64vh; overflow:auto}
   .results a{display:flex; gap:13px; align-items:flex-start; padding:12px 14px; border-radius:10px; text-decoration:none; color:var(--text); cursor:pointer}
-  .results a:hover, .results a.sel{background:rgba(200,169,110,.1)}
-  .results .dot{width:8px; height:8px; border-radius:50%; background:var(--acc,#C8A96E); flex:none; margin-top:7px}
+  .results a:hover, .results a.sel{background:rgba(192,160,98,.1)}
+  .results .dot{width:8px; height:8px; border-radius:50%; background:var(--acc,#C0A062); flex:none; margin-top:7px}
   .results a.aviation{--acc:var(--blue)} .results a.space{--acc:var(--gold)} .results a.propulsion{--acc:var(--amber)}
   .results .rt{font-family:var(--display); font-weight:600; font-size:16px; line-height:1.15; display:block}
   .results .rmeta{font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); margin-top:4px; display:block}
@@ -92,9 +88,9 @@
   .results a.gloss{--acc:var(--gold)}
   .results .rdef{font-family:var(--body); font-size:13px; line-height:1.35; color:var(--text); opacity:.72; margin-top:4px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
   .results .resgroup{padding:10px 14px 4px; font-family:var(--mono); font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); opacity:.7}
-  .results .resgroup.top{border-top:1px solid rgba(200,169,110,.14); margin-top:4px}
+  .results .resgroup.top{border-top:1px solid rgba(192,160,98,.14); margin-top:4px}
   .gterm.ghl{animation:ghlpulse 2.4s ease-out 1}
-  @keyframes ghlpulse{0%,22%{background:rgba(200,169,110,.16); box-shadow:inset 3px 0 0 var(--gold)} 100%{background:transparent; box-shadow:inset 3px 0 0 transparent}}
+  @keyframes ghlpulse{0%,22%{background:rgba(192,160,98,.16); box-shadow:inset 3px 0 0 var(--gold)} 100%{background:transparent; box-shadow:inset 3px 0 0 transparent}}
 
   header.hero{text-align:center; padding:70px 0 60px}
   .logo{width:176px; height:176px; margin:0 auto 30px; display:block; filter:drop-shadow(0 6px 24px rgba(0,0,0,.45))}
@@ -118,7 +114,7 @@
   .reel{aspect-ratio:9/16; border-radius:12px; border:1px solid rgba(232,154,76,.35); text-decoration:none;
     background:radial-gradient(ellipse at 50% 118%, rgba(255,210,122,.55), rgba(232,85,44,.22) 40%, transparent 70%), linear-gradient(#160f0a,#0a0705);
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; text-align:center; padding:22px}
-  .reel.blue{border-color:rgba(111,182,232,.35); background:radial-gradient(ellipse at 50% 20%, rgba(31,58,90,.5), transparent 60%), linear-gradient(#0b1420,#060b12)}
+  .reel.blue{border-color:rgba(111,182,232,.35); background:radial-gradient(ellipse at 50% 20%, rgba(31,58,90,.5), transparent 60%), linear-gradient(#1A2333,#060b12)}
   .reel .play{width:56px; height:56px; border-radius:50%; border:1.5px solid var(--gold); display:grid; place-items:center}
   .reel .play::before{content:""; border-left:15px solid var(--gold); border-top:9px solid transparent; border-bottom:9px solid transparent; margin-left:4px}
   .reel small{font-family:var(--mono); font-size:10.5px; letter-spacing:.18em; color:#d9c9a3; text-transform:uppercase}
@@ -137,7 +133,7 @@
     text-decoration:none; color:var(--text); display:flex; flex-direction:column; gap:12px; min-height:228px; overflow:hidden; cursor:pointer;
     transition:transform .22s ease, border-color .22s ease, background .22s ease}
   .card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--acc); opacity:.55}
-  .card:hover{transform:translateY(-5px); border-color:rgba(200,169,110,.45); background:rgba(255,255,255,.028)}
+  .card:hover{transform:translateY(-5px); border-color:rgba(192,160,98,.45); background:rgba(255,255,255,.028)}
   .card .num{font-family:var(--mono); font-size:11px; letter-spacing:.16em; color:var(--dim)}
   .card h4{font-family:var(--display); font-weight:600; font-size:22px; line-height:1.12}
   .card p{font-size:15.5px; color:#bdb7ac; line-height:1.5; margin-top:auto}
@@ -152,7 +148,7 @@
   .card.soon:hover{transform:none; border-color:var(--line); background:rgba(255,255,255,.012)}
   .card.soon .meta{color:var(--dim)}
 
-  .strip{border:1px solid var(--line); border-radius:18px; padding:44px; text-align:center; background:radial-gradient(ellipse at 50% 0%, rgba(200,169,110,.08), transparent 70%)}
+  .strip{border:1px solid var(--line); border-radius:18px; padding:44px; text-align:center; background:radial-gradient(ellipse at 50% 0%, rgba(192,160,98,.08), transparent 70%)}
   .strip h2{font-family:var(--display); font-weight:600; font-size:32px; margin-bottom:14px}
   .strip p{color:#c7c1b6; max-width:520px; margin:0 auto 26px}
   .btns{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
@@ -178,7 +174,7 @@
   .mythbox{display:grid; gap:2px; border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:36px 0}
   .mythbox>div{padding:22px 26px}
   .mythbox .m{background:rgba(232,85,44,.06)}
-  .mythbox .t{background:rgba(200,169,110,.06)}
+  .mythbox .t{background:rgba(192,160,98,.06)}
   .mythbox .rowlab{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:8px}
   .mythbox .m .rowlab{color:#e8a48c}
   .mythbox .t .rowlab{color:var(--gold)}
@@ -234,10 +230,10 @@
     .navright{gap:11px}
     .mlabel{display:none}
     .navtoggle{padding:11px 13px}
-    .navlinks{display:none; position:absolute; top:calc(100% + 14px); right:0; min-width:190px; flex-direction:column; gap:0; background:#0b1420; border:1px solid var(--line); border-radius:12px; padding:8px; z-index:60; box-shadow:0 22px 55px rgba(0,0,0,.55)}
+    .navlinks{display:none; position:absolute; top:calc(100% + 14px); right:0; min-width:190px; flex-direction:column; gap:0; background:#1A2333; border:1px solid var(--line); border-radius:12px; padding:8px; z-index:60; box-shadow:0 22px 55px rgba(0,0,0,.55)}
     .navlinks.open{display:flex}
     .navlinks a{padding:14px 16px; font-size:13px; border-radius:8px}
-    .navlinks a:hover{background:rgba(200,169,110,.08)}
+    .navlinks a:hover{background:rgba(192,160,98,.08)}
     .search input{width:150px}
     .search input:focus{width:172px}
     .results{width:280px}
@@ -249,7 +245,7 @@
   @media(prefers-reduced-motion:reduce){ *{animation:none!important} html{scroll-behavior:auto} .fade{opacity:1; transform:none} }
 
   /* --- quiz banner --- */
-  .qbanner{display:flex; align-items:center; gap:16px 22px; flex-wrap:wrap; justify-content:center; border:1px solid var(--line); border-radius:14px; padding:16px 24px; margin-bottom:8px; background:radial-gradient(ellipse at 50% 0,rgba(200,169,110,.09),transparent 72%)}
+  .qbanner{display:flex; align-items:center; gap:16px 22px; flex-wrap:wrap; justify-content:center; border:1px solid var(--line); border-radius:14px; padding:16px 24px; margin-bottom:8px; background:radial-gradient(ellipse at 50% 0,rgba(192,160,98,.09),transparent 72%)}
   .qbanner .qb-txt{font-size:17px; color:#d5cfc4}
   .qbanner .qb-txt b{color:var(--text); font-weight:600}
   .qbanner .qb-go{font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; padding:11px 22px; border-radius:30px; background:var(--gold); color:#1a1206; text-decoration:none; transition:.2s}
@@ -269,7 +265,7 @@
   .quiz .qq{font-family:var(--display); font-weight:600; font-size:clamp(27px,4.4vw,40px); line-height:1.18; margin-bottom:34px}
   .quiz .qopts{display:grid; gap:14px}
   .quiz .qopt{text-align:left; font-family:var(--body); font-size:19px; color:var(--text); background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px; padding:19px 24px; cursor:pointer; transition:.16s}
-  .quiz .qopt:hover{border-color:var(--gold); background:rgba(200,169,110,.08); transform:translateX(4px)}
+  .quiz .qopt:hover{border-color:var(--gold); background:rgba(192,160,98,.08); transform:translateX(4px)}
   .quiz .qhint{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-top:28px; text-align:center}
   /* --- result --- */
   .result{max-width:760px; margin:24px auto}
@@ -318,11 +314,11 @@
   /* ---- learn-next button + modal ---- */
   .learnnext{grid-column:1/-1; display:flex; justify-content:center; padding:10px 0 44px}
   .glowbtn{position:relative; animation:glowpulse 3.4s ease-in-out infinite}
-  @keyframes glowpulse{0%,100%{box-shadow:0 0 0 0 rgba(200,169,110,0)}50%{box-shadow:0 0 26px 2px rgba(200,169,110,.34)}}
+  @keyframes glowpulse{0%,100%{box-shadow:0 0 0 0 rgba(192,160,98,0)}50%{box-shadow:0 0 26px 2px rgba(192,160,98,.34)}}
   .modal{position:fixed; inset:0; z-index:200; display:grid; place-items:center; padding:24px}
   .modal[hidden]{display:none}
   .modal-back{position:absolute; inset:0; background:rgba(3,6,11,.72); backdrop-filter:blur(4px); animation:mfade .25s ease}
-  .modal-card{position:relative; z-index:1; width:min(560px,100%); background:linear-gradient(#0c1522,#080e17); border:1px solid var(--line); border-radius:18px; padding:36px 30px 30px; box-shadow:0 40px 90px rgba(0,0,0,.6); animation:mpop .3s cubic-bezier(.2,.9,.3,1.15)}
+  .modal-card{position:relative; z-index:1; width:min(560px,100%); background:linear-gradient(#1A2333,#080e17); border:1px solid var(--line); border-radius:18px; padding:36px 30px 30px; box-shadow:0 40px 90px rgba(0,0,0,.6); animation:mpop .3s cubic-bezier(.2,.9,.3,1.15)}
   @keyframes mfade{from{opacity:0}}
   @keyframes mpop{from{opacity:0; transform:translateY(18px) scale(.97)}}
   .modal-x{position:absolute; top:14px; right:16px; background:none; border:none; color:var(--dim); font-size:26px; line-height:1; cursor:pointer}
@@ -331,7 +327,7 @@
   .modal-sub{text-align:center; color:var(--dim); font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin:9px 0 24px}
   .modal-list{display:grid; gap:12px}
   .modal-item{display:grid; gap:6px; padding:16px 18px; border:1px solid var(--line); border-radius:12px; text-decoration:none; color:var(--text); background:rgba(255,255,255,.015); transition:.18s}
-  .modal-item:hover{border-color:var(--gold); background:rgba(200,169,110,.07); transform:translateX(4px)}
+  .modal-item:hover{border-color:var(--gold); background:rgba(192,160,98,.07); transform:translateX(4px)}
   .mi-top{display:flex; align-items:center; justify-content:space-between; gap:10px}
   .mi-code{font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--dim)}
   .mi-title{font-family:var(--display); font-weight:600; font-size:19px; line-height:1.15}
@@ -348,11 +344,11 @@
   .card{transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease}
   .card:hover{transform:translateY(-4px); border-color:var(--gold); box-shadow:0 18px 40px rgba(0,0,0,.35)}
   .reel .play{position:relative; transition:transform .25s ease, box-shadow .25s ease}
-  .reel:hover .play{transform:scale(1.08); box-shadow:0 0 26px rgba(200,169,110,.4)}
-  .reel .play::after{content:""; position:absolute; inset:-1px; border-radius:50%; border:1px solid rgba(200,169,110,.5); animation:ping 2.8s ease-out infinite}
+  .reel:hover .play{transform:scale(1.08); box-shadow:0 0 26px rgba(192,160,98,.4)}
+  .reel .play::after{content:""; position:absolute; inset:-1px; border-radius:50%; border:1px solid rgba(192,160,98,.5); animation:ping 2.8s ease-out infinite}
   @keyframes ping{0%{transform:scale(1); opacity:.55}100%{transform:scale(1.9); opacity:0}}
   .navlinks a{position:relative; padding:11px 14px; border-radius:9px; font-family:var(--mono); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--text); text-decoration:none; transition:background .15s ease, color .15s ease}
-  .navlinks a:hover{background:rgba(200,169,110,.08); color:var(--gold)}
+  .navlinks a:hover{background:rgba(192,160,98,.08); color:var(--gold)}
   .trustline{animation:tlpulse 6.5s ease-in-out infinite}
   @keyframes tlpulse{0%,100%{opacity:.55}50%{opacity:.9}}
   .levelcard{transition:transform .22s ease, border-color .22s ease}
@@ -360,7 +356,7 @@
   @media(prefers-reduced-motion:reduce){ .glowbtn,.grid .card,.reel .play::after,.trustline{animation:none!important} .modal-back,.modal-card{animation:none!important} }
   /* ---- scroll progress bar ---- */
   #progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:300;
-    background:linear-gradient(90deg, var(--gold), var(--bright)); box-shadow:0 0 12px rgba(200,169,110,.5); transition:width .1s linear}
+    background:linear-gradient(90deg, var(--gold), var(--bright)); box-shadow:0 0 12px rgba(192,160,98,.5); transition:width .1s linear}
   /* ---- scroll reveal ---- */
   .reveal{opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1; transform:none}
@@ -375,7 +371,7 @@
   .horizon-intro{max-width:660px; color:#b9b3a8; font-size:16.5px; line-height:1.6; margin:2px 0 26px}
   .horizon{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px}
   .hcard{position:relative; padding:26px 24px 24px; border:1px solid var(--line); border-radius:14px;
-    background:linear-gradient(160deg, rgba(200,169,110,.05), rgba(255,255,255,.012)); overflow:hidden; transition:transform .22s ease, border-color .22s ease}
+    background:linear-gradient(160deg, rgba(192,160,98,.05), rgba(255,255,255,.012)); overflow:hidden; transition:transform .22s ease, border-color .22s ease}
   .hcard::before{content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(var(--gold),transparent); opacity:.5}
   .hcard:hover{transform:translateY(-4px); border-color:var(--gold)}
   .hnum{font-family:var(--mono); font-size:12px; letter-spacing:.2em; color:var(--gold); opacity:.7}
@@ -404,7 +400,7 @@
   .startcard .stepn{font-family:var(--display); font-size:40px; font-weight:600; color:var(--gold); opacity:.55; line-height:1; flex:none}
   .startcard h4{font-family:var(--display); font-weight:600; font-size:21px; margin:9px 0 6px}
   .startcard p{color:#b3ada2; font-size:15px; line-height:1.5; margin:0}
-  .nextbox{border:1px solid var(--line); border-radius:16px; padding:34px 30px; background:linear-gradient(160deg,rgba(200,169,110,.05),rgba(255,255,255,.012)); text-align:center; max-width:820px; margin:0 auto}
+  .nextbox{border:1px solid var(--line); border-radius:16px; padding:34px 30px; background:linear-gradient(160deg,rgba(192,160,98,.05),rgba(255,255,255,.012)); text-align:center; max-width:820px; margin:0 auto}
   .nextbox h3{font-family:var(--display); font-weight:600; font-size:24px; margin:0 0 8px}
   .nextbox p{color:#b9b3a8; font-size:16px; line-height:1.55; margin:0 auto 22px; max-width:520px}
   .nextbox .rbtns{justify-content:center}
@@ -430,9 +426,9 @@
   .mhub{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:8px}
   @media(max-width:620px){ .mhub{grid-template-columns:1fr} }
   .mcard{display:block; text-decoration:none; color:var(--text); border:1px solid var(--line); border-radius:16px; padding:24px 22px 20px; background:linear-gradient(180deg,rgba(255,255,255,.015),transparent); position:relative; overflow:hidden; transition:border-color .2s ease, transform .2s ease}
-  .mcard:hover{border-color:var(--acc,#C8A96E); transform:translateY(-3px)}
+  .mcard:hover{border-color:var(--acc,#C0A062); transform:translateY(-3px)}
   .mcard::after{display:none}
-  .mcard .mnum{font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--acc,#C8A96E); opacity:.85}
+  .mcard .mnum{font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--acc,#C0A062); opacity:.85}
   .mcard .mttl{font-family:var(--display); font-weight:600; font-size:23px; line-height:1.15; margin:8px 0 6px}
   .mcard .mskill{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim)}
   .mcard .mblurb{font-family:var(--body); font-size:15px; line-height:1.5; color:var(--text); opacity:.78; margin-top:10px}
@@ -446,15 +442,15 @@
   .mscene{border:1px solid var(--line); border-radius:18px; padding:28px 26px; background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
   .mscene h2{font-family:var(--display); font-weight:600; font-size:25px; line-height:1.2; margin:0 0 12px}
   .mscene .mlead, .mscene .mbody{font-family:var(--body); font-size:17px; line-height:1.6; color:var(--text); opacity:.86; margin:0 0 13px}
-  .mkicker{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--acc,#C8A96E); margin-bottom:10px}
-  .mobj{border-left:2px solid var(--acc,#C8A96E); background:rgba(255,255,255,.02); border-radius:0 10px 10px 0; padding:13px 16px; margin:4px 0 14px; font-family:var(--body); font-size:16px; line-height:1.5}
-  .mobj .objlab{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--acc,#C8A96E); margin-bottom:5px; opacity:.85}
+  .mkicker{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--acc,#C0A062); margin-bottom:10px}
+  .mobj{border-left:2px solid var(--acc,#C0A062); background:rgba(255,255,255,.02); border-radius:0 10px 10px 0; padding:13px 16px; margin:4px 0 14px; font-family:var(--body); font-size:16px; line-height:1.5}
+  .mobj .objlab{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--acc,#C0A062); margin-bottom:5px; opacity:.85}
   .mtip{font-family:var(--body); font-size:14.5px; line-height:1.5; color:var(--text); opacity:.6; margin:0 0 6px}
   /* stage progress */
   .mprog{margin:0 0 18px}
   .mprog-lab{display:flex; justify-content:space-between; font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); margin-bottom:7px}
   .mprog-track{height:4px; border-radius:3px; background:rgba(255,255,255,.07); overflow:hidden}
-  .mprog-fill{height:100%; border-radius:3px; background:var(--acc,#C8A96E); transition:width .4s ease}
+  .mprog-fill{height:100%; border-radius:3px; background:var(--acc,#C0A062); transition:width .4s ease}
   /* gauges */
   .mgauge{margin:4px 0 20px}
   .mgauge .glab{display:flex; justify-content:space-between; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:7px}
@@ -464,7 +460,7 @@
   /* choices */
   .mchoices{display:flex; flex-direction:column; gap:12px; margin-top:6px}
   .mbtn{font-family:var(--body); font-size:16px; text-align:left; color:var(--text); background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px; padding:15px 18px; cursor:pointer; transition:border-color .18s ease, background .18s ease; line-height:1.35}
-  .mbtn:hover{border-color:var(--gold); background:rgba(200,169,110,.07)}
+  .mbtn:hover{border-color:var(--gold); background:rgba(192,160,98,.07)}
   .mbtn .mb-sub{display:block; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); margin-top:5px}
   .mbtn.toggle.on{border-color:#6FB6E8; background:rgba(111,182,232,.1)}
   .mbtn.toggle .tw{float:right; font-family:var(--mono); font-size:13px; color:var(--dim)}
@@ -474,14 +470,14 @@
   .mfx{border-radius:14px; padding:18px 20px; margin-top:4px; border:1px solid var(--line)}
   .mfx.big{padding:22px 22px}
   .mfx.good{border-color:rgba(143,209,158,.45); background:rgba(143,209,158,.06)}
-  .mfx.ok{border-color:rgba(200,169,110,.45); background:rgba(200,169,110,.06)}
+  .mfx.ok{border-color:rgba(192,160,98,.45); background:rgba(192,160,98,.06)}
   .mfx.bad{border-color:rgba(224,112,90,.45); background:rgba(224,112,90,.06)}
   .mfx .fxhead{font-family:var(--display); font-weight:600; font-size:21px; margin:0 0 8px; line-height:1.2}
   .mfx.good .fxhead{color:#8fd19e} .mfx.ok .fxhead{color:#e0b87a} .mfx.bad .fxhead{color:#e0705a}
   .mfx .fxwhy{font-family:var(--body); font-size:16px; line-height:1.55; opacity:.88; margin:0}
   /* debrief */
   .mwin{text-align:center; padding:6px 0 2px}
-  .mwin .patch{width:116px; height:116px; margin:4px auto 14px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 40%,rgba(200,169,110,.18),transparent 70%); box-shadow:0 0 34px rgba(200,169,110,.18)}
+  .mwin .patch{width:116px; height:116px; margin:4px auto 14px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 40%,rgba(192,160,98,.18),transparent 70%); box-shadow:0 0 34px rgba(192,160,98,.18)}
   .mwin .patch svg{width:62px; height:62px}
   .mwin .wtag{font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8fd19e; margin-bottom:6px}
   .mwin h2{margin-bottom:2px}
@@ -504,10 +500,10 @@
   .navmore{position:relative; display:flex; align-items:center}
   .navmore-btn{font-family:var(--mono); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--text); background:none; border:none; cursor:pointer; padding:0; transition:color .2s ease}
   .navmore-btn:hover{color:var(--gold)}
-  .navmore-menu{position:absolute; top:calc(100% + 16px); right:0; min-width:172px; flex-direction:column; gap:0; background:#0b1420; border:1px solid var(--line); border-radius:12px; padding:8px; z-index:60; box-shadow:0 22px 55px rgba(0,0,0,.55); display:none}
+  .navmore-menu{position:absolute; top:calc(100% + 16px); right:0; min-width:172px; flex-direction:column; gap:0; background:#1A2333; border:1px solid var(--line); border-radius:12px; padding:8px; z-index:60; box-shadow:0 22px 55px rgba(0,0,0,.55); display:none}
   .navmore.open .navmore-menu{display:flex}
   .navmore-menu a{padding:12px 14px; border-radius:8px; font-size:12.5px}
-  .navmore-menu a:hover{background:rgba(200,169,110,.08)}
+  .navmore-menu a:hover{background:rgba(192,160,98,.08)}
   .navmore-menu a::after{display:none}
   @media(max-width:600px){
     .navmore{display:contents}
@@ -518,7 +514,7 @@
   /* ---- build / version stamp ---- */
   .buildstamp{display:inline-flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px;
     margin:4px auto 22px; padding:11px 20px; border:1px solid var(--line); border-radius:999px;
-    background:linear-gradient(#0b1420,#080e17); font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim)}
+    background:linear-gradient(#1A2333,#080e17); font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim)}
   .buildstamp .bs-field b{color:var(--gold); font-weight:600; letter-spacing:.16em}
   .buildstamp .bs-sep{color:var(--line); opacity:.9}
   .buildstamp .bs-live{color:#8fd19e}
@@ -532,7 +528,6 @@
     body{font-size:16px; line-height:1.6}
     /* header: brand + Menu only (search hidden for a clean, non-overflowing bar) */
     .search{display:none}
-    nav{padding:18px 0}
     .brand{gap:12px}
     .brand b{font-size:18px; letter-spacing:.04em}
     .mark{width:38px; height:38px}
@@ -579,7 +574,7 @@
   }
   /* ---- NEW ribbon on cards ---- */
   .card .ribbon{position:absolute; bottom:22px; right:20px; font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
-    padding:4px 10px; border-radius:20px; color:#0b1420; background:linear-gradient(90deg,var(--gold),var(--gold-bright)); font-weight:700; box-shadow:0 0 16px rgba(200,169,110,.35)}
+    padding:4px 10px; border-radius:20px; color:#1A2333; background:linear-gradient(90deg,var(--gold),var(--gold-bright)); font-weight:700; box-shadow:0 0 16px rgba(192,160,98,.35)}
   /* ---- watched tick ---- */
   .card .wtick{display:none; color:#8fd19e}
   .card.watched .wtick{display:inline}
@@ -594,7 +589,7 @@
   .fb-lab{font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); margin-right:2px}
   .fb-pill{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); background:none; border:1px solid var(--line); border-radius:20px; padding:8px 15px; cursor:pointer; transition:.18s}
   .fb-pill:hover{border-color:var(--gold); color:var(--text)}
-  .fb-pill.active{color:#0b1420; background:var(--gold); border-color:var(--gold); font-weight:700}
+  .fb-pill.active{color:#1A2333; background:var(--gold); border-color:var(--gold); font-weight:700}
   body[data-lvlfilter="junior"] .grid .card:not([data-level="junior"]),
   body[data-lvlfilter="flight"] .grid .card:not([data-level="flight"]),
   body[data-lvlfilter="senior"] .grid .card:not([data-level="senior"]){ display:none }
@@ -605,11 +600,11 @@
   /* ---- share ---- */
   .sharerow{margin:6px 0 30px}
   .sharebtn{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--gold); background:none; border:1px solid rgba(200,169,110,.4); border-radius:22px; padding:10px 18px; cursor:pointer; transition:.18s}
-  .sharebtn:hover{background:rgba(200,169,110,.08); border-color:var(--gold)}
+    color:var(--gold); background:none; border:1px solid rgba(192,160,98,.4); border-radius:22px; padding:10px 18px; cursor:pointer; transition:.18s}
+  .sharebtn:hover{background:rgba(192,160,98,.08); border-color:var(--gold)}
   .sharebtn .sh-ic{font-size:14px}
   /* ---- toast ---- */
-  .toast{position:fixed; left:50%; bottom:34px; transform:translate(-50%,20px); z-index:400; background:#0c1522; border:1px solid var(--line); color:var(--text);
+  .toast{position:fixed; left:50%; bottom:34px; transform:translate(-50%,20px); z-index:400; background:#1A2333; border:1px solid var(--line); color:var(--text);
     font-family:var(--mono); font-size:12px; letter-spacing:.1em; padding:13px 22px; border-radius:24px; box-shadow:0 20px 50px rgba(0,0,0,.55); opacity:0; pointer-events:none; transition:.25s}
   .toast.show{opacity:1; transform:translate(-50%,0)}
   /* ---- sources page ---- */
@@ -632,7 +627,7 @@
   .sclist{list-style:none; margin:6px 0 0; padding:0; display:grid; gap:12px}
   .sclist li{display:flex; align-items:center; gap:16px}
   .sck{display:flex; gap:6px; flex:none; min-width:96px}
-  .sclist kbd{font-family:var(--mono); font-size:12px; color:var(--gold); background:#0b1420; border:1px solid var(--line); border-bottom-width:2px; border-radius:7px; padding:6px 10px; min-width:20px; text-align:center}
+  .sclist kbd{font-family:var(--mono); font-size:12px; color:var(--gold); background:#1A2333; border:1px solid var(--line); border-bottom-width:2px; border-radius:7px; padding:6px 10px; min-width:20px; text-align:center}
   .sclist span:last-child{color:#c4beb2; font-size:15px}
   @media(max-width:600px){
     .archivehead{margin:34px 0 4px}
@@ -642,18 +637,191 @@
     .sck{min-width:78px}
     .toast{bottom:20px; font-size:11px; padding:11px 18px; width:max-content; max-width:90vw}
   }
+
+  /* ===== v3 · shared "old money" look of Malcolm Syme's projects: navy, brass and cream, Georgia, thin brass rules ===== */
+  body{font-size:17px; line-height:1.65; background:var(--bg); color:var(--text); font-variant-numeric:lining-nums}
+  h1,h2,h3,h4,.article h1,.pagetitle,.sechead h2,.archiveh,.strip h2{font-family:var(--display); font-weight:400; letter-spacing:-.005em}
+  b,strong{font-weight:700}
+  a{text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px; border-radius:3px}
+  .sr,.skip:not(:focus){position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  .skip:focus{position:fixed; top:10px; left:10px; z-index:300; background:var(--gold); color:var(--bg); padding:8px 14px; border-radius:4px}
+  .glowtop{display:none}
+  .stars{opacity:.55}
+  /* top bar */
+  .topbar{position:sticky; top:0; z-index:100; background:rgba(15,21,32,.97); border-bottom:1px solid rgba(192,160,98,.16)}
+  .topbar .bar{height:64px; display:flex; align-items:center; gap:22px}
+  .topbar .brand{gap:11px; flex:none}
+  .topbar .mark{width:36px; height:36px}
+  .topbar .brand b{font-family:var(--display); font-weight:400; font-size:19px; letter-spacing:.04em; text-transform:none}
+  .topbar .brandtext i{display:none}
+  .topbar .navlinks{display:flex; position:static; flex-direction:row; align-items:center; gap:24px; margin-left:auto; background:none; border:0; box-shadow:none; padding:0; min-width:0}
+  .topbar .navlinks a,.navmore-btn{font-family:var(--body); font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink2); text-decoration:none; position:relative; padding:6px 0}
+  .topbar .navlinks > a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .3s var(--ease)}
+  .topbar .navlinks > a:hover,.navmore-btn:hover{color:var(--text)}
+  .topbar .navlinks > a:hover::after,.topbar .navlinks > a[aria-current]::after{transform:scaleX(1)}
+  .topbar .navlinks a[aria-current]{color:var(--gold-bright)}
+  .navmore-btn{background:none; border:0; cursor:pointer}
+  .navmore-menu{top:calc(100% + 18px); min-width:228px; background:var(--card); border:1px solid var(--line2); border-radius:var(--r); padding:8px 6px 10px}
+  .navmore-menu a{padding:9px 14px; letter-spacing:.12em; font-size:12px}
+  .navmore-menu a:hover{background:rgba(192,160,98,.08); color:var(--text)}
+  .navmore-menu .navgroup{font-family:var(--body); font-size:10.5px; letter-spacing:.3em; color:var(--gold); opacity:.85; padding:10px 14px 3px}
+  .topbar .navright{gap:12px; flex:none}
+  .topbar .search input{font-family:var(--body); background:var(--bg2); border:1px solid var(--line2); border-radius:999px; height:38px; width:190px; padding:0 34px 0 16px; font-size:14px; color:var(--text)}
+  .topbar .search input:focus{border-color:var(--gold); width:240px}
+  .search-kbd{font-family:var(--body)}
+  .results{background:var(--card); border:1px solid var(--line2); border-radius:var(--r)}
+  .navtoggle{display:none; width:44px; height:44px; border:0; padding:12px 10px; flex-direction:column; justify-content:center; gap:6px; background:none}
+  .navtoggle .mb{display:block; height:1.5px; width:22px; background:var(--text); transition:transform .25s}
+  .navtoggle[aria-expanded="true"] .mb:first-child{transform:translateY(3.75px) rotate(45deg)}
+  .navtoggle[aria-expanded="true"] .mb:last-child{transform:translateY(-3.75px) rotate(-45deg)}
+  #progress{top:64px}
+  @media(max-width:1020px){
+    .topbar .search input{width:150px} .topbar .search input:focus{width:180px}
+    .topbar .navlinks{gap:16px}
+  }
+  @media(max-width:880px){
+    .navtoggle{display:flex}
+    .topbar .navlinks{display:none; position:absolute; top:64px; left:0; right:0; width:auto; max-width:none; min-width:0; flex-direction:column; align-items:stretch; gap:0; background:var(--bg2); border-bottom:1px solid var(--line2); padding:8px var(--gutter,20px) 18px; max-height:calc(100vh - 64px); overflow:auto}
+    .topbar .navlinks.open{display:flex}
+    .topbar .navlinks a{padding:13px 4px; font-size:13px; border-bottom:1px solid rgba(58,70,92,.5)}
+    .topbar .navlinks > a::after{display:none}
+    .navmore{display:contents} .navmore-btn{display:none}
+    .navmore-menu{display:flex; position:static; flex-direction:column; background:none; border:0; box-shadow:none; padding:0; min-width:0}
+    .navmore-menu a{padding:13px 4px; font-size:13px}
+    .topbar .navright{margin-left:auto}
+  }
+  @media(max-width:520px){
+    .topbar .brand b{font-size:16px}
+    .topbar .search input{width:44px; padding:0; color:transparent; cursor:pointer; background:var(--bg2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C0A062' stroke-width='1.6'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='M16 16l4.5 4.5'/%3E%3C/svg%3E") center/18px no-repeat}
+    .topbar .search input::placeholder{color:transparent}
+    .topbar .search input:focus{position:fixed; left:12px; right:12px; top:12px; width:auto; color:var(--text); padding:0 16px; background:var(--bg2); z-index:120}
+    .topbar .search input:focus::placeholder{color:var(--dim)}
+    .search-kbd{display:none}
+    .results{position:fixed; left:12px; right:12px; top:58px; width:auto; z-index:120}
+  }
+  /* type and furniture */
+  .kicker,.eyebrow,.pagehead .ph-k,.sechead .count,.card .num,.card .meta,.tag,.lab,.fb-lab,.statlab,.hnum,.mkicker,.loglab,.rowlab,.crumb{font-family:var(--body); letter-spacing:.3em; text-transform:uppercase}
+  .kicker,.eyebrow,.pagehead .ph-k{color:var(--gold); font-size:12px}
+  h1{font-size:clamp(44px,7.5vw,84px); line-height:1.02; background:linear-gradient(180deg,var(--text) 40%,var(--gold-bright)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  h1 em{font-style:italic; -webkit-text-fill-color:var(--gold-bright)}
+  .lede,.pagelede,.standfirst{color:var(--ink2)}
+  .sechead{border-bottom:1px solid var(--line); padding-bottom:14px}
+  .sechead .idx{color:var(--gold); font-family:var(--body)}
+  .sechead h2{font-size:clamp(28px,4vw,40px)}
+  /* buttons: pills — brass primary, outlined secondary */
+  .btn,.qb-go,.go{border-radius:999px}
+  .btn{min-height:46px; display:inline-flex; align-items:center; justify-content:center; padding:0 26px; font-family:var(--body); font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; transition:transform .2s var(--ease),opacity .2s}
+  .btn.solid{background:linear-gradient(180deg,var(--gold-bright),var(--gold)); color:#141B26; border:0}
+  .btn.solid:hover{transform:translateY(-2px); color:#141B26}
+  .btn.ghost{background:transparent; color:var(--text); border:1px solid var(--line2)}
+  .btn.ghost:hover{border-color:var(--gold); color:var(--text)}
+  .linkbtn{background:none; border:0; color:var(--gold-bright); font:inherit; text-decoration:underline; cursor:pointer; padding:0}
+  /* cards: 10px corners, 1px border that turns brass */
+  .card,.levelcard,.hcard,.startcard,.mcard,.feature,.strip,.nextbox,.srcgroup,.gterm,.mythrow{border-radius:var(--r)}
+  .card,.levelcard,.hcard,.startcard,.mcard{background:var(--card); border:1px solid var(--line2); box-shadow:none}
+  .card:hover,.levelcard:hover,.hcard:hover,.startcard:hover,.mcard:hover{border-color:var(--gold); transform:translateY(-3px)}
+  .card h4{font-family:var(--display); font-weight:400; font-size:21px; line-height:1.25}
+  .card p{color:var(--ink2)}
+  .fb-pill{font-family:var(--body); border-radius:999px; border:1px solid var(--line2); background:transparent; color:var(--ink2); padding:7px 15px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; cursor:pointer}
+  .fb-pill span{color:var(--dim); margin-left:4px; letter-spacing:0}
+  .fb-pill.active,.fb-pill:hover{border-color:var(--gold); color:var(--gold-bright)}
+  .fb-pill.active{background:rgba(192,160,98,.1)}
+  /* hero */
+  header.hero{text-align:center; padding:clamp(48px,8vw,96px) 0 clamp(40px,6vw,72px); border-bottom:1px solid rgba(192,160,98,.14); margin-bottom:28px}
+  .hero .logo,.logo{width:clamp(160px,22vw,220px); height:auto; margin:0 auto 26px; filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+  .hero .lede{margin-left:auto; margin-right:auto; max-width:640px}
+  .herobtns{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:30px}
+  .herotopics{display:flex; padding:0; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:22px}
+  .chip{font-family:var(--body); display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line2); border-radius:999px; padding:6px 14px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink2); text-decoration:none; background:none; cursor:pointer}
+  .chip span{color:var(--gold)}
+  .chip:hover{border-color:var(--gold); color:var(--text)}
+  .trustline{font-style:italic; color:var(--dim)}
+  /* Mission Control promo on Home */
+  .mcpromo{display:flex; gap:28px; align-items:center; justify-content:space-between; background:linear-gradient(135deg,#1A2333,#0F1520); border:1px solid var(--line2); border-radius:var(--r); padding:clamp(24px,4vw,40px); margin:56px 0}
+  .mcpromo h2{font-size:clamp(30px,4vw,42px); margin:6px 0 10px}
+  .mcpromo p{color:var(--ink2); max-width:520px; margin-bottom:20px}
+  .mcp-n{flex:none; width:150px; height:150px; border-radius:50%; border:1px solid var(--gold); display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--dim); font-size:12px; letter-spacing:.3em; text-transform:uppercase}
+  .mcp-n span{font-size:56px; line-height:1; color:var(--gold-bright); letter-spacing:0; margin-bottom:6px}
+  @media(max-width:640px){ .mcpromo{flex-direction:column; align-items:flex-start} .mcp-n{display:none} }
+  /* all-explainers page */
+  .exbar{display:flex; flex-direction:column; gap:12px; background:var(--bg2); border:1px solid var(--line2); border-radius:var(--r); padding:18px 20px; margin:8px 0 18px; position:sticky; top:76px; z-index:5}
+  .exrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+  .exrow .fb-lab{width:64px; color:var(--dim); font-size:11px}
+  .exsearch input{width:100%; height:42px; border-radius:999px; border:1px solid var(--line2); background:var(--bg); color:var(--text); font-family:var(--body); font-size:15px; padding:0 18px}
+  .exsearch input:focus{border-color:var(--gold); outline:none}
+  .excount{color:var(--dim); font-size:13px; letter-spacing:.2em; text-transform:uppercase; margin:0 0 14px}
+  .exnone{color:var(--ink2); grid-column:1/-1; padding:28px 0}
+  @media(max-width:640px){ .exbar{position:static} .exrow .fb-lab{width:100%} }
+  /* legal */
+  .legal{max-width:760px; margin:0 auto}
+  .legal h2{font-size:30px; margin:42px 0 12px; padding-bottom:10px; border-bottom:1px solid var(--line); scroll-margin-top:90px}
+  .legal ul{padding-left:22px; margin:10px 0} .legal li{margin:9px 0; color:var(--ink2)} .legal li b{color:var(--text)}
+  .legal ul ul{margin:6px 0}
+  .legal code{font-family:ui-monospace,Consolas,monospace; font-size:.85em; color:var(--gold-bright)}
+  .legal a{color:var(--gold-bright)}
+  .legaltoc{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 10px}
+  .legaltoc a{border:1px solid var(--line2); border-radius:999px; padding:6px 14px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; color:var(--ink2)}
+  .legaltoc a:hover{border-color:var(--gold); color:var(--text)}
+  /* footer */
+  footer{background:var(--deep); border-top:1px solid rgba(192,160,98,.16); margin-top:72px; padding:56px 0 28px; position:relative; z-index:1}
+  .footgrid{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:32px; padding-bottom:30px; border-bottom:1px solid var(--line)}
+  .footbrand{display:flex; gap:18px; align-items:flex-start}
+  .footpatch{flex:none; width:84px; height:84px}
+  .footbrand b{font-family:var(--display); font-weight:400; font-size:21px}
+  .footbrand p{color:var(--ink2); font-size:15px; margin:6px 0 12px}
+  .footcol{display:flex; flex-direction:column; gap:8px}
+  .footcol h4{font-family:var(--body); font-size:11.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; font-weight:400}
+  .footcol a{color:var(--ink2); text-decoration:none; font-size:15px} .footcol a:hover{color:var(--text)}
+  .foothandles{display:flex; gap:14px; justify-content:flex-start}
+  footer .quote{margin:30px 0 18px; text-align:center}
+  .legalline{text-align:center; margin-top:16px}
+  .legalline .copy{font-family:var(--body); color:var(--ink2); font-size:13px; letter-spacing:.04em; text-transform:none}
+  .legalline .tm{color:var(--dim); font-size:12.5px; margin-top:4px} .legalline .tm a{color:var(--gold-bright)}
+  @media(max-width:860px){ .footgrid{grid-template-columns:1fr 1fr} .footbrand{grid-column:1/-1} }
+  @media(max-width:480px){ .footgrid{grid-template-columns:1fr} }
+  /* back to top */
+  .totop{position:fixed; right:18px; bottom:18px; z-index:90; width:44px; height:44px; border-radius:50%; border:1px solid var(--brass-dim); background:var(--bg2); color:var(--gold-bright); font-size:18px; cursor:pointer; opacity:0; transform:translateY(10px); pointer-events:none; transition:opacity .25s,transform .25s}
+  .totop.show{opacity:1; transform:none; pointer-events:auto}
+  .totop:hover{border-color:var(--gold)}
+  @media(prefers-reduced-motion:reduce){ .totop,.btn,.card,.topbar .navlinks > a::after{transition:none} }
 </style>
 </head>
 <body>
 <div id="progress"></div>
 <div class="stars"></div>
 <div class="glowtop"></div>
-<div class="wrap">
-  <nav>
+<a class="skip" href="#app">Skip to content</a>
+<header class="topbar">
+  <div class="wrap bar">
     <a class="brand" href="#/" aria-label="Simply Aerospace home">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="mark" aria-hidden="true"><desc>© Malcolm Syme · mcsyme11@gmail.com. Simply Aerospace™. All text converted to outlines.</desc><defs><radialGradient id="saGnav" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#26324A"/><stop offset="1" stop-color="#0E1520"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="#0C1119" stroke="#C8A96E" stroke-width="3"/><circle cx="50" cy="50" r="42" fill="url(#saGnav)" stroke="#8FB996" stroke-opacity=".7" stroke-width="2"/><g transform="translate(50 50) scale(1.62) translate(-50 -50)"><g fill="none" stroke-linecap="round"><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E4C88A" stroke-width="1.65"/><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E4C88A" stroke-width="0.88" opacity=".45" transform="rotate(28 50 50)"/><circle cx="50" cy="50" r="4.4" stroke="#E4C88A" stroke-width="1.65"/></g><circle cx="50" cy="50" r="1.5" fill="#EDE6D3"/><circle cx="68" cy="50" r="1.7" fill="#E4C88A"/></g></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="mark" aria-hidden="true"><desc>© Malcolm Syme · mcsyme11@gmail.com. Simply Aerospace™. All text converted to outlines.</desc><defs><radialGradient id="saGnav" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#26324A"/><stop offset="1" stop-color="#0E1520"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="#0C1119" stroke="#C0A062" stroke-width="3"/><circle cx="50" cy="50" r="42" fill="url(#saGnav)" stroke="#8FB996" stroke-opacity=".7" stroke-width="2"/><g transform="translate(50 50) scale(1.62) translate(-50 -50)"><g fill="none" stroke-linecap="round"><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E2C88E" stroke-width="1.65"/><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E2C88E" stroke-width="0.88" opacity=".45" transform="rotate(28 50 50)"/><circle cx="50" cy="50" r="4.4" stroke="#E2C88E" stroke-width="1.65"/></g><circle cx="50" cy="50" r="1.5" fill="#EDE6D3"/><circle cx="68" cy="50" r="1.7" fill="#E2C88E"/></g></svg>
       <span class="brandtext"><b>Simply Aerospace</b><i>Aerospace, explained simply</i></span>
     </a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="#/explainers" data-nav="explainers">Explainers</a>
+      <a href="#/myths" data-nav="myths">Myths</a>
+      <a href="#/missions" data-nav="missions">Mission Control</a>
+      <a href="#/glossary" data-nav="glossary">Glossary</a>
+      <div class="navmore">
+        <button class="navmore-btn" onclick="toggleMore(event)" aria-expanded="false" aria-haspopup="true">More <span aria-hidden="true">▾</span></button>
+        <div class="navmore-menu">
+          <span class="navgroup">Start</span>
+          <a href="#/start" data-nav="start">Start Here</a>
+          <a href="#/quiz" data-nav="quiz">Find your level</a>
+          <a href="#/levels" data-nav="levels">The three levels</a>
+          <span class="navgroup">Topics</span>
+          <a href="#/t/aviation" data-nav="t/aviation">Aviation</a>
+          <a href="#/t/space" data-nav="t/space">Space</a>
+          <a href="#/t/propulsion" data-nav="t/propulsion">Propulsion</a>
+          <span class="navgroup">About</span>
+          <a href="#/sources" data-nav="sources">Sources</a>
+          <a href="#/faq" data-nav="faq">FAQ</a>
+          <a href="#/about" data-nav="about">The Story</a>
+          <a href="#/legal" data-nav="legal">Legal</a>
+        </div>
+      </div>
+    </nav>
     <div class="navright">
       <div class="search">
         <input id="q" type="text" placeholder="Search" autocomplete="off" spellcheck="false"
@@ -661,39 +829,32 @@
         <span class="search-kbd" aria-hidden="true">/</span>
         <div id="results" class="results" role="listbox" hidden></div>
       </div>
-      <button class="navtoggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false"><span class="mburger">&#9776;</span><span class="mlabel">Menu</span></button>
-      <div class="navlinks">
-        <span class="navgroup">Browse</span>
-        <a href="#/start">Start Here</a>
-        <a href="#/t/aviation">Aviation</a>
-        <a href="#/t/space">Space</a>
-        <a href="#/t/propulsion">Propulsion</a>
-        <a href="#/myths">Myth Index</a>
-        <span class="navgroup">Learn</span>
-        <a href="#/levels">Levels</a>
-        <a href="#/quiz">Take the Quiz</a>
-        <a href="#/missions">Mission Control</a>
-        <a href="#/glossary">Glossary</a>
-        <span class="navgroup">About</span>
-        <a href="#/faq">FAQ</a>
-        <a href="#/sources">Sources</a>
-        <a href="#/about">The Story</a>
-      </div>
+      <button class="navtoggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false"><span class="mb"></span><span class="mb"></span></button>
     </div>
-  </nav>
-  <main id="app"></main>
+  </div>
+</header>
+<div class="wrap">
+  <main id="app" tabindex="-1"></main>
 </div>
+<button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'})" aria-label="Back to top">↑</button>
 <footer>
   <div class="wrap">
+    <div class="footgrid">
+      <div class="footbrand">
+        <img src="icon-192.png" width="84" height="84" alt="" class="footpatch">
+        <div><b>Simply Aerospace</b><p>Short, accurate explainers on how flight and spaceflight really work, at three levels.</p>
+        <div class="foothandles" id="footlinks"></div></div>
+      </div>
+      <nav class="footcol" aria-label="Explore"><h4>Explore</h4><a href="#/explainers">All explainers</a><a href="#/t/aviation">Aviation</a><a href="#/t/space">Space</a><a href="#/t/propulsion">Propulsion</a><a href="#/myths">Myth Index</a></nav>
+      <nav class="footcol" aria-label="Learn"><h4>Learn</h4><a href="#/start">Start Here</a><a href="#/quiz">Find your level</a><a href="#/levels">Levels</a><a href="#/missions">Mission Control</a><a href="#/glossary">Glossary</a></nav>
+      <nav class="footcol" aria-label="About"><h4>About</h4><a href="#/about">The Story</a><a href="#/sources">Sources</a><a href="#/faq">FAQ</a><a href="#/legal">Legal</a></nav>
+    </div>
     <p class="quote">"Somewhere, something incredible is waiting to be known."<span>Sharon Begley</span></p>
-    <nav class="footnav">
-      <a href="#/">Home</a><a href="#/start">Start Here</a><a href="#/levels">Levels</a>
-      <a href="#/quiz">Quiz</a><a href="#/missions">Mission Control</a><a href="#/myths">Myth Index</a><a href="#/glossary">Glossary</a>
-      <a href="#/faq">FAQ</a><a href="#/sources">Sources</a><a href="#/about">About</a>
-    </nav>
-    <div class="foothandles" id="footlinks"></div>
     <div class="buildstamp" id="buildstamp"></div>
-    <p class="copy">© Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™</p>
+    <div class="legalline">
+      <p class="copy">© Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™</p>
+      <p class="tm">Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme. All rights reserved. <a href="#/legal">Legal</a></p>
+    </div>
   </div>
 </footer>
 
@@ -708,7 +869,7 @@
              the "Watch the Short" button opens the actual video.
              (YouTube is used first; Instagram is the fallback.)
    ============================================================ */
-const SITE_VERSION = "2.8.0";
+const SITE_VERSION = "3.0.0";
 const BUILD_DATE = "2026.11.17";
 const CHANNELS = {
   youtube:   "https://www.youtube.com/@SimplyAerospace",
@@ -1459,7 +1620,7 @@ const PATHS = {
 
 let quizStep=0, quizScore={junior:0,flight:0,senior:0};
 function surpriseMe(){ const list=VIDEOS.filter(x=>x.published); const pick=list[Math.floor(Math.random()*list.length)]; location.hash="#/v/"+pick.id; }
-function toggleNav(){ const n=document.querySelector(".navlinks"); if(n) n.classList.toggle("open"); }
+function toggleNav(){ const n=document.querySelector(".navlinks"); if(!n) return; const o=n.classList.toggle("open"); const t=document.querySelector(".navtoggle"); if(t) t.setAttribute("aria-expanded", o?"true":"false"); }
 function closeMore(){ document.querySelectorAll(".navmore.open").forEach(m=>{ m.classList.remove("open"); const b=m.querySelector(".navmore-btn"); if(b) b.setAttribute("aria-expanded","false"); }); }
 function toggleMore(e){ e.stopPropagation(); const m=e.currentTarget.closest(".navmore"); if(!m) return; const open=m.classList.toggle("open"); e.currentTarget.setAttribute("aria-expanded", open?"true":"false"); }
 function pickLearnNext(curId){
@@ -1673,13 +1834,14 @@ function renderHome(){
       <a class="qb-go" href="#/quiz">Take the quiz</a>
       <button class="qb-surprise" onclick="surpriseMe()">Surprise me \u2192</button>
     </div>`;
-  app.innerHTML = bannerHTML + `
+  app.innerHTML = `
     <header class="hero">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo fade d1" aria-hidden="true"><desc>© Malcolm Syme · mcsyme11@gmail.com. Simply Aerospace™. All text converted to outlines.</desc><defs><radialGradient id="saGhero" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#26324A"/><stop offset="1" stop-color="#0E1520"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="#0C1119" stroke="#C8A96E" stroke-width="2.2"/><circle cx="50" cy="50" r="44.5" fill="none" stroke="#7E6A45" stroke-width=".8" stroke-dasharray="1.6 1.6"/><circle cx="50" cy="50" r="28" fill="url(#saGhero)" stroke="#8FB996" stroke-opacity=".7" stroke-width="1.2"/><path fill="#E4C88A" d="M15.090 40.758L13.628 40.403L13.703 40.167Q14.313 40.261 14.766 39.971Q15.218 39.682 15.400 39.107Q15.549 38.634 15.408 38.288Q15.268 37.941 14.891 37.823Q14.674 37.754 14.473 37.800Q14.272 37.846 14.036 38.038Q13.800 38.231 13.478 38.607Q13.074 39.063 12.768 39.300Q12.461 39.537 12.176 39.584Q11.891 39.631 11.565 39.529Q11.169 39.404 10.919 39.125Q10.670 38.846 10.599 38.469Q10.528 38.092 10.661 37.670Q10.830 37.134 11.358 36.773L11.123 36.516L11.169 36.369L12.463 36.700L12.388 36.936Q11.816 36.924 11.469 37.135Q11.122 37.345 10.993 37.754Q10.870 38.144 10.992 38.435Q11.115 38.727 11.434 38.827Q11.633 38.890 11.822 38.847Q12.010 38.805 12.222 38.636Q12.433 38.467 12.714 38.155Q13.194 37.611 13.542 37.331Q13.891 37.051 14.184 36.989Q14.478 36.927 14.816 37.033Q15.244 37.168 15.501 37.491Q15.757 37.814 15.820 38.263Q15.882 38.711 15.719 39.228Q15.605 39.593 15.408 39.850Q15.211 40.108 14.880 40.334L15.136 40.611ZM16.943 35.702L16.713 35.594Q16.834 35.303 16.840 35.132Q16.847 34.961 16.687 34.827Q16.528 34.693 16.152 34.517L13.689 33.362Q13.343 33.200 13.141 33.157Q12.940 33.114 12.803 33.209Q12.666 33.304 12.531 33.559L12.301 33.451L13.165 31.607L13.396 31.715Q13.280 31.979 13.296 32.142Q13.312 32.305 13.486 32.438Q13.660 32.572 14.030 32.745L16.408 33.860Q16.809 34.048 17.021 34.092Q17.233 34.136 17.361 34.022Q17.488 33.908 17.634 33.629L17.865 33.737ZM20.464 29.534L15.763 28.577L15.747 28.599L18.251 30.361Q18.613 30.615 18.815 30.696Q19.016 30.776 19.162 30.686Q19.307 30.596 19.499 30.346L19.707 30.492L18.632 32.021L18.423 31.875Q18.594 31.609 18.629 31.442Q18.665 31.275 18.532 31.115Q18.398 30.956 18.058 30.717L15.834 29.151Q15.522 28.931 15.330 28.854Q15.139 28.777 14.987 28.846Q14.836 28.916 14.659 29.144L14.451 28.997L15.373 27.688L19.583 28.586L19.598 28.564L17.362 24.860L18.226 23.633L18.434 23.780Q18.274 24.019 18.261 24.182Q18.249 24.346 18.397 24.507Q18.546 24.669 18.880 24.904L21.028 26.416Q21.389 26.670 21.591 26.751Q21.792 26.831 21.938 26.741Q22.083 26.651 22.275 26.401L22.484 26.547L21.234 28.323L21.026 28.176Q21.196 27.911 21.232 27.744Q21.268 27.576 21.134 27.417Q21.001 27.257 20.661 27.018L18.119 25.229L18.080 25.284L20.549 29.413ZM24.139 19.587Q24.462 19.928 24.548 20.316Q24.634 20.705 24.432 21.150Q24.230 21.594 23.685 22.110L23.247 22.524L24.135 23.464Q24.361 23.702 24.527 23.785Q24.693 23.868 24.878 23.776Q25.063 23.684 25.355 23.408L25.530 23.593L23.812 25.218L23.637 25.033Q23.856 24.807 23.931 24.657Q24.007 24.507 23.935 24.354Q23.864 24.200 23.647 23.971L21.502 21.703Q21.286 21.474 21.143 21.392Q21.001 21.310 20.855 21.365Q20.709 21.420 20.490 21.608L20.315 21.423L21.844 19.978Q22.511 19.347 23.116 19.245Q23.720 19.144 24.139 19.587ZM21.608 20.791L23.017 22.281L23.362 21.954Q23.844 21.498 23.906 21.085Q23.967 20.672 23.562 20.244Q23.175 19.835 22.817 19.832Q22.460 19.829 22.060 20.207L21.613 20.630Q21.530 20.708 21.608 20.791ZM28.164 21.299L28.022 21.088Q28.276 20.901 28.375 20.766Q28.474 20.631 28.429 20.468Q28.384 20.304 28.208 20.043L26.468 17.450Q26.293 17.189 26.166 17.084Q26.039 16.980 25.886 17.010Q25.733 17.040 25.486 17.190L25.344 16.978L27.035 15.843L27.177 16.055Q26.942 16.221 26.860 16.352Q26.779 16.483 26.834 16.648Q26.888 16.814 27.078 17.097L28.688 19.495Q28.897 19.806 29.091 19.910Q29.286 20.013 29.542 19.926Q29.798 19.839 30.182 19.581Q30.610 19.294 30.816 19.059Q31.022 18.824 31.035 18.549Q31.048 18.274 30.894 17.877L31.105 17.735L31.758 18.887ZM34.307 17.582L34.203 17.350Q34.497 17.218 34.612 17.090Q34.727 16.961 34.688 16.751Q34.649 16.541 34.482 16.168L34.148 15.422L31.990 13.877Q31.771 13.718 31.617 13.651Q31.462 13.585 31.330 13.592Q31.198 13.600 31.026 13.677L30.922 13.444L32.849 12.583L32.953 12.815Q32.653 12.949 32.545 13.053Q32.437 13.156 32.489 13.272Q32.517 13.333 32.591 13.410Q32.666 13.487 32.794 13.576L34.467 14.773L34.492 14.762L34.663 13.291Q34.714 12.879 34.710 12.649Q34.707 12.420 34.655 12.304Q34.603 12.187 34.493 12.181Q34.384 12.175 34.164 12.273L34.060 12.041L35.461 11.415L35.565 11.647Q35.436 11.704 35.350 11.791Q35.264 11.877 35.205 12.032Q35.145 12.187 35.101 12.441Q35.058 12.696 35.010 13.099L34.780 15.110L35.105 15.838Q35.283 16.236 35.418 16.414Q35.552 16.592 35.722 16.593Q35.891 16.595 36.185 16.463L36.289 16.696ZM41.753 14.859L41.713 14.608Q42.012 14.526 42.147 14.393Q42.282 14.259 42.349 13.957L43.384 9.376L43.669 9.331L45.764 12.824Q45.975 13.170 46.123 13.374Q46.271 13.578 46.394 13.670Q46.517 13.762 46.646 13.779Q46.774 13.796 46.946 13.769L46.987 14.027L44.830 14.370L44.789 14.112Q45.139 14.056 45.261 13.969Q45.383 13.882 45.359 13.729Q45.338 13.597 45.290 13.486Q45.241 13.375 45.113 13.165L44.728 12.493L42.961 12.774Q42.823 13.353 42.777 13.665Q42.732 13.977 42.753 14.110Q42.783 14.295 42.916 14.345Q43.050 14.395 43.321 14.352L43.361 14.603ZM43.041 12.422L44.550 12.182L43.518 10.345L43.492 10.349ZM49.980 9.237L49.948 11.160Q50.310 11.166 50.555 11.126Q50.800 11.087 50.946 10.995Q51.091 10.904 51.157 10.758Q51.224 10.611 51.227 10.410L51.461 10.414L51.431 12.243L51.197 12.239Q51.200 12.038 51.146 11.890Q51.091 11.741 50.952 11.642Q50.813 11.543 50.566 11.488Q50.319 11.434 49.944 11.428L49.919 12.942Q49.914 13.230 50.015 13.399Q50.116 13.568 50.356 13.642Q50.596 13.717 51.018 13.724Q51.494 13.732 51.780 13.642Q52.066 13.553 52.231 13.332Q52.395 13.110 52.489 12.716L52.743 12.720L52.621 14.038L48.461 13.970L48.465 13.715Q48.780 13.707 48.939 13.653Q49.097 13.598 49.153 13.438Q49.210 13.279 49.215 12.964L49.266 9.842Q49.271 9.527 49.227 9.369Q49.183 9.211 49.040 9.148Q48.897 9.085 48.609 9.067L48.613 8.813L52.485 8.876L52.526 10.056L52.291 10.052Q52.244 9.697 52.103 9.500Q51.962 9.303 51.682 9.225Q51.402 9.147 50.946 9.139L50.095 9.125Q50.042 9.124 50.011 9.154Q49.981 9.184 49.980 9.237ZM59.345 11.205Q59.244 11.724 58.860 12.015Q58.476 12.305 57.762 12.289L58.876 14.321Q59.011 14.573 59.210 14.710Q59.408 14.848 59.688 14.950L59.640 15.200L58.371 14.953L57.161 12.575Q57.078 12.402 56.994 12.310Q56.909 12.219 56.785 12.174Q56.660 12.130 56.456 12.090L56.190 13.458Q56.128 13.780 56.157 13.963Q56.186 14.146 56.369 14.243Q56.551 14.340 56.946 14.417L56.897 14.667L54.576 14.215L54.624 13.966Q54.936 14.013 55.101 13.987Q55.267 13.961 55.350 13.813Q55.433 13.666 55.493 13.356L56.089 10.292Q56.150 9.983 56.134 9.819Q56.118 9.656 55.988 9.569Q55.858 9.482 55.577 9.414L55.626 9.164L57.691 9.566Q58.592 9.741 59.027 10.173Q59.461 10.606 59.345 11.205ZM56.892 9.847L56.520 11.761L56.987 11.852Q57.638 11.978 58.008 11.798Q58.378 11.617 58.484 11.071Q58.586 10.545 58.378 10.262Q58.170 9.980 57.631 9.875L57.026 9.757Q56.914 9.735 56.892 9.847ZM65.602 11.840Q66.148 12.063 66.539 12.444Q66.929 12.825 67.142 13.306Q67.354 13.787 67.367 14.321Q67.381 14.855 67.165 15.382Q66.960 15.884 66.581 16.243Q66.203 16.603 65.715 16.787Q65.227 16.971 64.683 16.966Q64.138 16.960 63.599 16.740Q63.059 16.519 62.667 16.142Q62.275 15.764 62.056 15.291Q61.837 14.818 61.818 14.296Q61.800 13.775 62.005 13.272Q62.221 12.745 62.604 12.374Q62.988 12.002 63.476 11.807Q63.965 11.613 64.511 11.615Q65.056 11.617 65.602 11.840ZM63.738 16.399Q64.284 16.622 64.784 16.533Q65.283 16.444 65.689 16.071Q66.095 15.697 66.351 15.071Q66.623 14.407 66.605 13.832Q66.586 13.256 66.297 12.830Q66.008 12.405 65.462 12.181Q64.917 11.958 64.412 12.060Q63.907 12.161 63.491 12.559Q63.075 12.957 62.804 13.621Q62.548 14.247 62.576 14.798Q62.604 15.348 62.898 15.762Q63.192 16.175 63.738 16.399ZM68.087 18.744L68.814 17.426L69.022 17.560Q68.772 18.124 68.932 18.637Q69.092 19.150 69.599 19.476Q70.017 19.744 70.388 19.699Q70.758 19.655 70.972 19.322Q71.095 19.131 71.104 18.925Q71.112 18.720 70.989 18.441Q70.865 18.163 70.587 17.753Q70.253 17.244 70.104 16.886Q69.956 16.528 69.985 16.240Q70.015 15.953 70.200 15.665Q70.424 15.316 70.759 15.148Q71.093 14.981 71.475 15.011Q71.858 15.042 72.230 15.281Q72.703 15.585 72.913 16.189L73.222 16.030L73.352 16.113L72.693 17.275L72.485 17.141Q72.646 16.591 72.535 16.201Q72.423 15.811 72.062 15.579Q71.718 15.358 71.405 15.400Q71.092 15.442 70.911 15.723Q70.798 15.898 70.790 16.092Q70.781 16.285 70.888 16.533Q70.996 16.781 71.223 17.134Q71.622 17.741 71.800 18.150Q71.979 18.560 71.962 18.859Q71.945 19.159 71.753 19.458Q71.511 19.835 71.131 19.998Q70.752 20.161 70.303 20.103Q69.855 20.046 69.398 19.753Q69.077 19.546 68.880 19.289Q68.683 19.031 68.552 18.652L68.217 18.827ZM78.143 21.686Q77.831 22.036 77.451 22.154Q77.070 22.273 76.611 22.108Q76.151 21.944 75.591 21.444L75.142 21.042L74.280 22.006Q74.061 22.251 73.992 22.423Q73.924 22.596 74.031 22.772Q74.138 22.949 74.438 23.217L74.268 23.407L72.505 21.830L72.674 21.640Q72.918 21.840 73.073 21.903Q73.229 21.965 73.376 21.881Q73.523 21.797 73.733 21.562L75.814 19.235Q76.024 19.000 76.094 18.851Q76.164 18.703 76.097 18.562Q76.030 18.421 75.824 18.219L75.993 18.029L77.562 19.431Q78.246 20.043 78.398 20.637Q78.550 21.231 78.143 21.686ZM76.731 19.264L75.365 20.793L75.720 21.110Q76.214 21.552 76.631 21.578Q77.047 21.605 77.440 21.165Q77.815 20.746 77.788 20.389Q77.761 20.032 77.352 19.666L76.892 19.255Q76.807 19.179 76.731 19.264ZM76.569 25.566L76.768 25.408Q76.986 25.629 77.168 25.681Q77.351 25.733 77.647 25.643L82.147 24.296L82.326 24.522L80.311 28.062Q80.113 28.416 80.008 28.645Q79.903 28.874 79.883 29.026Q79.863 29.179 79.911 29.299Q79.959 29.419 80.067 29.555L79.863 29.718L78.505 28.007L78.710 27.844Q78.930 28.123 79.066 28.186Q79.202 28.249 79.323 28.153Q79.428 28.070 79.501 27.974Q79.574 27.877 79.694 27.662L80.090 26.997L78.978 25.596Q78.406 25.759 78.112 25.873Q77.817 25.987 77.712 26.070Q77.565 26.186 77.587 26.327Q77.609 26.468 77.780 26.683L77.581 26.842ZM79.324 25.492L80.273 26.689L81.368 24.889L81.351 24.868ZM86.809 32.438L87.232 32.349L87.320 32.514L85.989 33.292L85.872 33.073Q86.317 32.669 86.417 32.138Q86.517 31.606 86.237 31.080Q85.982 30.601 85.552 30.393Q85.123 30.185 84.561 30.249Q83.999 30.313 83.355 30.657Q82.409 31.161 82.107 31.834Q81.805 32.507 82.202 33.252Q82.501 33.814 83.007 34.023Q83.513 34.232 84.195 34.073L84.325 34.315L82.852 35.100L82.742 34.893L83.137 34.508Q82.280 34.168 81.810 33.287Q81.454 32.618 81.469 31.977Q81.484 31.335 81.844 30.793Q82.205 30.252 82.897 29.883Q83.435 29.597 83.962 29.525Q84.489 29.453 84.972 29.582Q85.455 29.712 85.852 30.036Q86.248 30.360 86.516 30.863Q86.705 31.218 86.773 31.587Q86.841 31.957 86.809 32.438ZM88.569 36.808L86.739 37.399Q86.851 37.743 86.967 37.963Q87.084 38.182 87.218 38.290Q87.351 38.398 87.511 38.414Q87.671 38.429 87.862 38.367L87.934 38.590L86.194 39.153L86.122 38.930Q86.313 38.868 86.436 38.768Q86.558 38.669 86.607 38.505Q86.657 38.341 86.628 38.090Q86.600 37.839 86.484 37.482L85.044 37.947Q84.769 38.036 84.642 38.186Q84.515 38.337 84.522 38.588Q84.529 38.839 84.659 39.241Q84.805 39.693 84.982 39.935Q85.159 40.177 85.422 40.261Q85.685 40.345 86.088 40.307L86.166 40.549L84.879 40.859L83.600 36.900L83.842 36.822Q83.951 37.117 84.054 37.250Q84.157 37.382 84.326 37.384Q84.496 37.385 84.795 37.288L87.766 36.328Q88.066 36.231 88.201 36.138Q88.337 36.045 88.350 35.889Q88.363 35.734 88.287 35.455L88.529 35.377L89.720 39.062L88.617 39.482L88.545 39.259Q88.866 39.099 89.007 38.902Q89.147 38.705 89.131 38.415Q89.114 38.124 88.974 37.691L88.712 36.881Q88.696 36.830 88.658 36.811Q88.620 36.791 88.569 36.808Z"/><path fill="#98A0AB" d="M33.823 75.732 L33.381 77.874 L35.180 79.118 L33.006 79.359 L32.379 81.455 L31.478 79.462 L29.291 79.513 L30.908 78.040 L30.183 75.976 L32.084 77.058ZM40.158 83.940L40.156 83.973L41.406 84.307Q41.606 84.361 41.757 84.341Q41.907 84.320 42.049 84.190Q42.192 84.060 42.359 83.789L42.591 83.851L41.994 85.124L39.075 84.343L39.130 84.136Q40.017 83.687 40.611 83.328Q41.205 82.969 41.564 82.661Q41.922 82.353 42.114 82.051Q42.305 81.749 42.393 81.423Q42.522 80.939 42.366 80.591Q42.210 80.243 41.821 80.139Q41.451 80.040 41.146 80.221Q40.842 80.402 40.738 80.791Q40.647 81.130 40.782 81.382Q40.917 81.633 41.231 81.717Q41.165 81.861 41.006 81.916Q40.846 81.971 40.652 81.919Q40.419 81.857 40.270 81.686Q40.121 81.514 40.071 81.272Q40.022 81.030 40.094 80.760Q40.195 80.384 40.478 80.143Q40.761 79.903 41.158 79.827Q41.555 79.752 42.001 79.871Q42.446 79.990 42.738 80.257Q43.030 80.523 43.140 80.879Q43.250 81.235 43.143 81.637Q43.005 82.152 42.575 82.565Q42.145 82.978 41.517 83.314Q40.888 83.651 40.158 83.940ZM47.349 80.816Q47.744 80.850 48.073 81.077Q48.403 81.305 48.638 81.681Q48.873 82.056 48.981 82.542Q49.089 83.028 49.042 83.578Q48.997 84.103 48.808 84.550Q48.620 84.997 48.325 85.317Q48.030 85.637 47.667 85.802Q47.304 85.966 46.908 85.932Q46.513 85.898 46.184 85.674Q45.854 85.450 45.618 85.084Q45.382 84.718 45.273 84.245Q45.163 83.773 45.208 83.248Q45.256 82.698 45.445 82.238Q45.635 81.778 45.931 81.448Q46.227 81.118 46.590 80.950Q46.954 80.782 47.349 80.816ZM46.935 85.621Q47.272 85.650 47.529 85.473Q47.785 85.297 47.956 84.832Q48.126 84.367 48.199 83.525Q48.274 82.644 48.188 82.131Q48.102 81.618 47.880 81.387Q47.659 81.156 47.322 81.127Q46.985 81.098 46.727 81.288Q46.470 81.478 46.297 81.968Q46.124 82.459 46.049 83.340Q45.976 84.182 46.065 84.669Q46.153 85.156 46.376 85.374Q46.598 85.592 46.935 85.621ZM52.437 85.254L52.446 85.286L53.735 85.170Q53.942 85.151 54.076 85.080Q54.210 85.010 54.299 84.838Q54.388 84.667 54.451 84.355L54.690 84.333L54.568 85.734L51.558 86.005L51.539 85.792Q52.217 85.065 52.652 84.523Q53.086 83.982 53.316 83.569Q53.547 83.157 53.623 82.808Q53.699 82.458 53.669 82.121Q53.624 81.623 53.358 81.350Q53.092 81.077 52.690 81.113Q52.309 81.147 52.085 81.422Q51.862 81.697 51.898 82.098Q51.930 82.448 52.142 82.637Q52.355 82.827 52.679 82.798Q52.667 82.956 52.536 83.062Q52.406 83.168 52.205 83.186Q51.965 83.208 51.766 83.099Q51.567 82.989 51.437 82.779Q51.307 82.569 51.282 82.291Q51.247 81.902 51.430 81.579Q51.613 81.256 51.960 81.048Q52.307 80.841 52.767 80.799Q53.226 80.758 53.592 80.908Q53.958 81.058 54.184 81.354Q54.410 81.650 54.447 82.064Q54.495 82.595 54.233 83.131Q53.971 83.667 53.497 84.199Q53.023 84.731 52.437 85.254ZM60.451 82.731Q60.545 83.083 60.497 83.425Q60.450 83.767 60.282 84.061Q60.115 84.354 59.847 84.563Q59.580 84.771 59.234 84.863Q58.757 84.989 58.313 84.811Q57.869 84.633 57.531 84.195Q57.193 83.756 57.023 83.115Q56.871 82.544 56.894 81.996Q56.917 81.449 57.089 80.993Q57.261 80.537 57.565 80.225Q57.869 79.912 58.277 79.804Q58.579 79.724 58.849 79.743Q59.120 79.762 59.303 79.869Q59.486 79.975 59.534 80.157Q59.574 80.308 59.506 80.420Q59.438 80.532 59.281 80.574Q59.137 80.612 59.040 80.564Q58.943 80.515 58.863 80.429Q58.783 80.343 58.696 80.255Q58.608 80.167 58.486 80.125Q58.365 80.084 58.170 80.135Q57.881 80.212 57.720 80.533Q57.560 80.855 57.546 81.336Q57.533 81.817 57.683 82.382L57.705 82.390Q57.828 82.041 58.031 81.843Q58.233 81.645 58.548 81.562Q58.975 81.448 59.365 81.563Q59.755 81.679 60.044 81.982Q60.333 82.285 60.451 82.731ZM57.816 82.939L57.898 83.247Q58.103 84.019 58.430 84.353Q58.757 84.687 59.184 84.573Q59.618 84.459 59.738 84.063Q59.859 83.668 59.673 82.965Q59.506 82.336 59.218 82.063Q58.931 81.789 58.541 81.893Q58.252 81.969 58.082 82.216Q57.912 82.463 57.816 82.939ZM66.177 75.732 L67.916 77.058 L69.817 75.976 L69.092 78.040 L70.709 79.513 L68.522 79.462 L67.621 81.455 L66.994 79.359 L64.820 79.118 L66.619 77.874Z"/><g transform="translate(50 50) scale(1.0) translate(-50 -50)"><g fill="none" stroke-linecap="round"><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E4C88A" stroke-width="1.50"/><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E4C88A" stroke-width="0.80" opacity=".45" transform="rotate(28 50 50)"/><circle cx="50" cy="50" r="4.4" stroke="#E4C88A" stroke-width="1.50"/></g><circle cx="50" cy="50" r="1.5" fill="#EDE6D3"/><circle cx="68" cy="50" r="1.7" fill="#E4C88A"/></g></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo fade d1" aria-hidden="true"><desc>© Malcolm Syme · mcsyme11@gmail.com. Simply Aerospace™. All text converted to outlines.</desc><defs><radialGradient id="saGhero" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#26324A"/><stop offset="1" stop-color="#0E1520"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="#0C1119" stroke="#C0A062" stroke-width="2.2"/><circle cx="50" cy="50" r="44.5" fill="none" stroke="#7E6A45" stroke-width=".8" stroke-dasharray="1.6 1.6"/><circle cx="50" cy="50" r="28" fill="url(#saGhero)" stroke="#8FB996" stroke-opacity=".7" stroke-width="1.2"/><path fill="#E2C88E" d="M15.090 40.758L13.628 40.403L13.703 40.167Q14.313 40.261 14.766 39.971Q15.218 39.682 15.400 39.107Q15.549 38.634 15.408 38.288Q15.268 37.941 14.891 37.823Q14.674 37.754 14.473 37.800Q14.272 37.846 14.036 38.038Q13.800 38.231 13.478 38.607Q13.074 39.063 12.768 39.300Q12.461 39.537 12.176 39.584Q11.891 39.631 11.565 39.529Q11.169 39.404 10.919 39.125Q10.670 38.846 10.599 38.469Q10.528 38.092 10.661 37.670Q10.830 37.134 11.358 36.773L11.123 36.516L11.169 36.369L12.463 36.700L12.388 36.936Q11.816 36.924 11.469 37.135Q11.122 37.345 10.993 37.754Q10.870 38.144 10.992 38.435Q11.115 38.727 11.434 38.827Q11.633 38.890 11.822 38.847Q12.010 38.805 12.222 38.636Q12.433 38.467 12.714 38.155Q13.194 37.611 13.542 37.331Q13.891 37.051 14.184 36.989Q14.478 36.927 14.816 37.033Q15.244 37.168 15.501 37.491Q15.757 37.814 15.820 38.263Q15.882 38.711 15.719 39.228Q15.605 39.593 15.408 39.850Q15.211 40.108 14.880 40.334L15.136 40.611ZM16.943 35.702L16.713 35.594Q16.834 35.303 16.840 35.132Q16.847 34.961 16.687 34.827Q16.528 34.693 16.152 34.517L13.689 33.362Q13.343 33.200 13.141 33.157Q12.940 33.114 12.803 33.209Q12.666 33.304 12.531 33.559L12.301 33.451L13.165 31.607L13.396 31.715Q13.280 31.979 13.296 32.142Q13.312 32.305 13.486 32.438Q13.660 32.572 14.030 32.745L16.408 33.860Q16.809 34.048 17.021 34.092Q17.233 34.136 17.361 34.022Q17.488 33.908 17.634 33.629L17.865 33.737ZM20.464 29.534L15.763 28.577L15.747 28.599L18.251 30.361Q18.613 30.615 18.815 30.696Q19.016 30.776 19.162 30.686Q19.307 30.596 19.499 30.346L19.707 30.492L18.632 32.021L18.423 31.875Q18.594 31.609 18.629 31.442Q18.665 31.275 18.532 31.115Q18.398 30.956 18.058 30.717L15.834 29.151Q15.522 28.931 15.330 28.854Q15.139 28.777 14.987 28.846Q14.836 28.916 14.659 29.144L14.451 28.997L15.373 27.688L19.583 28.586L19.598 28.564L17.362 24.860L18.226 23.633L18.434 23.780Q18.274 24.019 18.261 24.182Q18.249 24.346 18.397 24.507Q18.546 24.669 18.880 24.904L21.028 26.416Q21.389 26.670 21.591 26.751Q21.792 26.831 21.938 26.741Q22.083 26.651 22.275 26.401L22.484 26.547L21.234 28.323L21.026 28.176Q21.196 27.911 21.232 27.744Q21.268 27.576 21.134 27.417Q21.001 27.257 20.661 27.018L18.119 25.229L18.080 25.284L20.549 29.413ZM24.139 19.587Q24.462 19.928 24.548 20.316Q24.634 20.705 24.432 21.150Q24.230 21.594 23.685 22.110L23.247 22.524L24.135 23.464Q24.361 23.702 24.527 23.785Q24.693 23.868 24.878 23.776Q25.063 23.684 25.355 23.408L25.530 23.593L23.812 25.218L23.637 25.033Q23.856 24.807 23.931 24.657Q24.007 24.507 23.935 24.354Q23.864 24.200 23.647 23.971L21.502 21.703Q21.286 21.474 21.143 21.392Q21.001 21.310 20.855 21.365Q20.709 21.420 20.490 21.608L20.315 21.423L21.844 19.978Q22.511 19.347 23.116 19.245Q23.720 19.144 24.139 19.587ZM21.608 20.791L23.017 22.281L23.362 21.954Q23.844 21.498 23.906 21.085Q23.967 20.672 23.562 20.244Q23.175 19.835 22.817 19.832Q22.460 19.829 22.060 20.207L21.613 20.630Q21.530 20.708 21.608 20.791ZM28.164 21.299L28.022 21.088Q28.276 20.901 28.375 20.766Q28.474 20.631 28.429 20.468Q28.384 20.304 28.208 20.043L26.468 17.450Q26.293 17.189 26.166 17.084Q26.039 16.980 25.886 17.010Q25.733 17.040 25.486 17.190L25.344 16.978L27.035 15.843L27.177 16.055Q26.942 16.221 26.860 16.352Q26.779 16.483 26.834 16.648Q26.888 16.814 27.078 17.097L28.688 19.495Q28.897 19.806 29.091 19.910Q29.286 20.013 29.542 19.926Q29.798 19.839 30.182 19.581Q30.610 19.294 30.816 19.059Q31.022 18.824 31.035 18.549Q31.048 18.274 30.894 17.877L31.105 17.735L31.758 18.887ZM34.307 17.582L34.203 17.350Q34.497 17.218 34.612 17.090Q34.727 16.961 34.688 16.751Q34.649 16.541 34.482 16.168L34.148 15.422L31.990 13.877Q31.771 13.718 31.617 13.651Q31.462 13.585 31.330 13.592Q31.198 13.600 31.026 13.677L30.922 13.444L32.849 12.583L32.953 12.815Q32.653 12.949 32.545 13.053Q32.437 13.156 32.489 13.272Q32.517 13.333 32.591 13.410Q32.666 13.487 32.794 13.576L34.467 14.773L34.492 14.762L34.663 13.291Q34.714 12.879 34.710 12.649Q34.707 12.420 34.655 12.304Q34.603 12.187 34.493 12.181Q34.384 12.175 34.164 12.273L34.060 12.041L35.461 11.415L35.565 11.647Q35.436 11.704 35.350 11.791Q35.264 11.877 35.205 12.032Q35.145 12.187 35.101 12.441Q35.058 12.696 35.010 13.099L34.780 15.110L35.105 15.838Q35.283 16.236 35.418 16.414Q35.552 16.592 35.722 16.593Q35.891 16.595 36.185 16.463L36.289 16.696ZM41.753 14.859L41.713 14.608Q42.012 14.526 42.147 14.393Q42.282 14.259 42.349 13.957L43.384 9.376L43.669 9.331L45.764 12.824Q45.975 13.170 46.123 13.374Q46.271 13.578 46.394 13.670Q46.517 13.762 46.646 13.779Q46.774 13.796 46.946 13.769L46.987 14.027L44.830 14.370L44.789 14.112Q45.139 14.056 45.261 13.969Q45.383 13.882 45.359 13.729Q45.338 13.597 45.290 13.486Q45.241 13.375 45.113 13.165L44.728 12.493L42.961 12.774Q42.823 13.353 42.777 13.665Q42.732 13.977 42.753 14.110Q42.783 14.295 42.916 14.345Q43.050 14.395 43.321 14.352L43.361 14.603ZM43.041 12.422L44.550 12.182L43.518 10.345L43.492 10.349ZM49.980 9.237L49.948 11.160Q50.310 11.166 50.555 11.126Q50.800 11.087 50.946 10.995Q51.091 10.904 51.157 10.758Q51.224 10.611 51.227 10.410L51.461 10.414L51.431 12.243L51.197 12.239Q51.200 12.038 51.146 11.890Q51.091 11.741 50.952 11.642Q50.813 11.543 50.566 11.488Q50.319 11.434 49.944 11.428L49.919 12.942Q49.914 13.230 50.015 13.399Q50.116 13.568 50.356 13.642Q50.596 13.717 51.018 13.724Q51.494 13.732 51.780 13.642Q52.066 13.553 52.231 13.332Q52.395 13.110 52.489 12.716L52.743 12.720L52.621 14.038L48.461 13.970L48.465 13.715Q48.780 13.707 48.939 13.653Q49.097 13.598 49.153 13.438Q49.210 13.279 49.215 12.964L49.266 9.842Q49.271 9.527 49.227 9.369Q49.183 9.211 49.040 9.148Q48.897 9.085 48.609 9.067L48.613 8.813L52.485 8.876L52.526 10.056L52.291 10.052Q52.244 9.697 52.103 9.500Q51.962 9.303 51.682 9.225Q51.402 9.147 50.946 9.139L50.095 9.125Q50.042 9.124 50.011 9.154Q49.981 9.184 49.980 9.237ZM59.345 11.205Q59.244 11.724 58.860 12.015Q58.476 12.305 57.762 12.289L58.876 14.321Q59.011 14.573 59.210 14.710Q59.408 14.848 59.688 14.950L59.640 15.200L58.371 14.953L57.161 12.575Q57.078 12.402 56.994 12.310Q56.909 12.219 56.785 12.174Q56.660 12.130 56.456 12.090L56.190 13.458Q56.128 13.780 56.157 13.963Q56.186 14.146 56.369 14.243Q56.551 14.340 56.946 14.417L56.897 14.667L54.576 14.215L54.624 13.966Q54.936 14.013 55.101 13.987Q55.267 13.961 55.350 13.813Q55.433 13.666 55.493 13.356L56.089 10.292Q56.150 9.983 56.134 9.819Q56.118 9.656 55.988 9.569Q55.858 9.482 55.577 9.414L55.626 9.164L57.691 9.566Q58.592 9.741 59.027 10.173Q59.461 10.606 59.345 11.205ZM56.892 9.847L56.520 11.761L56.987 11.852Q57.638 11.978 58.008 11.798Q58.378 11.617 58.484 11.071Q58.586 10.545 58.378 10.262Q58.170 9.980 57.631 9.875L57.026 9.757Q56.914 9.735 56.892 9.847ZM65.602 11.840Q66.148 12.063 66.539 12.444Q66.929 12.825 67.142 13.306Q67.354 13.787 67.367 14.321Q67.381 14.855 67.165 15.382Q66.960 15.884 66.581 16.243Q66.203 16.603 65.715 16.787Q65.227 16.971 64.683 16.966Q64.138 16.960 63.599 16.740Q63.059 16.519 62.667 16.142Q62.275 15.764 62.056 15.291Q61.837 14.818 61.818 14.296Q61.800 13.775 62.005 13.272Q62.221 12.745 62.604 12.374Q62.988 12.002 63.476 11.807Q63.965 11.613 64.511 11.615Q65.056 11.617 65.602 11.840ZM63.738 16.399Q64.284 16.622 64.784 16.533Q65.283 16.444 65.689 16.071Q66.095 15.697 66.351 15.071Q66.623 14.407 66.605 13.832Q66.586 13.256 66.297 12.830Q66.008 12.405 65.462 12.181Q64.917 11.958 64.412 12.060Q63.907 12.161 63.491 12.559Q63.075 12.957 62.804 13.621Q62.548 14.247 62.576 14.798Q62.604 15.348 62.898 15.762Q63.192 16.175 63.738 16.399ZM68.087 18.744L68.814 17.426L69.022 17.560Q68.772 18.124 68.932 18.637Q69.092 19.150 69.599 19.476Q70.017 19.744 70.388 19.699Q70.758 19.655 70.972 19.322Q71.095 19.131 71.104 18.925Q71.112 18.720 70.989 18.441Q70.865 18.163 70.587 17.753Q70.253 17.244 70.104 16.886Q69.956 16.528 69.985 16.240Q70.015 15.953 70.200 15.665Q70.424 15.316 70.759 15.148Q71.093 14.981 71.475 15.011Q71.858 15.042 72.230 15.281Q72.703 15.585 72.913 16.189L73.222 16.030L73.352 16.113L72.693 17.275L72.485 17.141Q72.646 16.591 72.535 16.201Q72.423 15.811 72.062 15.579Q71.718 15.358 71.405 15.400Q71.092 15.442 70.911 15.723Q70.798 15.898 70.790 16.092Q70.781 16.285 70.888 16.533Q70.996 16.781 71.223 17.134Q71.622 17.741 71.800 18.150Q71.979 18.560 71.962 18.859Q71.945 19.159 71.753 19.458Q71.511 19.835 71.131 19.998Q70.752 20.161 70.303 20.103Q69.855 20.046 69.398 19.753Q69.077 19.546 68.880 19.289Q68.683 19.031 68.552 18.652L68.217 18.827ZM78.143 21.686Q77.831 22.036 77.451 22.154Q77.070 22.273 76.611 22.108Q76.151 21.944 75.591 21.444L75.142 21.042L74.280 22.006Q74.061 22.251 73.992 22.423Q73.924 22.596 74.031 22.772Q74.138 22.949 74.438 23.217L74.268 23.407L72.505 21.830L72.674 21.640Q72.918 21.840 73.073 21.903Q73.229 21.965 73.376 21.881Q73.523 21.797 73.733 21.562L75.814 19.235Q76.024 19.000 76.094 18.851Q76.164 18.703 76.097 18.562Q76.030 18.421 75.824 18.219L75.993 18.029L77.562 19.431Q78.246 20.043 78.398 20.637Q78.550 21.231 78.143 21.686ZM76.731 19.264L75.365 20.793L75.720 21.110Q76.214 21.552 76.631 21.578Q77.047 21.605 77.440 21.165Q77.815 20.746 77.788 20.389Q77.761 20.032 77.352 19.666L76.892 19.255Q76.807 19.179 76.731 19.264ZM76.569 25.566L76.768 25.408Q76.986 25.629 77.168 25.681Q77.351 25.733 77.647 25.643L82.147 24.296L82.326 24.522L80.311 28.062Q80.113 28.416 80.008 28.645Q79.903 28.874 79.883 29.026Q79.863 29.179 79.911 29.299Q79.959 29.419 80.067 29.555L79.863 29.718L78.505 28.007L78.710 27.844Q78.930 28.123 79.066 28.186Q79.202 28.249 79.323 28.153Q79.428 28.070 79.501 27.974Q79.574 27.877 79.694 27.662L80.090 26.997L78.978 25.596Q78.406 25.759 78.112 25.873Q77.817 25.987 77.712 26.070Q77.565 26.186 77.587 26.327Q77.609 26.468 77.780 26.683L77.581 26.842ZM79.324 25.492L80.273 26.689L81.368 24.889L81.351 24.868ZM86.809 32.438L87.232 32.349L87.320 32.514L85.989 33.292L85.872 33.073Q86.317 32.669 86.417 32.138Q86.517 31.606 86.237 31.080Q85.982 30.601 85.552 30.393Q85.123 30.185 84.561 30.249Q83.999 30.313 83.355 30.657Q82.409 31.161 82.107 31.834Q81.805 32.507 82.202 33.252Q82.501 33.814 83.007 34.023Q83.513 34.232 84.195 34.073L84.325 34.315L82.852 35.100L82.742 34.893L83.137 34.508Q82.280 34.168 81.810 33.287Q81.454 32.618 81.469 31.977Q81.484 31.335 81.844 30.793Q82.205 30.252 82.897 29.883Q83.435 29.597 83.962 29.525Q84.489 29.453 84.972 29.582Q85.455 29.712 85.852 30.036Q86.248 30.360 86.516 30.863Q86.705 31.218 86.773 31.587Q86.841 31.957 86.809 32.438ZM88.569 36.808L86.739 37.399Q86.851 37.743 86.967 37.963Q87.084 38.182 87.218 38.290Q87.351 38.398 87.511 38.414Q87.671 38.429 87.862 38.367L87.934 38.590L86.194 39.153L86.122 38.930Q86.313 38.868 86.436 38.768Q86.558 38.669 86.607 38.505Q86.657 38.341 86.628 38.090Q86.600 37.839 86.484 37.482L85.044 37.947Q84.769 38.036 84.642 38.186Q84.515 38.337 84.522 38.588Q84.529 38.839 84.659 39.241Q84.805 39.693 84.982 39.935Q85.159 40.177 85.422 40.261Q85.685 40.345 86.088 40.307L86.166 40.549L84.879 40.859L83.600 36.900L83.842 36.822Q83.951 37.117 84.054 37.250Q84.157 37.382 84.326 37.384Q84.496 37.385 84.795 37.288L87.766 36.328Q88.066 36.231 88.201 36.138Q88.337 36.045 88.350 35.889Q88.363 35.734 88.287 35.455L88.529 35.377L89.720 39.062L88.617 39.482L88.545 39.259Q88.866 39.099 89.007 38.902Q89.147 38.705 89.131 38.415Q89.114 38.124 88.974 37.691L88.712 36.881Q88.696 36.830 88.658 36.811Q88.620 36.791 88.569 36.808Z"/><path fill="#98A0AB" d="M33.823 75.732 L33.381 77.874 L35.180 79.118 L33.006 79.359 L32.379 81.455 L31.478 79.462 L29.291 79.513 L30.908 78.040 L30.183 75.976 L32.084 77.058ZM40.158 83.940L40.156 83.973L41.406 84.307Q41.606 84.361 41.757 84.341Q41.907 84.320 42.049 84.190Q42.192 84.060 42.359 83.789L42.591 83.851L41.994 85.124L39.075 84.343L39.130 84.136Q40.017 83.687 40.611 83.328Q41.205 82.969 41.564 82.661Q41.922 82.353 42.114 82.051Q42.305 81.749 42.393 81.423Q42.522 80.939 42.366 80.591Q42.210 80.243 41.821 80.139Q41.451 80.040 41.146 80.221Q40.842 80.402 40.738 80.791Q40.647 81.130 40.782 81.382Q40.917 81.633 41.231 81.717Q41.165 81.861 41.006 81.916Q40.846 81.971 40.652 81.919Q40.419 81.857 40.270 81.686Q40.121 81.514 40.071 81.272Q40.022 81.030 40.094 80.760Q40.195 80.384 40.478 80.143Q40.761 79.903 41.158 79.827Q41.555 79.752 42.001 79.871Q42.446 79.990 42.738 80.257Q43.030 80.523 43.140 80.879Q43.250 81.235 43.143 81.637Q43.005 82.152 42.575 82.565Q42.145 82.978 41.517 83.314Q40.888 83.651 40.158 83.940ZM47.349 80.816Q47.744 80.850 48.073 81.077Q48.403 81.305 48.638 81.681Q48.873 82.056 48.981 82.542Q49.089 83.028 49.042 83.578Q48.997 84.103 48.808 84.550Q48.620 84.997 48.325 85.317Q48.030 85.637 47.667 85.802Q47.304 85.966 46.908 85.932Q46.513 85.898 46.184 85.674Q45.854 85.450 45.618 85.084Q45.382 84.718 45.273 84.245Q45.163 83.773 45.208 83.248Q45.256 82.698 45.445 82.238Q45.635 81.778 45.931 81.448Q46.227 81.118 46.590 80.950Q46.954 80.782 47.349 80.816ZM46.935 85.621Q47.272 85.650 47.529 85.473Q47.785 85.297 47.956 84.832Q48.126 84.367 48.199 83.525Q48.274 82.644 48.188 82.131Q48.102 81.618 47.880 81.387Q47.659 81.156 47.322 81.127Q46.985 81.098 46.727 81.288Q46.470 81.478 46.297 81.968Q46.124 82.459 46.049 83.340Q45.976 84.182 46.065 84.669Q46.153 85.156 46.376 85.374Q46.598 85.592 46.935 85.621ZM52.437 85.254L52.446 85.286L53.735 85.170Q53.942 85.151 54.076 85.080Q54.210 85.010 54.299 84.838Q54.388 84.667 54.451 84.355L54.690 84.333L54.568 85.734L51.558 86.005L51.539 85.792Q52.217 85.065 52.652 84.523Q53.086 83.982 53.316 83.569Q53.547 83.157 53.623 82.808Q53.699 82.458 53.669 82.121Q53.624 81.623 53.358 81.350Q53.092 81.077 52.690 81.113Q52.309 81.147 52.085 81.422Q51.862 81.697 51.898 82.098Q51.930 82.448 52.142 82.637Q52.355 82.827 52.679 82.798Q52.667 82.956 52.536 83.062Q52.406 83.168 52.205 83.186Q51.965 83.208 51.766 83.099Q51.567 82.989 51.437 82.779Q51.307 82.569 51.282 82.291Q51.247 81.902 51.430 81.579Q51.613 81.256 51.960 81.048Q52.307 80.841 52.767 80.799Q53.226 80.758 53.592 80.908Q53.958 81.058 54.184 81.354Q54.410 81.650 54.447 82.064Q54.495 82.595 54.233 83.131Q53.971 83.667 53.497 84.199Q53.023 84.731 52.437 85.254ZM60.451 82.731Q60.545 83.083 60.497 83.425Q60.450 83.767 60.282 84.061Q60.115 84.354 59.847 84.563Q59.580 84.771 59.234 84.863Q58.757 84.989 58.313 84.811Q57.869 84.633 57.531 84.195Q57.193 83.756 57.023 83.115Q56.871 82.544 56.894 81.996Q56.917 81.449 57.089 80.993Q57.261 80.537 57.565 80.225Q57.869 79.912 58.277 79.804Q58.579 79.724 58.849 79.743Q59.120 79.762 59.303 79.869Q59.486 79.975 59.534 80.157Q59.574 80.308 59.506 80.420Q59.438 80.532 59.281 80.574Q59.137 80.612 59.040 80.564Q58.943 80.515 58.863 80.429Q58.783 80.343 58.696 80.255Q58.608 80.167 58.486 80.125Q58.365 80.084 58.170 80.135Q57.881 80.212 57.720 80.533Q57.560 80.855 57.546 81.336Q57.533 81.817 57.683 82.382L57.705 82.390Q57.828 82.041 58.031 81.843Q58.233 81.645 58.548 81.562Q58.975 81.448 59.365 81.563Q59.755 81.679 60.044 81.982Q60.333 82.285 60.451 82.731ZM57.816 82.939L57.898 83.247Q58.103 84.019 58.430 84.353Q58.757 84.687 59.184 84.573Q59.618 84.459 59.738 84.063Q59.859 83.668 59.673 82.965Q59.506 82.336 59.218 82.063Q58.931 81.789 58.541 81.893Q58.252 81.969 58.082 82.216Q57.912 82.463 57.816 82.939ZM66.177 75.732 L67.916 77.058 L69.817 75.976 L69.092 78.040 L70.709 79.513 L68.522 79.462 L67.621 81.455 L66.994 79.359 L64.820 79.118 L66.619 77.874Z"/><g transform="translate(50 50) scale(1.0) translate(-50 -50)"><g fill="none" stroke-linecap="round"><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E2C88E" stroke-width="1.50"/><ellipse cx="50" cy="50" rx="18" ry="6.4" stroke="#E2C88E" stroke-width="0.80" opacity=".45" transform="rotate(28 50 50)"/><circle cx="50" cy="50" r="4.4" stroke="#E2C88E" stroke-width="1.50"/></g><circle cx="50" cy="50" r="1.5" fill="#EDE6D3"/><circle cx="68" cy="50" r="1.7" fill="#E2C88E"/></g></svg>
       <div class="kicker fade d1">Aerospace \u00B7 Explained Simply</div>
       <h1 class="fade d2">The sky and space,<br>made <em>simple.</em></h1>
       <p class="lede fade d3">Short, accurate explainers on how flight and spaceflight actually work \u2014 and the textbook myths they quietly replace. Every video has a companion breakdown here, with the depth a 45-second clip can't hold.</p>
-      <div class="scrollcue fade d4">Browse the archive</div>
+      <div class="herobtns fade d4"><a class="btn solid" href="#/explainers">Browse all explainers</a><a class="btn ghost" href="#/quiz">Find your level</a></div>
+      <nav class="herotopics fade d4" aria-label="Topics">${TOPICS.map(t=>`<a class="chip ${t.id}" href="#/t/${t.id}">${esc(t.label)} <span>${VIDEOS.filter(v=>v.published&&v.topic===t.id).length}</span></a>`).join("")}<button class="chip" onclick="surpriseMe()">Surprise me →</button></nav>
     </header>
 
     <div class="trustline">Every claim, sourced \u2014 most of it straight from NASA.</div>
@@ -1699,6 +1861,13 @@ function renderHome(){
           <a class="go" href="#/v/${feat.id}">Read the full breakdown \u2192</a>
         </div>
       </article>
+    </section>
+
+    <section class="mcpromo reveal" aria-label="Mission Control">
+      <div class="mcp-txt"><div class="eyebrow">For ages 7–11</div><h2>Mission Control</h2>
+        <p>Land on the Moon, stack a rocket, survive re-entry. Short story missions with real choices, and a patch for every mission you fly.</p>
+        <a class="btn solid" href="#/missions">Open Mission Control</a></div>
+      <div class="mcp-n"><span>${MISSIONS.length}</span>missions</div>
     </section>
 
     <div class="archivehead"><h2 class="archiveh">The archive</h2>${filterBar()}</div>
@@ -2237,7 +2406,7 @@ const MISSIONS = [
 
   /* 6 ---- STACK THE ROCKET (efficiency / staging) ---- */
   {
-    id:"stack", acc:"#C8A96E", title:"Stack the Rocket", skill:"Efficiency & smart design",
+    id:"stack", acc:"#C0A062", title:"Stack the Rocket", skill:"Efficiency & smart design",
     blurb:"Design a rocket that can actually reach orbit. The secret is building it in stages that drop away.",
     state0:{},
     intro:{ lead:[
@@ -2463,6 +2632,88 @@ function renderSources(){
     + statStrip([{n:pub.length,label:"Explainers"},{n:total,label:"References"},{n:100,suffix:"%",label:"Cited"}])
     + `<div class="sourceslist">${groups}</div>`;
 }
+
+/* ---- All explainers: one page, filter by topic and level, instant text filter ---- */
+let EXF = { topic:"all", level:"all", q:"" };
+function renderExplainers(){
+  setTitle("All explainers");
+  const pub = VIDEOS.filter(v=>v.published);
+  const chip = (k,val,label,n)=>`<button class="fb-pill${EXF[k]===val?" active":""}" data-k="${k}" data-v="${val}" onclick="setExf('${k}','${val}')">${label}${n!=null?` <span>${n}</span>`:""}</button>`;
+  app.innerHTML = pageHead("The archive", "All <em>explainers.</em>", "Every explainer in one place. Pick a topic or a level, or type to narrow it down. Your watched ones are ticked.") + `
+    <div class="exbar reveal in">
+      <div class="exrow"><span class="fb-lab">Topic</span>${chip("topic","all","All",pub.length)}${TOPICS.map(t=>chip("topic",t.id,esc(t.label),pub.filter(v=>v.topic===t.id).length)).join("")}</div>
+      <div class="exrow"><span class="fb-lab">Level</span>${chip("level","all","All")}${chip("level","junior","Junior")}${chip("level","flight","Flight")}${chip("level","senior","Senior")}</div>
+      <label class="exsearch"><span class="sr">Filter explainers</span><input id="exq" type="search" placeholder="Filter by word: lift, thrust, Moon…" value="${esc(EXF.q)}" oninput="EXF.q=this.value; drawExplainers()"></label>
+    </div>
+    <p class="excount" id="excount" aria-live="polite"></p>
+    <div class="grid" id="exgrid"></div>
+    <section class="block reveal"><div class="nextbox">
+      <h3>Not sure where to start?</h3>
+      <p>Take the two-minute quiz and get a path through the explainers at your level.</p>
+      <div class="rbtns"><a class="btn solid" href="#/quiz">Find your level</a><a class="btn ghost" href="#/myths">See every myth</a></div>
+    </div></section>`;
+  drawExplainers();
+}
+function setExf(k,v){ EXF[k]=v; document.querySelectorAll('.exbar .fb-pill[data-k="'+k+'"]').forEach(b=>b.classList.toggle("active", b.dataset.v===v)); drawExplainers(); }
+function drawExplainers(){
+  const g=document.getElementById("exgrid"); if(!g) return;
+  const term=EXF.q.trim().toLowerCase();
+  const list=VIDEOS.filter(v=>v.published
+    && (EXF.topic==="all" || v.topic===EXF.topic)
+    && (EXF.level==="all" || levelClass(v.level)===EXF.level)
+    && (!term || [v.title,v.teaser,v.myth,v.truth,v.standfirst,v.topicLabel,v.code,(v.sections||[]).map(s=>s.h+' '+s.p).join(' ')].join(" ").toLowerCase().includes(term)));
+  g.innerHTML = list.length ? list.map(cardHTML).join("") : `<p class="exnone">Nothing matches yet. Try another word, or <button class="linkbtn" onclick="EXF={topic:'all',level:'all',q:''}; renderExplainers()">clear the filters</button>.</p>`;
+  const c=document.getElementById("excount"); if(c) c.textContent = list.length + " of " + VIDEOS.filter(v=>v.published).length + " explainers";
+  applyWatched();
+}
+
+/* ---- Legal: terms, privacy, copyright and trademarks ---- */
+const LEGAL_UPDATED = "November 17, 2026";
+function renderLegal(){
+  setTitle("Legal");
+  app.innerHTML = pageHead("The fine print", "Legal.", "Terms of use, privacy, and copyright, in plain English. Last updated " + LEGAL_UPDATED + ".") + `
+  <div class="legal prose reveal in">
+    <nav class="legaltoc" aria-label="On this page"><a href="javascript:void(0)" onclick="legalJump('terms')">Terms of use</a><a href="javascript:void(0)" onclick="legalJump('privacy')">Privacy</a><a href="javascript:void(0)" onclick="legalJump('copyright')">Copyright and trademarks</a><a href="javascript:void(0)" onclick="legalJump('contact')">Contact</a></nav>
+
+    <h2 id="terms">Terms of use</h2>
+    <p>Simply Aerospace is a free educational website by Malcolm Syme. By using it, you agree to these terms.</p>
+    <ul>
+      <li><b>For learning, not for flying.</b> The explainers are general education. They are not professional engineering, flight-training, aviation-safety or medical advice, and must not be used to operate aircraft, spacecraft, rockets or any equipment.</li>
+      <li><b>Accuracy.</b> Every explainer is checked against its listed sources, most of them from NASA and other space and science agencies. Mistakes can still happen. If you spot one, please email so it can be fixed.</li>
+      <li><b>Other websites.</b> Links to sources, Instagram and YouTube go to sites this website doesn't control. Their own terms and privacy policies apply there.</li>
+      <li><b>No warranty.</b> The site is provided as it is, without any warranty, and may change or go offline at any time. To the extent the law allows, Malcolm Syme isn't liable for any loss from using it.</li>
+      <li><b>Changes.</b> These terms may be updated. The date at the top shows the latest version.</li>
+    </ul>
+
+    <h2 id="privacy">Privacy</h2>
+    <p><b>The short version: this site collects nothing about you.</b></p>
+    <ul>
+      <li>There are no accounts, sign-ups, forms, cookies, ads, analytics or trackers, and no web fonts or other files loaded from other companies.</li>
+      <li>To remember your progress, the site saves four small notes <b>in your own browser</b> (its local storage). They never leave your device and aren't sent to anyone:
+        <ul>
+          <li><code>sa_watched</code>: which explainers you've opened.</li>
+          <li><code>sa_patches</code>: which Mission Control patches you've earned.</li>
+          <li><code>sa_quiz_done</code> and <code>sa_level</code>: that you took the level quiz, and your result.</li>
+        </ul>
+        To erase them, clear this site's data in your browser settings.</li>
+      <li><b>Hosting.</b> The site is hosted on GitHub Pages. Like any web host, GitHub may record technical details such as IP addresses for security. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's Privacy Statement</a>.</li>
+      <li><b>Young visitors.</b> Mission Control is made for ages 7–11. It asks for no names, ages or other personal details, and saves only earned patches in the browser.</li>
+    </ul>
+
+    <h2 id="copyright">Copyright and trademarks</h2>
+    <ul>
+      <li>© 2026 Malcolm Syme · mcsyme11@gmail.com. <b>All rights reserved.</b> The text, slides, illustrations, code and design of this site are his work.</li>
+      <li>You're welcome to read the site and share links to it. Please don't copy, republish or adapt its content, design or code without written permission.</li>
+      <li><b>Simply Aerospace™</b> and the <b>Simply Aerospace mission patch</b> are trademarks of Malcolm Syme.</li>
+      <li>Sources cited on the site belong to their owners. Links are given so you can check the facts yourself. The patch lettering uses Libre Baskerville (SIL Open Font License).</li>
+    </ul>
+
+    <h2 id="contact">Contact</h2>
+    <p>Questions, corrections or permission requests: <a href="mailto:mcsyme11@gmail.com">mcsyme11@gmail.com</a>.</p>
+  </div>`;
+}
+function legalJump(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:reduceMotion?"auto":"smooth", block:"start"}); }
+
 function renderNotFound(){
   setTitle("Lost in space");
   app.innerHTML = `<section class="notfound reveal">
@@ -2472,8 +2723,16 @@ function renderNotFound(){
     <div class="rbtns"><a class="btn solid" href="#/">Back to home</a><a class="btn ghost" href="#/start">Start here</a></div>
   </section>`;
 }
+function markNav(){
+  const h=(location.hash||"#/").replace(/^#\//,"");
+  const v=h.startsWith("v/") ? byId(h.slice(2)) : null;
+  const key = v ? "explainers" : h.split("?")[0].replace(/^missions\/.*/,"missions").replace(/^glossary\/.*/,"glossary");
+  document.querySelectorAll(".topbar [data-nav]").forEach(a=>{ if(a.dataset.nav===key) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  const t=document.querySelector(".navtoggle"); if(t) t.setAttribute("aria-expanded","false");
+}
 function router(){
   const _n=document.querySelector(".navlinks"); if(_n) _n.classList.remove("open");
+  markNav();
   closeMore();
   closeLearnModal();
   document.body.setAttribute("data-lvlfilter","all");
@@ -2496,6 +2755,8 @@ function router(){
   if(h.startsWith("/missions/")){ MRUN=null; startMission(decodeURIComponent(h.slice(10))); window.scrollTo(0,0); return; }
   if(h==="/myths"){ renderMyths(); window.scrollTo(0,0); return; }
   if(h==="/sources"){ renderSources(); window.scrollTo(0,0); return; }
+  if(h==="/legal"){ renderLegal(); window.scrollTo(0,0); return; }
+  if(h==="/explainers" || h.startsWith("/explainers?")){ renderExplainers(); window.scrollTo(0,0); return; }
   if(h.startsWith("/t/")){
     const t = h.slice(3);
     if(TOPICS.some(x=>x.id===t)){ renderTopic(t); window.scrollTo(0,0); return; }
@@ -2548,6 +2809,7 @@ function onScroll(){
     const h = document.documentElement.scrollHeight - window.innerHeight;
     const bar = document.getElementById("progress");
     if(bar) bar.style.width = (h>0 ? (y/h*100) : 0) + "%";
+    const tt = document.getElementById("totop"); if(tt) tt.classList.toggle("show", y > window.innerHeight);
     if(!reduceMotion){ const st = document.querySelector(".stars"); if(st) st.style.transform = "translate3d(0," + (y*0.12) + "px,0)"; }
     _ticking = false;
   });
