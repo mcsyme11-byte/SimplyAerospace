@@ -1,0 +1,49 @@
+# Simply Aerospace · Site check · © 2026 Malcolm Syme · mcsyme11@gmail.com
+#
+# Runs tools/check_site.js on every push and pull request, so a release can't go live half-done:
+#   version bumped and in CHANGELOG.md · credit line present · script compiles · every file and icon exists ·
+#   explainer, glossary and mission data complete · no personal details.
+# A red ✗ on a push to main means the live site needs a fix; see docs/RELEASE-CHECKLIST.md.
+# Run it by hand: GitHub › Actions › Site check › Run workflow.
+
+name: Site check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - name: The site before this change (to check the version was bumped)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then BASE="origin/${{ github.base_ref }}"
+          else BASE="${{ github.event.before }}"; fi
+          if [ -n "$BASE" ] && git cat-file -e "$BASE^{commit}" 2>/dev/null && git show "$BASE:index.html" > "$RUNNER_TEMP/prev.html" 2>/dev/null; then
+            echo "PREV=$RUNNER_TEMP/prev.html" >> "$GITHUB_ENV"; echo "Comparing with $BASE"
+          else echo "No earlier version to compare with."; fi
+
+      - name: Site check
+        run: node tools/check_site.js ${PREV:-}
+
+      - name: Summary
+        if: always()
+        run: |
+          V=$(grep -o 'SITE_VERSION = "[^"]*"' index.html | cut -d'"' -f2)
+          echo "### Simply Aerospace v$V — site check" >> "$GITHUB_STEP_SUMMARY"
+          echo "Before publishing, follow docs/RELEASE-CHECKLIST.md." >> "$GITHUB_STEP_SUMMARY"
