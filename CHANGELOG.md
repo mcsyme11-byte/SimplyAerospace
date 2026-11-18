@@ -2,7 +2,18 @@
 
 Every version of https://mcsyme11-byte.github.io/SimplyAerospace/, newest first. Semantic versioning (MAJOR.MINOR.PATCH); the footer build stamp shows the current one. Every release adds a `## vX.Y.Z` section here (the Site check fails without it).
 
-## v3.0.0 — 2026.11.17 (redesign, in preview)
+## v3.1.0 — 2026.11.17
+- **Fixed:** the top bar now stays at the top while scrolling. Before, it scrolled away and the reading-progress bar floated on its own: `overflow-x: hidden` on both `html` and `body` made the page body its own scroll box, which stops "sticky" from working, so it is now `overflow-x: clip`.
+- **Reading progress** is attached to the bottom edge of the top bar. It moves with `transform` only, so scrolling stays smooth.
+- **The top bar darkens** slightly, with a brighter brass line, once the page is scrolled.
+- **Myth ticker** on Home: every myth the channel has busted scrolls past, crossed out, with the explainer's code. Each one links to its explainer; the ticker pauses on hover or focus, and stands still when "reduce motion" is on.
+- **The hero patch's orbit dot** now really orbits the centre ring (it stands still with "reduce motion").
+- **Back-to-top button** with a brass ring that fills as you read.
+- **Card spotlight:** a soft brass light follows the pointer across cards (mouse only; off with "reduce motion").
+- **Mission Control promo:** a slowly turning orbit with a brass dot around the mission count.
+- **Ctrl K / ⌘K** opens search from anywhere, and is listed in the shortcuts help (`?`).
+
+## v3.0.0 — 2026.11.17
 - **New look:** the shared "old money" design of Malcolm Syme's projects:
   - navy, brass and cream, with Georgia throughout;
   - thin brass rules, pill buttons, and cards whose border turns brass.

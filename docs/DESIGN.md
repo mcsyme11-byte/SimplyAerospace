@@ -1,6 +1,6 @@
 # Design guide
 
-How Simply Aerospace looks. It follows the shared "old money" look of Malcolm Syme's projects (the portfolio, Flight Deck Suite, Hot Mic, Syme Skyworks): navy, brass and cream, serif type, thin brass rules, kept modern. This guide matches website **v3.0.0**. The private archive keeps a copy; keep the two the same.
+How Simply Aerospace looks. It follows the shared "old money" look of Malcolm Syme's projects (the portfolio, Flight Deck Suite, Hot Mic, Syme Skyworks): navy, brass and cream, serif type, thin brass rules, kept modern. This guide matches website **v3.1.0**. The private archive keeps a copy; keep the two the same.
 
 ## Logo
 
@@ -63,10 +63,21 @@ Use the full patch at about 180 px or more, the no-text version from about 33 to
 - Search is on every page (press `/`), and also finds glossary terms.
 - **All explainers** (`#/explainers`) filters by topic and level, and narrows down by any word.
 - Explainer pages have a breadcrumb, previous/next links (and the `←` `→` keys), and related explainers.
-- The current page is highlighted in the top bar, and there are a back-to-top button and a skip link.
+- The current page is highlighted in the top bar. A brass reading-progress line runs along the bar's bottom edge, and the bar darkens slightly once the page is scrolled.
+- A back-to-top button whose brass ring fills as you read, and a skip link.
+- `Ctrl K` / `⌘K` opens search from anywhere.
+
+## Signature touches (v3.1)
+
+- **Myth ticker** on Home: the busted myths, crossed out, scroll past. Each links to its explainer; the ticker pauses on hover or focus.
+- **Hero patch:** the orbit dot travels around the centre ring.
+- **Card spotlight:** a soft brass light follows the mouse across cards.
+- **Mission Control promo:** a slowly turning orbit around the mission count.
+- All of them stop or switch off with "reduce motion".
 
 ## Motion and performance
 
+- **Never put `overflow-x: hidden` on `html` or `body`.** It turns the body into its own scroll box, and the sticky top bar stops sticking (the v3.1.0 fix). Use `overflow-x: clip`.
 - Animate only `transform` and `opacity`. Don't use `backdrop-filter`, animated shadows or per-frame scroll handlers (the one scroll handler runs in `requestAnimationFrame`).
 - Sections fade up once as they come into view. All motion stops when the visitor turns on "reduce motion".
 
