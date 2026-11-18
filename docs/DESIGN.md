@@ -1,6 +1,6 @@
 # Design guide
 
-How Simply Aerospace looks. It follows the shared "old money" look of Malcolm Syme's projects (the portfolio, Flight Deck Suite, Hot Mic, Syme Skyworks): navy, brass and cream, serif type, thin brass rules, kept modern. This guide matches website **v3.1.0**. The private archive keeps a copy; keep the two the same.
+How Simply Aerospace looks. It follows the shared "old money" look of Malcolm Syme's projects (the portfolio, Flight Deck Suite, Hot Mic, Syme Skyworks): navy, brass and cream, serif type, thin brass rules, kept modern. This guide matches website **v3.1.1**. The private archive keeps a copy; keep the two the same.
 
 ## Logo
 
@@ -53,8 +53,9 @@ Use the full patch at about 180 px or more, the no-text version from about 33 to
 - **Footer:**
   - the patch, a one-line description and the channel links;
   - three columns: Explore, Learn and About;
-  - the Begley quote and the build stamp;
-  - the credit and trademark lines, with a link to Legal.
+  - the Begley quote, centred;
+  - a bottom row with the credit and trademark lines on the left (and a link to Legal), and a quiet version line on the right ("● Version · Updated · explainers", with no badge or glow).
+  - Columns are left-aligned: four across on desktop, three link columns on tablets, two on phones.
 - Works on phones (one column), tablets and desktops.
 
 ## Navigation

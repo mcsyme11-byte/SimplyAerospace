@@ -2,6 +2,15 @@
 
 Every version of https://mcsyme11-byte.github.io/SimplyAerospace/, newest first. Semantic versioning (MAJOR.MINOR.PATCH); the footer build stamp shows the current one. Every release adds a `## vX.Y.Z` section here (the Site check fails without it).
 
+## v3.1.1 — 2026.11.17
+- **Footer formatting fixed:**
+  - the brand text and link columns are left-aligned (they were centred);
+  - the Begley quote is centred properly, with its credit under it;
+  - the credit and trademark lines sit on the left of a bottom row.
+- **Version line redesigned:** the glowing "SIMPLY AEROSPACE / V3.1.0 / … / LIVE" badge is now a quiet line: "● Version 3.1.1 · Updated Nov 17, 2026 · 24 explainers". The exact build stays in the tooltip.
+- **Instagram and YouTube** are small outlined buttons with ↗.
+- **Tablet and phone layout:** three link columns on tablets, two on phones, and room for the back-to-top button so it no longer covers the version line.
+
 ## v3.1.0 — 2026.11.17
 - **Fixed:** the top bar now stays at the top while scrolling. Before, it scrolled away and the reading-progress bar floated on its own: `overflow-x: hidden` on both `html` and `body` made the page body its own scroll box, which stops "sticky" from working, so it is now `overflow-x: clip`.
 - **Reading progress** is attached to the bottom edge of the top bar. It moves with `transform` only, so scrolling stays smooth.

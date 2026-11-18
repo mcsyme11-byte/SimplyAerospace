@@ -827,6 +827,33 @@
   .mcp-orbit b{position:absolute; top:-5px; left:50%; width:9px; height:9px; margin-left:-4.5px; border-radius:50%; background:var(--gold-bright); box-shadow:0 0 10px rgba(226,200,142,.6)}
   @keyframes mcpspin{to{transform:rotate(360deg)}}
   @media(prefers-reduced-motion:reduce){ .mcp-orbit{animation:none} .topbar{transition:none} .card::after,.mcard::after,.hcard::after,.levelcard::after,.startcard::after{display:none} }
+
+  /* ===== v3.1.1 · footer tidy: left-aligned columns, centred quote, quiet version line ===== */
+  footer{text-align:left}
+  .footbrand > div{min-width:0}
+  .footbrand p{max-width:340px}
+  .foothandles{gap:10px; margin:14px 0 0; flex-wrap:wrap}
+  .foothandles a{font-family:var(--body); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink2); border:1px solid var(--line2); border-radius:999px; padding:6px 13px; text-decoration:none}
+  .foothandles a:hover{color:var(--gold-bright); border-color:var(--gold)}
+  .foothandles a span{color:var(--gold)}
+  .footcol{align-items:flex-start}
+  .footquote{margin:40px auto 0; max-width:640px; text-align:center}
+  .footquote blockquote{margin:0; font-family:var(--display); font-style:italic; font-size:clamp(18px,2.2vw,22px); line-height:1.45; color:var(--text); opacity:.9}
+  .footquote figcaption{margin-top:10px; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold)}
+  .footbottom{display:flex; justify-content:space-between; align-items:flex-end; gap:16px 32px; flex-wrap:wrap; margin-top:36px; padding-top:20px; border-top:1px solid var(--line)}
+  .legalline{text-align:left; margin:0}
+  .legalline .copy{margin:0}
+  .legalline .tm{margin:4px 0 0}
+  .buildstamp{display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0; padding:0; border:0; background:none; box-shadow:none; border-radius:0;
+    font-family:var(--body); font-size:13px; letter-spacing:.02em; text-transform:none; color:var(--dim)}
+  .buildstamp .bs-dot{width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:none; animation:none; opacity:.85}
+  .buildstamp .bs-sep{color:var(--brass-dim); opacity:1}
+  @media(max-width:700px){ .footbottom{flex-direction:column; align-items:flex-start} .buildstamp{font-size:12.5px} }
+  .foothandles{gap:8px}
+  .foothandles a{letter-spacing:.12em; padding:5px 11px; font-size:11px}
+  @media(max-width:860px){ .footgrid{grid-template-columns:repeat(3,1fr)} .footbrand{grid-column:1/-1} }
+  @media(max-width:520px){ .footgrid{grid-template-columns:1fr 1fr; gap:28px 20px} }
+  @media(max-width:700px){ footer{padding-bottom:84px} }
 </style>
 </head>
 <body>
@@ -891,11 +918,13 @@
       <nav class="footcol" aria-label="Learn"><h4>Learn</h4><a href="#/start">Start Here</a><a href="#/quiz">Find your level</a><a href="#/levels">Levels</a><a href="#/missions">Mission Control</a><a href="#/glossary">Glossary</a></nav>
       <nav class="footcol" aria-label="About"><h4>About</h4><a href="#/about">The Story</a><a href="#/sources">Sources</a><a href="#/faq">FAQ</a><a href="#/legal">Legal</a></nav>
     </div>
-    <p class="quote">"Somewhere, something incredible is waiting to be known."<span>Sharon Begley</span></p>
-    <div class="buildstamp" id="buildstamp"></div>
-    <div class="legalline">
-      <p class="copy">© Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™</p>
-      <p class="tm">Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme. All rights reserved. <a href="#/legal">Legal</a></p>
+    <figure class="footquote"><blockquote>“Somewhere, something incredible is waiting to be known.”</blockquote><figcaption>Sharon Begley</figcaption></figure>
+    <div class="footbottom">
+      <div class="legalline">
+        <p class="copy">© Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™</p>
+        <p class="tm">Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme. All rights reserved. <a href="#/legal">Legal</a></p>
+      </div>
+      <p class="buildstamp" id="buildstamp"></p>
     </div>
   </div>
 </footer>
@@ -911,7 +940,7 @@
              the "Watch the Short" button opens the actual video.
              (YouTube is used first; Instagram is the fallback.)
    ============================================================ */
-const SITE_VERSION = "3.1.0";
+const SITE_VERSION = "3.1.1";
 const BUILD_DATE = "2026.11.17";
 const CHANNELS = {
   youtube:   "https://www.youtube.com/@SimplyAerospace",
@@ -1798,17 +1827,20 @@ function renderFaq(){
 
 (function(){
   var bs = document.getElementById("buildstamp");
-  if(bs) bs.innerHTML =
-    '<span class="bs-dot" aria-hidden="true"></span>'
-    + '<span class="bs-field"><b>SIMPLY AEROSPACE</b></span>'
-    + '<span class="bs-sep">/</span><span class="bs-field">v' + SITE_VERSION + '</span>'
-    + '<span class="bs-sep">/</span><span class="bs-field">BUILD ' + BUILD_DATE + '</span>'
-    + '<span class="bs-sep">/</span><span class="bs-field">' + VIDEOS.filter(function(v){return v.published;}).length + ' EXPLAINERS</span>'
-    + '<span class="bs-sep">/</span><span class="bs-field bs-live">LIVE</span>';
+  if(bs){
+    var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var p = String(BUILD_DATE).split("."), when = p.length===3 ? MONTHS[+p[1]-1] + " " + (+p[2]) + ", " + p[0] : BUILD_DATE;
+    var n = VIDEOS.filter(function(v){return v.published;}).length;
+    bs.innerHTML = '<span class="bs-dot" aria-hidden="true"></span>'
+      + '<span>Version ' + SITE_VERSION + '</span><span class="bs-sep" aria-hidden="true">·</span>'
+      + '<span>Updated ' + when + '</span><span class="bs-sep" aria-hidden="true">·</span>'
+      + '<span>' + n + ' explainers</span>';
+    bs.title = "Build " + BUILD_DATE;
+  }
 })();
 document.getElementById("footlinks").innerHTML =
-  `<a href="${CHANNELS.instagram}" target="_blank" rel="noopener">Instagram</a>
-   <a href="${CHANNELS.youtube}" target="_blank" rel="noopener">YouTube</a>`;
+  `<a href="${CHANNELS.instagram}" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
+   <a href="${CHANNELS.youtube}" target="_blank" rel="noopener">YouTube <span aria-hidden="true">↗</span></a>`;
 
 function isNewVideo(v){ const pub=VIDEOS.filter(x=>x.published); return pub.slice(-2).indexOf(v)>=0; }
 function cardHTML(v){
