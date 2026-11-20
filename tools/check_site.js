@@ -99,6 +99,30 @@ if (emails.length) fail('an e-mail address other than the creator\'s is on the s
 if (/C:\\Users\\|\/Users\/[A-Za-z]|\/home\/[a-z]/.test(text)) fail('a personal folder path is on the site');
 ok('privacy');
 
+// 8 · branding: every file in the repo carries the credit; every document shows the patch; every PNG has the credit inside
+{
+  const { execSync } = require('child_process');
+  let files = [];
+  try { files = execSync('git ls-files', { cwd: ROOT, encoding: 'utf8' }).split('\n').filter(Boolean); } catch (e) { warn('git not available: branding check skipped'); }
+  const TEXT = /\.(md|js|ya?ml|html|svg|webmanifest|css|py|sh)$/i;
+  let n = 0;
+  for (const f of files) {
+    if (!exists(f)) continue;
+    if (TEXT.test(f)) {
+      const t = read(f); n++;
+      if (!t.includes('©') || !t.includes('Malcolm Syme') || !t.includes('mcsyme11@gmail.com')) fail(`${f}: missing the credit "© … Malcolm Syme · mcsyme11@gmail.com"`);
+      if (/\.md$/i.test(f)) {
+        if (!/^<p align="center"><img src="[^"]*(patch|icon-)[^"]*"/.test(t)) fail(`${f}: no mission patch at the top`);
+        if (!t.includes('Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme')) fail(`${f}: no trademark line`);
+      }
+    } else if (/\.png$/i.test(f)) {
+      n++;
+      if (!fs.readFileSync(path.join(ROOT, f)).includes(Buffer.from('Malcolm Syme'))) fail(`${f}: no credit embedded in the image (tag it with the credit)`);
+    }
+  }
+  if (files.length) ok(`branding on ${n} files`);
+}
+
 // 8 · Legal page and footer link, once the Legal page exists
 if (/#\/legal/.test(html) && !/route.*legal|legal\s*:/i.test(html)) warn('a #/legal link exists but no legal route was found');
 

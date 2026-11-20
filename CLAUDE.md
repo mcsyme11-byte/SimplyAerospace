@@ -1,3 +1,5 @@
+<p align="center"><img src="brand/simply-aerospace-patch-512.png" width="110" alt="Simply Aerospace mission patch"></p>
+
 # Instructions for Claude working in this repository
 
 This is the public website of **Simply Aerospace**, Malcolm Syme's educational aerospace channel: https://mcsyme11-byte.github.io/SimplyAerospace/, published by GitHub Pages from `main`. The work lives in the Claude project **Simply Aerospace**, whose brief loads into every chat. The project's decks, brand master files, documents and Project Record live in a separate **private archive repository** (named in the project brief). Never link to it from here.
@@ -7,6 +9,10 @@ This is the public website of **Simply Aerospace**, Malcolm Syme's educational a
 ## Standing rules
 
 - **This site is public.** No street address, school, age, PC names, file paths or callsigns. The only contact and credit is Malcolm Syme · mcsyme11@gmail.com.
+- **Branding on every file (Malcolm, Nov 19, 2026; enforced by the Site check):**
+  - every Markdown document starts with the patch (`<p align="center"><img src="…/brand/simply-aerospace-patch-512.png" width="110" …></p>`) and ends with "© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme.";
+  - every code or config file has the credit in its header comment;
+  - every PNG has the credit embedded in its file details (Author/Copyright).
 - **Credit and trademark lines stay on everything:** the site footer, README, docs and icons carry "© Malcolm Syme · mcsyme11@gmail.com" and "Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme." Never use ® unless a registration has been granted.
 - When Malcolm asks a question ("why…", "what do you think?"), answer it only. Change nothing until he says go.
 - **Mock-ups first:** big visual changes are shown as mock-ups or a preview branch, and published only after Malcolm's go.
@@ -21,3 +27,6 @@ This is the public website of **Simply Aerospace**, Malcolm Syme's educational a
 - **After every release:** copy the site files into the private archive's `site/` folder and update its `CHANGELOG.md` and `docs/ROADMAP.md`, then push there. The archive's Project Record rebuilds itself and also checks this repo daily.
 - **Hand-offs:** when another chat needs to know something, paste the full hand-off into the chat for Malcolm to copy, and also save it in the archive's `docs/handoffs/`.
 - **Other chats own other repos** (for example the portfolio, `mcsyme11-byte.github.io`). Write a hand-off instead of changing them from here.
+
+---
+© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme.

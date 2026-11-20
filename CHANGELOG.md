@@ -1,6 +1,17 @@
+<p align="center"><img src="brand/simply-aerospace-patch-512.png" width="110" alt="Simply Aerospace mission patch"></p>
+
 # Change log — Simply Aerospace website
 
 Every version of https://mcsyme11-byte.github.io/SimplyAerospace/, newest first. Semantic versioning (MAJOR.MINOR.PATCH); the footer build stamp shows the current one. Every release adds a `## vX.Y.Z` section here (the Site check fails without it).
+
+## v3.1.2 — 2026.11.19
+- **Branding everywhere in the repo:**
+  - every document starts with the mission patch and ends with the credit and trademark line;
+  - every code and config file carries "© Malcolm Syme · mcsyme11@gmail.com";
+  - the site's source opens with a copyright notice.
+- **Credit inside the images:** every PNG (icons, share preview, patch) has the credit embedded in its file details (Author, Copyright). The pixels are unchanged.
+- New `brand/simply-aerospace-patch-512.png` (the full patch, used at the top of the docs).
+- **The Site check now enforces branding**, so a new file without the credit, a document without the patch, or an image without the embedded credit fails the check.
 
 ## v3.1.1 — 2026.11.17
 - **Footer formatting fixed:**
@@ -64,4 +75,4 @@ Every version of https://mcsyme11-byte.github.io/SimplyAerospace/, newest first.
 - Initial build: core pages, brand, the first ~17 explainers, and the site features (difficulty filter, search, quiz, glossary, stat strips, keyboard shortcuts, watched tracking, social previews).
 
 ---
-© Malcolm Syme · mcsyme11@gmail.com
+© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme.

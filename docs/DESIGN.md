@@ -1,3 +1,5 @@
+<p align="center"><img src="../brand/simply-aerospace-patch-512.png" width="110" alt="Simply Aerospace mission patch"></p>
+
 # Design guide
 
 How Simply Aerospace looks. It follows the shared "old money" look of Malcolm Syme's projects (the portfolio, Flight Deck Suite, Hot Mic, Syme Skyworks): navy, brass and cream, serif type, thin brass rules, kept modern. This guide matches website **v3.1.1**. The private archive keeps a copy; keep the two the same.
@@ -101,4 +103,4 @@ Every page carries the credit line in the footer, and every document and deck ca
 - **Check before calling it done:** desktop and phone widths, every page touched, and no console errors.
 
 ---
-© Malcolm Syme · mcsyme11@gmail.com
+© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme.

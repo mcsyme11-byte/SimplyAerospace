@@ -1,3 +1,5 @@
+<p align="center"><img src="../brand/simply-aerospace-patch-512.png" width="110" alt="Simply Aerospace mission patch"></p>
+
 # Release checklist
 
 Follow it for every change to the live site, in order. The automatic **Site check** enforces the starred (★) steps; the rest are on you.
@@ -43,4 +45,4 @@ Follow it for every change to the live site, in order. The automatic **Site chec
 16. **Tell Malcolm** what shipped, in a line or two.
 
 ---
-© Malcolm Syme · mcsyme11@gmail.com
+© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme.

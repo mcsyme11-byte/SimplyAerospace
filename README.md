@@ -1,4 +1,4 @@
-<p align="center"><img src="icon-512.png" width="140" alt="Simply Aerospace mission patch"></p>
+<p align="center"><img src="brand/simply-aerospace-patch-512.png" width="110" alt="Simply Aerospace mission patch"></p>
 
 # Simply Aerospace — website
 
@@ -17,5 +17,7 @@
 | `docs/RELEASE-CHECKLIST.md` | The steps for every release |
 | `tools/check_site.js` | The Site check, run automatically on every push |
 
+**License:** all rights reserved. See [LICENSE.md](LICENSE.md).
+
 ---
-© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme. All rights reserved — see [LICENSE.md](LICENSE.md).
+© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme.

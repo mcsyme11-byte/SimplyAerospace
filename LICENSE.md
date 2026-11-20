@@ -1,3 +1,5 @@
+<p align="center"><img src="brand/simply-aerospace-patch-512.png" width="110" alt="Simply Aerospace mission patch"></p>
+
 # Copyright and trademarks
 
 © 2026 Malcolm Syme · mcsyme11@gmail.com. **All rights reserved.**
@@ -9,3 +11,6 @@ The text, slides, illustrations, code and design of Simply Aerospace and this we
 Sources cited on the site belong to their owners. Their links are given so readers can check the facts.
 
 The patch lettering uses Libre Baskerville (SIL Open Font License 1.1), converted to outlines.
+
+---
+© 2026 Malcolm Syme · mcsyme11@gmail.com · Simply Aerospace™ and the Simply Aerospace mission patch are trademarks of Malcolm Syme.
